@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+    .navbar-brand.abs
+        {
+            position: absolute;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    }
+
+.topbar {
+    background-color: #e25f21;
+    }
+
+.topbar a {
+    color: #e0ecf4;
+    text-align: center;
+    
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Outfit", sans-serif;
+  }

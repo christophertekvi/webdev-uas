@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro&family=Archivo:wght@100;200;300&family=BioRhyme&family=Cormorant+Garamond:wght@300&family=Fruktur&family=Inter:wght@100;200;300&family=Poppins:wght@200&family=Sora:wght@100;500&display=swap");
+body {
+  margin: 0px;
+  background-color: #ffbea0;
+}
+
+.logo {
+  width: 20%;
+  height: 20%;
+  display: block;
+  align-items: center;
+  margin: auto;
+}
+
+.header-top {
+  background-color: white;
+}
+
+.topbar {
+  background-color: #e25f21;
+  }
+
+.topbar a {
+  color: #e0ecf4;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Outfit", sans-serif;
+}
+
+
+/* .bar {
+  background-color: #e25f21;
+  overflow: hidden;
+  padding: 1%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+} */
+
+
+.navbar-nav .nav-item .nav-link {
+  color: white;
+}
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+  color: black;
+}
+
+/* .nav li {
+  text-decoration: none;
+  list-style: none;
+  display: block;
+} */
+
+/* .bar a:hover,
+.bar a.active {
+  background-color: transparent;
+  color: black;
+} */
+
+.cart {
+  float: right;
+  margin-left: 400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#btnScrollTop {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+#btnScrollTop:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand.abs
+      {
+          position: absolute;
+          width: auto;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+      }
+  }
+
+  footer {
+    margin-top: 100px;
+    width: 100%;
+    background-color: #e25f21;
+    color: white;
+  }

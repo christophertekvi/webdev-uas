@@ -1,0 +1,17 @@
+.aboutus{
+    text-align: center;
+    margin: 75px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: bold;
+}
+
+.aboutus-p{
+    margin: 25px 100px 50px 100px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-img{
+    margin: 50px;
+    max-width: 50%;
+}
