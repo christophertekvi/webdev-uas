@@ -39,3 +39,7 @@ Route::get('/home-sign-in', function () {
 Route::get('/about-sign-in', function () {
     return view('about-sign-in');
 });
+
+Route::get('/menu', function () {
+    return view('menu');
+});
