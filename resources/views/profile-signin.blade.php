@@ -16,8 +16,8 @@
           href="https://fonts.googleapis.com/css?family=Material+Icons"
         />
 
-        <link rel="stylesheet" href="css/template.css" />
-        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="template.css" />
+        <link rel="stylesheet" href="profile.css" />
         <script type="text/javascript" src="template.js"></script>
         <script type="text/javascript" src="profile.js"></script>
 
@@ -127,26 +127,122 @@
         </div>
 
         <div class="profile">
-            <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'EditProfile')" id="defaultOpen">Edit Profile</button>
-            <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
-          </div>
+                <div class="profilecontrol">
+                     <div class="controlbutton">
+                        <button class="tablinks" onclick="openCity(event, 'EditProfile')" id="defaultOpen">Edit Profile</button>
+                        <button class="tablinks" onclick="openCity(event, 'UbahkataSandi')">Ubah kata Sandi</button>
+                        <button class="tablinks" onclick="openCity(event, 'Pesanan')">Pesanan</button>
+                        <button class="tablinks" onclick="openCity(event, 'MenuFavorit')">Menu Favorit</button>
+                        <button class="tablinks" onclick="openCity(event, 'Keluar')">Keluar</button>
+                    </div>
+                    <div id="EditProfile" class="tabcontent">
+                        <div class="gantiprofile">
+                            <img src="image/user.png" alt="">
+                        </div>
+                        <div class="editinfo">
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>Nama :</h5>
+                            </div>
+                            <div class="inputprofile">
+                              <input type="text" name="nama" id="inputannama">
+                            </div>
+                          </div>
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>Email :</h5>
+                            </div>
+                            <div class="inputprofile">
+                              <input type="text" name="nama" id="inputannama">
+                            </div>
+                          </div>
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>No.HP :</h5>
+                            </div>
+                            <div class="inputprofile">
+                              <input type="text" name="nohp" id="inputannotelp">
+                            </div>
+                          </div>
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>Gender</h5>
+                            </div>
+                            <div class="inputgender">
+                              <div class="inputcowok">
+                                <input type="radio" name="Laki_Laki" id="cowok"> Laki-Laki
+                              </div>
+                              <div class="inputcewek">
+                                <input type="radio" name="Perempuan" id="cewek"> Perempuan
+                              </div>
+                            </div>
+                          </div>
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>Alamat :</h5>
+                            </div>
+                            <div class="inputalamat">
+                              <input type="text" name="nohp" id="inputannotelp">
+                            </div>
+                          </div>
+                          <div class="controlbutton2">
+                            <button>Ubah</button>
+                          </div>
 
-          <div id="London" class="tabcontent">
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
-          </div>
-
-          <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
-          </div>
-
-          <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-          </div>
+                        </div>
+                    </div>
+                    <div id="UbahkataSandi" class="tabcontent">
+                      <div class="controltextandimg">
+                          <div class="imgcontrol">
+                            <img src="image/user.png" alt="">
+                          </div>
+                          <div class="textcontrol">
+                            <h2>Nama Pengguna</h2>
+                          </div>
+                      </div><br>
+                      <div class="controlinput">
+                        <div class="textcontrolinputkatasandi">
+                          <h5>Kata Sandi Lama :</h5>
+                        </div>
+                        <div class="controlinputkatasandi">
+                          <input type="password" name="katasandilama" id="katasandilama">
+                        </div>
+                      </div>
+                      <div class="controlinput">
+                        <div class="textcontrolinputkatasandi">
+                          <h5>Kata Sandi Baru :</h5>
+                        </div>
+                        <div class="controlinputkatasandi">
+                          <input type="password" name="katasandibaru" id="katasandibaru">
+                        </div>
+                      </div>
+                      <div class="controlinput">
+                        <div class="textcontrolinputkatasandi">
+                          <h5>Konfirmasi Kata Sandi Baru:</h5>
+                        </div>
+                        <div class="controlinputkatasandi">
+                          <input type="password" name="konfirmasikatasandibaru" id="konfirmasikatasandibaru">
+                        </div>
+                      </div>
+                      <br>
+                      <br>
+                      <div class="controlbutton2">
+                        <button>Ubah</button>
+                      </div>
+                    </div>
+                    <div id="Pesanan" class="tabcontent">
+                        <h3>Pesanan</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
+                    <div id="MenuFavorit" class="tabcontent">
+                        <h3>Menu Favorit</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
+                    <div id="Keluar" class="tabcontent">
+                        <h3>Keluar</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
+                </div>
         </div>
 
 
@@ -233,6 +329,24 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
     </body>
 
 
