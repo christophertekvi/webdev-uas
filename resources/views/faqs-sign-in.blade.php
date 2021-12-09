@@ -78,7 +78,7 @@
                       aria-labelledby="navbarDropdownMenuLink"
                     >
                       <li>
-                        <a style="text-align: left; color: black;" class="dropdown-item" href="#">My profile</a>
+                        <a style="text-align: left; color: black;" class="dropdown-item" href="#">My Profile</a>
                       </li>
                       <li>
                         <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
@@ -97,6 +97,102 @@
           <h5>(Frequently Asked Questions)</h5>
           <p class="faqs-p">ddd</p>
         </div>
+
+        <div class="faqs">
+            <h1>FAQs</h1>
+            <h5>(Frequently Asked Questions)</h5>
+            <div class="faqs-p">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Terms & Conditions
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      1. The menus displayed are available starting one day after the website is accessed (i.e. The menus displayed on December 7 are menus available starting on December 8).
+                      <br> 2. Orders are made maximum one day before delivery time.
+                      <br> 3. The maximum amount of orders of every meal is 50 packs. If you wanted to order more, you can contact us directly via e-mail (subject : "Order") or WhatsApp.
+                      <br> 4. Every transactions will have Rp10.000 added for delivery fee.
+                      <br> 5. Payments are made maximum one day before delivery time at 12.00 WIB.
+                      <br> 6. Operational Hours :
+                      <br>&emsp; Weekdays (Monday - Friday) &emsp;&emsp; 07.00 WIB - 19.00 WIB
+                      <br>&emsp; Weekends (Saturday & Sunday) &emsp;&emsp; 08.00 WIB - 20.00 WIB
+                      <br> 7. Orders are closed at 16.00 WIB for next day deliveries.
+                      <br> 8. You will receive points in every transactions you made.
+                      <br> 9. For every Rp1000 you will receive 1 point.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      How can I order?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="text-align: justify;">
+                      Simply click "Menu" on the navigation bar. Then, choose the date of delivery that you wanted (since we are using the pre-order system and the menus differ by date). Click the menu that you wanted to order then, choose the number of packs that you wanted. If you want to checkout immediately, then click "Order Now". But, if you still want to choose something else, you can click "Add to Cart".
+                      <br>After that, click on the shopping cart icon on the top-right corner and select the menus that you want to order. Then, click the "Checkout" button. Make sure your orders are right then, select the payment method and choose whether or not to use your points. After that, click "Order".
+                      <br><br>*Make sure you are already signed in to your account.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Do I have to be a member in order to place a transaction?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="text-align: justify;">
+                      Yes.
+                      <br> If you do not have an account yet, you can simply sign up through our website. Click on the Profile icon on the top-right corner then, click "Sign Up" on the dropdown menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                      When is the delivery time?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Weekdays : starts at 08.00 WIB
+                      <br>Weekends : starts at 09.00 WIB
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                      Which areas are covered?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      For now, we operate within Surabaya area only.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                      How can I check my order status?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="text-align: justify;">
+                      Click on the profile icon on the top-right corner then, click profile. After that, click "Order Status" on the right-tab. Here, you can see all of your ongoing and completed orders.
+                      <br><br>*Make sure you are signed in to your account.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <button id="btnScrollTop" onclick="scrollToTop()">
           <i class="material-icons">keyboard_double_arrow_up</i>
