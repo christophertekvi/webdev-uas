@@ -43,3 +43,7 @@ Route::get('/about-sign-in', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
+
+Route::get('/profile-signin', function () {
+    return view('profile-signin');
+});
