@@ -22,8 +22,8 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
     ></script>
-    <link rel="stylesheet" href="Sign-Up.css" />
-    <link rel="stylesheet" href="template.css" />
+    <link rel="stylesheet" href="css/Sign-Up.css" />
+    <link rel="stylesheet" href="css/template.css" />
 
     <title>MakanYuk | Sign Up</title>
   </head>
@@ -140,7 +140,7 @@
 
       <div class="ke-signin">
         <a
-          href="./Sign-In.html"
+          href="./sign-in"
           style="
             font-family: 'Outfit', sans-serif;
             color: black;
