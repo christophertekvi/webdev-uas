@@ -107,11 +107,11 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     </div>
-                                    <div class="cart_item_image"><img src="https://i.imgur.com/qqBRWD5.jpg" alt=""></div>
+                                    <div class="cart_item_image"><img src="image/ayambakar.png" alt=""></div>
                                     <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                         <div class="cart_item_name cart_info_col">
-                                            <div class="cart_item_title">Name</div>
-                                            <div class="cart_item_text">Samsung C7 Pro</div>
+                                            <div class="cart_item_title">Menu Name</div>
+                                            <div class="cart_item_text">Ayam Bakar</div>
                                         </div>
                                         <div class="cart_item_quantity cart_info_col">
                                             <div class="cart_item_title">Quantity</div>
@@ -119,11 +119,11 @@
                                         </div>
                                         <div class="cart_item_price cart_info_col">
                                             <div class="cart_item_title">Price</div>
-                                            <div class="cart_item_text">₹22000</div>
+                                            <div class="cart_item_text">Rp. 15.000</div>
                                         </div>
                                         <div class="cart_item_total cart_info_col">
                                             <div class="cart_item_title">Total</div>
-                                            <div class="cart_item_text">₹22000</div>
+                                            <div class="cart_item_text">Rp. 15.000</div>
                                         </div>
                                     </div>
                                 </li>
@@ -134,11 +134,11 @@
                                   <div class="form-check">
                                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                   </div>
-                                  <div class="cart_item_image"><img src="https://i.imgur.com/qqBRWD5.jpg" alt=""></div>
+                                  <div class="cart_item_image"><img src="image/nasiputih.png" alt=""></div>
                                   <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                       <div class="cart_item_name cart_info_col">
-                                          <div class="cart_item_title">Name</div>
-                                          <div class="cart_item_text">Samsung C7 Pro</div>
+                                          <div class="cart_item_title">Menu Name</div>
+                                          <div class="cart_item_text">Nasi Putih</div>
                                       </div>
                                       <div class="cart_item_quantity cart_info_col">
                                           <div class="cart_item_title">Quantity</div>
@@ -146,11 +146,11 @@
                                       </div>
                                       <div class="cart_item_price cart_info_col">
                                           <div class="cart_item_title">Price</div>
-                                          <div class="cart_item_text">₹22000</div>
+                                          <div class="cart_item_text">Rp. 7.000</div>
                                       </div>
                                       <div class="cart_item_total cart_info_col">
                                           <div class="cart_item_title">Total</div>
-                                          <div class="cart_item_text">₹22000</div>
+                                          <div class="cart_item_text">Rp. 7.000</div>
                                       </div>
                                   </div>
                               </li>
@@ -159,7 +159,7 @@
                         <div class="order_total">
                             <div class="order_total_content text-md-right">
                                 <div class="order_total_title">Order Total:</div>
-                                <div class="order_total_amount">₹22000</div>
+                                <div class="order_total_amount">Rp. 22.000</div>
                             </div>
                         </div>
                         <div class="cart_buttons"> <button type="button" class="button cart_button_clear">Back</button> <button style= "background-color: #e25f21;"type="button" class="button cart_button_checkout">Check Out</button> </div>

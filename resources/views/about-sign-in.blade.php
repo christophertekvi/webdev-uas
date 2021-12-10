@@ -58,8 +58,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                <a class="text-reset me-3" href="#">
-                  <i href="/cart" style="color: #ffffff;" class="fas fa-shopping-cart"></i>
+                <a class="text-reset me-3" href="/cart" >
+                  <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
                 </a>
                 <a
                   style="padding-right: 18%;"
