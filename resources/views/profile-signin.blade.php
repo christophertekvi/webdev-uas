@@ -16,8 +16,8 @@
           href="https://fonts.googleapis.com/css?family=Material+Icons"
         />
 
-        <link rel="stylesheet" href="css/template.css" />
-        <link rel="stylesheet" href="css/profile.css" />
+        <link rel="stylesheet" href="template.css" />
+        <link rel="stylesheet" href="profile.css" />
         <script type="text/javascript" src="template.js"></script>
         <script type="text/javascript" src="profile.js"></script>
 
@@ -231,8 +231,22 @@
                       </div>
                     </div>
                     <div id="Pesanan" class="tabcontent">
-                        <h3>Pesanan</h3>
-                        <p>Tokyo is the capital of Japan.</p>
+                      <div class="buttoncontrolpesanan">
+                        <div class="buttondalamproses">
+                          <button class="tablinkspesanan" onclick="openPesanan(event, 'pesanandalamproses')" id="TerbukaPertama">Dalam Proses</button>
+                        </div>
+                        <div class="buttonselesai">
+                          <button class="tablinkspesanan" onclick="openPesanan(event, 'pesananselesai')">Selesai</button>
+                        </div>
+                      </div>
+                      <div id="pesanandalamproses" class="pesanandalamproses">
+                        <div class="isipesanandalamproses">
+
+                        </div>
+                      </div>
+                      <div id="pesananselesai" class="pesanandalamproses">
+                        pesananselesai
+                      </div>
                     </div>
                     <div id="MenuFavorit" class="tabcontent">
                         <h3>Menu Favorit</h3>
@@ -346,6 +360,20 @@
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
+    function openPesanan(evt, tipePesanan) {
+      var x, pesanandalamproses, tablinkspesanan;
+      pesanandalamproses = document.getElementsByClassName("pesanandalamproses");
+      for (x = 0; x < pesanandalamproses.length; x++) {
+        pesanandalamproses[x].style.display = "none";
+      }
+      tablinkspesanan = document.getElementsByClassName("tablinkspesanan");
+      for (x = 0; x < tablinkspesanan.length; x++) {
+        tablinkspesanan[x].className = tablinkspesanan[x].className.replace(" active", "");
+      }
+      document.getElementById(tipePesanan).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("TerbukaPertama").click();
     </script>
     </body>
 
