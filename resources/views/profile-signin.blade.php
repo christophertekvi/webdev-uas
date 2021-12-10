@@ -18,8 +18,8 @@
 
         <link rel="stylesheet" href="css/template.css" />
         <link rel="stylesheet" href="css/profile.css" />
-        <script type="text/javascript" src="template.js"></script>
-        <script type="text/javascript" src="profile.js"></script>
+        <script type="text/javascript" src="js/template.js"></script>
+        <script type="text/javascript" src="js/profile.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap.css" />
