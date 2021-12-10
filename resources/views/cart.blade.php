@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="eng">
+
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MakanYuk | About</title>
+    <title>MakanYuk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
     <link rel="stylesheet" href="css/template.css" />
-    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/cart.css" />
     <script type="text/javascript" src="js/template.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -23,11 +25,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" ></script>
   </head>
+
   <body style="background-color:floralwhite;">
+    <!--topbar-->
     <div class="header-top">
       <div class="row">
         <div>
-          <a href="/home">
+          <!-- <a href="index.html"> -->
             <img
               class="logo"
               src="image/logo.png"
@@ -44,22 +48,22 @@
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
             <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/home-sign-in">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/menu" >MENU</a>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/about-sign-in">ABOUT US</a>
+                    <a class="nav-link" aria-current="page" href="./home.html">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/faqs-sign-in">FAQS</a>
+                    <a class="nav-link" href="./menu.html" >MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./faqs.html">FAQS</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                 <a class="text-reset me-3" href="#">
-                  <i href="/cart" style="color: #ffffff;" class="fas fa-shopping-cart"></i>
+                  <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
                 </a>
                 <a
                   style="padding-right: 18%;"
@@ -77,13 +81,13 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">My Profile</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">My profile</a>
                   </li>
                   <li>
                     <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="./home.html">Sign Out</a>
                   </li>
                 </ul>
             </ul>
@@ -91,20 +95,86 @@
       </nav>
     </div>
 
-    <div class="aboutus">
-      <h1>About Us</h1>
-      <img class="about-img" src="image/about.jpg" />
-      <p class="aboutus-p">
-        MakanYuk is a catering company founded by four college students in 2021. It all started when a lot of their friends kept on saying they are missing their mother's cooking.
-        These four college students then started designing the company. The name MakanYuk is actually two words, "Makan" and "Yuk", which is Indonesian for "Let's eat".
-        <br><br>MakanYuk specializes on home-cooked meals using the pre-order system. The menus are all scheduled so everyday there will be some meals that are different.
-        This is one of the efforts made so that every meal can stay fresh and well-made. This is also to help the customers to make easier decisions and to minimalize boredom towards the menus.
-      </p>
+    <div class="cart_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cart_container">
+                        <div class="cart_title">Cart<small> (1 item in your cart) </small></div>
+                        <div class="cart_items">
+                            <ul class="cart_list">
+                                <li class="cart_item clearfix">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    </div>
+                                    <div class="cart_item_image"><img src="https://i.imgur.com/qqBRWD5.jpg" alt=""></div>
+                                    <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                        <div class="cart_item_name cart_info_col">
+                                            <div class="cart_item_title">Name</div>
+                                            <div class="cart_item_text">Samsung C7 Pro</div>
+                                        </div>
+                                        <div class="cart_item_quantity cart_info_col">
+                                            <div class="cart_item_title">Quantity</div>
+                                            <div class="cart_item_text">1</div>
+                                        </div>
+                                        <div class="cart_item_price cart_info_col">
+                                            <div class="cart_item_title">Price</div>
+                                            <div class="cart_item_text">₹22000</div>
+                                        </div>
+                                        <div class="cart_item_total cart_info_col">
+                                            <div class="cart_item_title">Total</div>
+                                            <div class="cart_item_text">₹22000</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="cart_list">
+                              <li class="cart_item clearfix">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  </div>
+                                  <div class="cart_item_image"><img src="https://i.imgur.com/qqBRWD5.jpg" alt=""></div>
+                                  <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                      <div class="cart_item_name cart_info_col">
+                                          <div class="cart_item_title">Name</div>
+                                          <div class="cart_item_text">Samsung C7 Pro</div>
+                                      </div>
+                                      <div class="cart_item_quantity cart_info_col">
+                                          <div class="cart_item_title">Quantity</div>
+                                          <div class="cart_item_text">1</div>
+                                      </div>
+                                      <div class="cart_item_price cart_info_col">
+                                          <div class="cart_item_title">Price</div>
+                                          <div class="cart_item_text">₹22000</div>
+                                      </div>
+                                      <div class="cart_item_total cart_info_col">
+                                          <div class="cart_item_title">Total</div>
+                                          <div class="cart_item_text">₹22000</div>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+                        </div>
+                        <div class="order_total">
+                            <div class="order_total_content text-md-right">
+                                <div class="order_total_title">Order Total:</div>
+                                <div class="order_total_amount">₹22000</div>
+                            </div>
+                        </div>
+                        <div class="cart_buttons"> <button type="button" class="button cart_button_clear">Back</button> <button style= "background-color: #e25f21;"type="button" class="button cart_button_checkout">Check Out</button> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button id="btnScrollTop" onclick="scrollToTop()">
-      <i class="material-icons">keyboard_double_arrow_up</i>
-    </button>
+    <div>
+        <button id="btnScrollTop" onclick="scrollToTop()">
+            <i class="material-icons">keyboard_double_arrow_up</i>
+        </button>
+    </div>
+
   </body>
 
   <!-- Footer -->

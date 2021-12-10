@@ -44,10 +44,18 @@ Route::get('/about-sign-in', function () {
     return view('about-sign-in');
 });
 
+Route::get('/faqs-sign-in', function () {
+    return view('faqs-sign-in');
+});
+
 Route::get('/menu', function () {
     return view('menu');
 });
 
 Route::get('/profile-signin', function () {
     return view('profile-signin');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
 });

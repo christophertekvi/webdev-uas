@@ -93,12 +93,6 @@
         </div>
 
         <div class="faqs">
-          <h1>FAQs</h1>
-          <h5>(Frequently Asked Questions)</h5>
-          <p class="faqs-p">ddd</p>
-        </div>
-
-        <div class="faqs">
             <h1>FAQs</h1>
             <h5>(Frequently Asked Questions)</h5>
             <div class="faqs-p">
