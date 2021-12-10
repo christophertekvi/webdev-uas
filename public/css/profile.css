@@ -1,152 +1,181 @@
-* {box-sizing: border-box}
-.profile{
-    width: 100%;
+* {
+    box-sizing: border-box;
 }
-.profilecontrol{
+.profile {
+    width: 75%;
+    margin: 50px 50px 50px 150px;
+    font-family: "Montserrat", sans-serif;
+}
+.profilecontrol {
     margin: auto;
     display: flex;
     justify-content: center;
     padding: 50px;
 }
-.controlbutton{
+.controlbutton {
     display: flex;
     flex-direction: column;
+    /* color: rgb(255, 203, 141); */
 }
-.controlbutton button{
+.controlbutton button {
     padding: 20px;
     font-size: 19px;
+    background-color: rgb(255, 203, 141);
+    border: 0.5px solid black;
 }
-.tabcontent{
+.tabcontent {
     width: 1000px;
     background-color: rgba(246, 246, 246, 1);
-    border-radius: 0 15px 15px 0 ;
+    border-radius: 0 15px 15px 0;
     border: 1px solid black;
 }
-.gantiprofile{
+.changeProfile {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 75px;
 }
-.gantiprofile img{
-    width: 200px;
-    height: 200px;
+.changeProfile img {
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
 }
-.editprofile{
+
+#file {
+    display: none;
+}
+
+#uploadPhoto {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(246, 246, 246, 1);
+    color: black;
+    line-height: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.editprofile {
     background-color: rgba(246, 246, 246, 1);
 }
-.editinfo{
+.editinfo {
     width: 70%;
-    margin: auto;
     padding-top: 50px;
+    margin: 0px 50px 50px;
 }
-.controlinfo{
+.controlinfo {
     display: flex;
     width: 100%;
     padding-top: 10px;
 }
-.controltext{
+.controltext {
     width: 48%;
+    font-size: 14px;
 }
-.controltext h5{
+.controltext h5 {
     padding-left: 40%;
 }
-.inputprofile{
+.inputProfile {
     width: 52%;
 }
-.inputprofile input{
+.inputProfile input {
     width: 100%;
 }
-.inputgender{
+.inputGender {
     width: 52%;
     display: flex;
     justify-content: space-around;
 }
-.inputalamat{
-    width : 52%;
+.inputAddress {
+    width: 52%;
 }
-.inputalamat input{
+.inputAddress input {
     width: 100%;
     height: 300px;
 }
-.controlbutton2{
+.save-profile {
     display: flex;
-    margin-top: 10px;
-    justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
+    position: relative;
+    margin: 20px 50px 50px 30px;
 }
-.controlbutton2 button{
+.save-profile button {
     border: none;
     border-radius: 15px;
     padding: 10px 30px 10px 30px;
     background-color: #e25f21;
 }
-.controltextandimg{
+.controltextandimg {
     width: 100%;
 }
-.controltextandimg{
+.controltextandimg {
     display: flex;
     margin-top: 30px;
 }
-.imgcontrol{
+.imgcontrol {
     width: 50%;
     display: flex;
     justify-content: center;
 }
-.textcontrol{
+.textcontrol {
     width: 50%;
     display: flex;
     align-items: right;
     margin-top: auto;
     margin-bottom: auto;
 }
-.imgcontrol img{
+.imgcontrol img {
     width: 200px;
     height: 200px;
 }
-.controlinput{
+.controlinput {
     width: 100%;
     display: flex;
     margin-top: 20px;
 }
-.textcontrolinputkatasandi{
+.textcontrol-InputPass {
     display: flex;
     width: 50%;
     padding-left: 15%;
 }
-.controlinputkatasandi{
+.controlinputPass {
     width: 50%;
 }
-.controlinputkatasandi input{
+.controlinputPass input {
     width: 70%;
 }
-.buttoncontrolpesanan{
-    width :100%;
+.buttoncontrolOrders {
+    width: 100%;
     height: 20%;
     display: flex;
 }
-.buttondalamproses{
+.buttonProcess {
     width: 50%;
 }
-.buttondalamproses button{
+.buttonProcess button {
     width: 100%;
     height: 100%;
 }
-.buttonselesai{
+.buttonselesai {
     width: 50%;
 }
-.buttonselesai button{
+.buttonselesai button {
     width: 100%;
     border-radius: 0 14px 0 0;
     height: 100%;
 }
-.pesanandalamproses{
+.inProcess {
     width: 100%;
     height: 80%;
     border-radius: 0 0 15px 0;
     display: flex;
     flex-direction: column;
 }
-.isipesanandalamproses{
+.inProcessAll {
     width: 80%;
     height: 50%;
     border: 1px solid black;

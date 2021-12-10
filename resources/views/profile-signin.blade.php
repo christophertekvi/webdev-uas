@@ -112,7 +112,7 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">My Profile</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
                     <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
@@ -130,131 +130,133 @@
                 <div class="profilecontrol">
                      <div class="controlbutton">
                         <button class="tablinks" onclick="openCity(event, 'EditProfile')" id="defaultOpen">Edit Profile</button>
-                        <button class="tablinks" onclick="openCity(event, 'UbahkataSandi')">Ubah kata Sandi</button>
-                        <button class="tablinks" onclick="openCity(event, 'Pesanan')">Pesanan</button>
-                        <button class="tablinks" onclick="openCity(event, 'MenuFavorit')">Menu Favorit</button>
-                        <button class="tablinks" onclick="openCity(event, 'Keluar')">Keluar</button>
+                        <button class="tablinks" onclick="openCity(event, 'ChangePass')">Change Password</button>
+                        <button class="tablinks" onclick="openCity(event, 'Orders')">Orders</button>
+                        <button class="tablinks" onclick="openCity(event, 'FavMenus')">Favorite Menus</button>
+                        <button class="tablinks" onclick="openCity(event, 'SIgnOut')">Sign Out</button>
                     </div>
                     <div id="EditProfile" class="tabcontent">
-                        <div class="gantiprofile">
-                            <img src="image/user.png" alt="">
+                        <div class="changeProfile">
+                            <img src="image/user.png">
+                            <input type="file" id="file">
+                            <label for="file" id="uploadPhoto">Change Photo</label>
+                            {{-- <p>UserID</p> --}}
                         </div>
                         <div class="editinfo">
                           <div class="controlinfo">
                             <div class="controltext">
-                              <h5>Nama :</h5>
+                              <h5>Name :</h5>
                             </div>
-                            <div class="inputprofile">
-                              <input type="text" name="nama" id="inputannama">
-                            </div>
-                          </div>
-                          <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>Email :</h5>
-                            </div>
-                            <div class="inputprofile">
-                              <input type="text" name="nama" id="inputannama">
+                            <div class="inputProfile">
+                              <input type="text" name="nama" id="input-name">
                             </div>
                           </div>
                           <div class="controlinfo">
                             <div class="controltext">
-                              <h5>No.HP :</h5>
+                              <h5>E-mail :</h5>
                             </div>
-                            <div class="inputprofile">
-                              <input type="text" name="nohp" id="inputannotelp">
+                            <div class="inputProfile">
+                              <input type="text" name="nama" id="input-name">
+                            </div>
+                          </div>
+                          <div class="controlinfo">
+                            <div class="controltext">
+                              <h5>Phone :</h5>
+                            </div>
+                            <div class="inputProfile">
+                              <input type="text" name="nohp" id="input-phone">
                             </div>
                           </div>
                           <div class="controlinfo">
                             <div class="controltext">
                               <h5>Gender</h5>
                             </div>
-                            <div class="inputgender">
-                              <div class="inputcowok">
+                            <div class="inputGender">
+                              <div class="rbCowok">
                                 <input type="radio" name="Laki_Laki" id="cowok"> Laki-Laki
                               </div>
-                              <div class="inputcewek">
+                              <div class="rbCewek">
                                 <input type="radio" name="Perempuan" id="cewek"> Perempuan
                               </div>
                             </div>
                           </div>
                           <div class="controlinfo">
                             <div class="controltext">
-                              <h5>Alamat :</h5>
+                              <h5>Address :</h5>
                             </div>
-                            <div class="inputalamat">
-                              <input type="text" name="nohp" id="inputannotelp">
+                            <div class="inputAddress">
+                              <textarea id="address" name="address" rows="6" cols="25"></textarea>
                             </div>
                           </div>
-                          <div class="controlbutton2">
-                            <button>Ubah</button>
+                          <div class="save-profile">
+                            <button>Save</button>
                           </div>
 
                         </div>
                     </div>
-                    <div id="UbahkataSandi" class="tabcontent">
-                      <div class="controltextandimg">
+                    <div id="ChangePass" class="tabcontent">
+                      <div class="controltextAndimg">
                           <div class="imgcontrol">
                             <img src="image/user.png" alt="">
                           </div>
                           <div class="textcontrol">
-                            <h2>Nama Pengguna</h2>
+                            <h2>Name</h2>
+                            {{-- <br><p>User ID</p> --}}
                           </div>
                       </div><br>
                       <div class="controlinput">
-                        <div class="textcontrolinputkatasandi">
-                          <h5>Kata Sandi Lama :</h5>
+                        <div class="textcontrol-InputPass">
+                          <h5>Old Password :</h5>
                         </div>
-                        <div class="controlinputkatasandi">
-                          <input type="password" name="katasandilama" id="katasandilama">
-                        </div>
-                      </div>
-                      <div class="controlinput">
-                        <div class="textcontrolinputkatasandi">
-                          <h5>Kata Sandi Baru :</h5>
-                        </div>
-                        <div class="controlinputkatasandi">
-                          <input type="password" name="katasandibaru" id="katasandibaru">
+                        <div class="controlinputPass">
+                          <input type="password" name="oldPass" id="oldPass">
                         </div>
                       </div>
                       <div class="controlinput">
-                        <div class="textcontrolinputkatasandi">
-                          <h5>Konfirmasi Kata Sandi Baru:</h5>
+                        <div class="textcontrol-InputPass">
+                          <h5>New Password :</h5>
                         </div>
-                        <div class="controlinputkatasandi">
-                          <input type="password" name="konfirmasikatasandibaru" id="konfirmasikatasandibaru">
+                        <div class="controlinputPass">
+                          <input type="password" name="newPass" id="newPass">
+                        </div>
+                      </div>
+                      <div class="controlinput">
+                        <div class="textcontrol-InputPass">
+                          <h5>Confirm Password :</h5>
+                        </div>
+                        <div class="controlinputPass">
+                          <input type="password" name="confirmPass" id="confirmPass">
                         </div>
                       </div>
                       <br>
                       <br>
-                      <div class="controlbutton2">
-                        <button>Ubah</button>
+                      <div class="save-password">
+                        <button>Save</button>
                       </div>
                     </div>
-                    <div id="Pesanan" class="tabcontent">
-                      <div class="buttoncontrolpesanan">
-                        <div class="buttondalamproses">
-                          <button class="tablinkspesanan" onclick="openPesanan(event, 'pesanandalamproses')" id="TerbukaPertama">Dalam Proses</button>
+                    <div id="Orders" class="tabcontent">
+                      <div class="buttoncontrolOrders">
+                        <div class="buttonProcess">
+                          <button class="tabOrders" onclick="openPesanan(event, 'inProcess')" id="TerbukaPertama">In Process</button>
                         </div>
                         <div class="buttonselesai">
-                          <button class="tablinkspesanan" onclick="openPesanan(event, 'pesananselesai')">Selesai</button>
+                          <button class="tabOrders" onclick="openPesanan(event, 'completedOrder')">Done</button>
                         </div>
                       </div>
-                      <div id="pesanandalamproses" class="pesanandalamproses">
-                        <div class="isipesanandalamproses">
-
+                      <div id="inProcess" class="inProcess">
+                        <div class="inProcessAll">
+                            proses
                         </div>
                       </div>
-                      <div id="pesananselesai" class="pesanandalamproses">
+                      <div id="completedOrder" class="inProcess">
                         pesananselesai
                       </div>
                     </div>
-                    <div id="MenuFavorit" class="tabcontent">
-                        <h3>Menu Favorit</h3>
-                        <p>Tokyo is the capital of Japan.</p>
+                    <div id="FavMenu" class="tabcontent">
+                        <h3>Favorite Menus</h3>
                     </div>
-                    <div id="Keluar" class="tabcontent">
-                        <h3>Keluar</h3>
-                        <p>Tokyo is the capital of Japan.</p>
+                    <div id="SignOut" href="/home">
+                        balik ke home
                     </div>
                 </div>
         </div>
@@ -343,6 +345,7 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+
   <script>
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
@@ -361,14 +364,14 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
     function openPesanan(evt, tipePesanan) {
-      var x, pesanandalamproses, tablinkspesanan;
+      var x, pesanandalamproses, tabOrders;
       pesanandalamproses = document.getElementsByClassName("pesanandalamproses");
       for (x = 0; x < pesanandalamproses.length; x++) {
         pesanandalamproses[x].style.display = "none";
       }
-      tablinkspesanan = document.getElementsByClassName("tablinkspesanan");
-      for (x = 0; x < tablinkspesanan.length; x++) {
-        tablinkspesanan[x].className = tablinkspesanan[x].className.replace(" active", "");
+      tabOrders = document.getElementsByClassName("tabOrders");
+      for (x = 0; x < tabOrders.length; x++) {
+        tabOrders[x].className = tabOrders[x].className.replace(" active", "");
       }
       document.getElementById(tipePesanan).style.display = "block";
       evt.currentTarget.className += " active";
