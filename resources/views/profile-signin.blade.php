@@ -16,13 +16,13 @@
           href="https://fonts.googleapis.com/css?family=Material+Icons"
         />
 
-        <link rel="stylesheet" href="template.css" />
-        <link rel="stylesheet" href="profile.css" />
+        <link rel="stylesheet" href="css/template.css" />
+        <link rel="stylesheet" href="css/profile.css" />
         <script type="text/javascript" src="template.js"></script>
         <script type="text/javascript" src="profile.js"></script>
 
-        <link rel="stylesheet" href="bootstrap.min.css" />
-        <link rel="stylesheet" href="bootstrap.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
