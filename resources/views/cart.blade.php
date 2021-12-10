@@ -108,7 +108,7 @@
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     </div>
                                     <div class="cart_item_image"><img src="image/ayambakar.png" alt=""></div>
-                                    <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                    <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                         <div class="cart_item_name cart_info_col">
                                             <div class="cart_item_title">Menu Name</div>
                                             <div class="cart_item_text">Ayam Bakar</div>
@@ -135,7 +135,7 @@
                                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                   </div>
                                   <div class="cart_item_image"><img src="image/nasiputih.png" alt=""></div>
-                                  <div style= "width: 70%; margin-left: 10%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                  <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                       <div class="cart_item_name cart_info_col">
                                           <div class="cart_item_title">Menu Name</div>
                                           <div class="cart_item_text">Nasi Putih</div>
@@ -157,7 +157,7 @@
                           </ul>
                         </div>
                         <div class="order_total">
-                            <div class="order_total_content text-md-right">
+                            <div style= "float: right; margin-right: 3%"class="order_total_content text-md-right">
                                 <div class="order_total_title">Order Total:</div>
                                 <div class="order_total_amount">Rp. 22.000</div>
                             </div>
