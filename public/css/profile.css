@@ -26,21 +26,29 @@
 .tabcontent {
     width: 1000px;
     background-color: rgba(246, 246, 246, 1);
-    border-radius: 0 15px 15px 0;
+    border-radius: 0;
     border: 1px solid black;
 }
-.changeProfile {
+.changeProfilePic {
     display: flex;
     justify-content: center;
     margin-top: 75px;
+    /* height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey; */
 }
-.changeProfile img {
+.changeProfilePic img {
     width: 150px;
     height: 150px;
-    transform: translate(-50%, -50%);
 }
 
-#file {
+/* #file {
     display: none;
 }
 
@@ -57,7 +65,9 @@
     line-height: 30px;
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
-}
+    cursor: pointer;
+    display: none;
+} */
 
 .editprofile {
     background-color: rgba(246, 246, 246, 1);
@@ -153,29 +163,33 @@
     height: 20%;
     display: flex;
 }
-.buttonProcess {
+.button-ongoingTab {
     width: 50%;
 }
-.buttonProcess button {
+.button-ongoingTab button {
     width: 100%;
     height: 100%;
+    border: 0.5px solid black;
+    /* color: rgb(255, 144, 103); */
+    background-color: rgb(255, 144, 103);
 }
-.buttonselesai {
+.button-completedTab {
     width: 50%;
 }
-.buttonselesai button {
+.button-completedTab button {
     width: 100%;
     border-radius: 0 14px 0 0;
     height: 100%;
+    border: 0.5px solid black;
 }
-.inProcess {
+.orderOngoing {
     width: 100%;
     height: 80%;
     border-radius: 0 0 15px 0;
     display: flex;
     flex-direction: column;
 }
-.inProcessAll {
+.orderOngoingAll {
     width: 80%;
     height: 50%;
     border: 1px solid black;

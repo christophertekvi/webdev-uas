@@ -82,7 +82,7 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-sign-in">My Profile</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
                     <a style="text-align: left; color: black;" class="dropdown-item" >Points : 1000</a>

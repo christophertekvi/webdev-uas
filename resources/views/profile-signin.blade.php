@@ -136,7 +136,7 @@
                         <button class="tablinks" onclick="openCity(event, 'SIgnOut')">Sign Out</button>
                     </div>
                     <div id="EditProfile" class="tabcontent">
-                        <div class="changeProfile">
+                        <div class="changeProfilePic">
                             <img src="image/user.png">
                             <input type="file" id="file">
                             <label for="file" id="uploadPhoto">Change Photo</label>
@@ -236,27 +236,27 @@
                     </div>
                     <div id="Orders" class="tabcontent">
                       <div class="buttoncontrolOrders">
-                        <div class="buttonProcess">
-                          <button class="tabOrders" onclick="openPesanan(event, 'inProcess')" id="TerbukaPertama">In Process</button>
+                        <div class="button-ongoingTab">
+                          <button class="tabOrders" onclick="openOrders(event, 'orderOngoing')" id="ongoing-tab">Ongoing</button>
                         </div>
-                        <div class="buttonselesai">
-                          <button class="tabOrders" onclick="openPesanan(event, 'completedOrder')">Done</button>
+                        <div class="button-completedTab">
+                          <button class="tabOrders" onclick="openOrders(event, 'orderCompleted')">Completed</button>
                         </div>
                       </div>
-                      <div id="inProcess" class="inProcess">
-                        <div class="inProcessAll">
+                      <div id="orderOngoing" class="orderOngoing">
+                        <div class="orderOngoingAll">
                             proses
                         </div>
                       </div>
-                      <div id="completedOrder" class="inProcess">
-                        pesananselesai
+                      <div id="orderCompleted" class="orderOngoing">
+
                       </div>
                     </div>
                     <div id="FavMenu" class="tabcontent">
                         <h3>Favorite Menus</h3>
                     </div>
                     <div id="SignOut" href="/home">
-                        balik ke home
+                        {{-- <p>balik ke home</p> --}}
                     </div>
                 </div>
         </div>
@@ -363,7 +363,7 @@
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    function openPesanan(evt, tipePesanan) {
+    function openOrders(evt, tipePesanan) {
       var x, pesanandalamproses, tabOrders;
       pesanandalamproses = document.getElementsByClassName("pesanandalamproses");
       for (x = 0; x < pesanandalamproses.length; x++) {
@@ -376,7 +376,7 @@
       document.getElementById(tipePesanan).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    document.getElementById("TerbukaPertama").click();
+    document.getElementById("ongoing-tab").click();
     </script>
     </body>
 
