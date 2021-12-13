@@ -59,3 +59,6 @@ Route::get('/profile-signin', function () {
 Route::get('/cart', function () {
     return view('cart');
 });
+Route::get('/detail-pesanan', function () {
+    return view('detail-pesanan');
+});
