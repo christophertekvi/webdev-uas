@@ -62,3 +62,6 @@ Route::get('/cart', function () {
 Route::get('/detail-pesanan', function () {
     return view('detail-pesanan');
 });
+Route::get('/checkout', function () {
+    return view('checkout');
+});
