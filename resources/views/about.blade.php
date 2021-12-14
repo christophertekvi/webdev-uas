@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@include("header")
 <html lang="eng">
   <head>
     <meta charset="UTF-8" />
