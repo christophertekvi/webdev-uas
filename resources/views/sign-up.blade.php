@@ -134,13 +134,13 @@
       </div>
       <div class="buttoncontrol">
         <button>
-          <a href="/home - signin.html" style="color: black">Sign Up</a>
+          <a href="/home-sign-in" style="color: black">Sign Up</a>
         </button>
       </div>
 
       <div class="ke-signin">
         <a
-          href="./sign-in"
+          href="/sign-in"
           style="
             font-family: 'Outfit', sans-serif;
             color: black;

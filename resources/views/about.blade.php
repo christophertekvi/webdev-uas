@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@include("header")
+{{-- @include("header") --}}
 <html lang="eng">
   <head>
     <meta charset="UTF-8" />
