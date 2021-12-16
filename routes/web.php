@@ -67,3 +67,4 @@ Route::get('/detail-pesanan', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 });
+
