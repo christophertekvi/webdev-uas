@@ -13,19 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
 Route::get('/faqs', function () {
-    return view('faqs');
+    return view('faqs', [
+        "title" => "FaQ"
+    ]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about',[
+        "title" => "About"
+    ]);
 });
 
 Route::get('/sign-in', function () {
