@@ -48,7 +48,7 @@
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
             <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/home">HOME</a>
                 </li>
                 <li class="nav-item">
@@ -63,7 +63,7 @@
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                 <a class="text-reset me-3" href="#">
-                  <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
+                  <i style="color: black;" class="fas fa-shopping-cart"></i>
                 </a>
                 <a
                   style="padding-right: 18%;"
@@ -162,9 +162,10 @@
                                 <div class="order_total_amount">Rp. 22.000</div>
                             </div>
                         </div>
+
                         <div class="cart_buttons">
-                            <button href="/home-sign-in" type="button" class="button cart_button_clear">Back</button>
-                            <button href="/checkout" style= "background-color: #e25f21;"type="button" class="button cart_button_checkout">Check Out</button>
+                            <button href="/home-sign-in"  type="button" class="button cart_button_clear">Back</button>
+                            <button href="/checkout" style= "background-color: #e25f21;" type="button" class="button cart_button_checkout">Check Out</button>
                         </div>
                     </div>
                 </div>

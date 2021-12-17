@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Readex Pro', sans-serif;
+
 }
 .container2{
     width: 100%;
@@ -28,8 +29,9 @@
     height: 50px;
 }
 .tanggalpesanan{
-    background-color: orchid;
-    font-family: 'Readex Pro', sans-serif;
+    width: 30%;
+    background-color:bisque;
+    font-family: 'Outfit', sans-serif;
     margin-right: 10px;
     display: flex;
     justify-content: center;
@@ -39,7 +41,7 @@
     padding: 5px;
 }
 .nopesanan{
-    background-color: orchid;
+    background-color:bisque;
     font-family: 'Readex Pro', sans-serif;
     display: flex;
     justify-content: center;
@@ -51,7 +53,7 @@
 .bagian2 textarea{
     width: 100%;
     padding: 10px;
-    font-family: 'Readex Pro', sans-serif;
+
 }
 .pesanan{
     width: 100%;
@@ -77,17 +79,23 @@
 }
 .detailmenu1{
     width: 100%;
-    height: 70%;
+    height: 65%;
 
     display: flex;
     flex-direction: column;
     text-align: left;
     justify-content: center;
     padding: 10px;
-    font-family: 'Readex Pro', sans-serif;
+    font-family: 'Outfit', sans-serif;
+
 }
 .detailmenu1 h1{
     padding-bottom: 10px;
+    font-size: 150%;
+}
+
+.detailmenu h3{
+    font-size: 120%;
 }
 .detailmenu2{
     width: 100%;
@@ -98,11 +106,11 @@
     text-align: left;
     justify-content: center;
     padding: 10px;
-    font-family: 'Readex Pro', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .gambar{
-    height: 95%;
+    height: 85%;
     width: 95%;
     margin: auto;
 }
@@ -111,7 +119,7 @@
     height: 70%;
 }
 .subtotaltext{
-    width: 100%;
+    width: 120%;
     height: 30%;
     text-align: right;
     font-family: 'Readex Pro', sans-serif;
@@ -121,6 +129,9 @@
 }
 .subtotaltext h3{
     padding: 10px;
+    margin-bottom: 13%;
+    margin-right: 20%;
+    font-size: 100%;
 }
 .bagian4{
     margin-top: 10px;
@@ -155,6 +166,7 @@
 .bagian5text1 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
 .bagian5text2{
     width: 35%;
@@ -162,8 +174,9 @@
 .bagian5text2 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
-/* bagian 5 */
+/* bagian 6 */
 .bagian6radiobutton{
     width: 100%;
     border: 1px solid black;
@@ -174,10 +187,7 @@
     display: flex;
     border: 1px solid black;
 }
-.empty{
-    width: 30%;
 
-}
 .bagian6text1{
     width: 35%;
 
@@ -189,13 +199,16 @@
 .bagian6text1 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
 .bagian6text2{
     width: 35%;
+
 }
 .bagian6text2 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
 
 .bagian7{
@@ -204,7 +217,7 @@
     border: 1px solid black;
 }
 .empty{
-    width: 30%;
+    width: 90%;
 
 }
 .bagian7text1{
@@ -217,6 +230,7 @@
 .bagian7text1 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
 .bagian7text2{
     width: 35%;
@@ -230,6 +244,7 @@
 .bagian7text2 h3{
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
+    font-size: 120%;
 }
 #bluecheckbox{
     accent-color: blue;
@@ -246,18 +261,21 @@
     display: flex;
 }
 .empty2{
-    width: 65%;
+    width: 170%;
 }
 .buttoncheckoutcontrol{
-    width: 35%;
+    width: 45%;
     height: 70px;
     display: flex;
     align-items: center;
+
 }
 .buttoncheckoutcontrol button{
     border-radius: 10px;
+    width: 80%;
     padding: 10px;
     font-family: 'Readex Pro', sans-serif;
     border: none;
     background-color: chocolate;
+    color: white;
 }
