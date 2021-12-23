@@ -31,42 +31,62 @@ Route::get('/about', function () {
 });
 
 Route::get('/sign-in', function () {
-    return view('sign-in');
+    return view('sign-in',[
+        "title" => "Sign In"
+    ]);
 });
 
 Route::get('/sign-up', function () {
-    return view('sign-up');
+    return view('sign-up',[
+        "title" => "Sign Up"
+    ]);
 });
 
 Route::get('/home-sign-in', function () {
-    return view('home-sign-in');
+    return view('home-sign-in',[
+        "title" => "Home"
+    ]);
 });
 
 Route::get('/about-sign-in', function () {
-    return view('about-sign-in');
+    return view('about-sign-in',[
+        "title" => "About"
+    ]);
 });
 
 Route::get('/faqs-sign-in', function () {
-    return view('faqs-sign-in');
+    return view('faqs-sign-in',[
+        "title" => "FaQ"
+    ]);
 });
 
 Route::get('/menu', function () {
-    return view('menu');
+    return view('menu',[
+        "title" => "Menu"
+    ]);
 });
 
 Route::get('/profile-signin', function () {
-    return view('profile-signin');
+    return view('profile-signin',[
+        "title" => "Profile"
+    ]);
 });
 
 Route::get('/cart', function () {
-    return view('cart');
+    return view('cart',[
+        "title" => "Cart"
+    ]);
 });
 
 Route::get('/detail-pesanan', function () {
-    return view('detail-pesanan');
+    return view('detail-pesanan',[
+        "title" => "Detail Pesanan"
+    ]);
 });
 
 Route::get('/checkout', function () {
-    return view('checkout');
+    return view('checkout',[
+        "title" => "Checkout"
+    ]);
 });
 
