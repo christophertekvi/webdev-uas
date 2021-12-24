@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('isiWeb')
+
+
     <div class="aboutus">
       <h1>About Us</h1>
       <img class="about-img" src="image/about.jpg" />
@@ -11,4 +13,6 @@
         This is one of the efforts made so that every meal can stay fresh and well-made. This is also to help the customers to make easier decisions and to minimalize boredom towards the menus.
       </p>
     </div>
+
+
 @endsection

@@ -2,7 +2,14 @@
 
 @section("isiWeb")
 
-<h1> BELOM ADA ISI </h1>
+<?php
 
+$users = DB::table('admin')->get();
 
+foreach ($users as $user)
+{
+    var_dump($user);
+}
+
+?>
 @endsection
