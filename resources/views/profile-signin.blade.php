@@ -78,18 +78,18 @@
             <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
               <ul class="navbar-nav w-100 justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="./home.html"
+                  <a class="nav-link" aria-current="page" href="/home-sign-in"
                     >HOME</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./menu.html">MENU</a>
+                  <a class="nav-link" href="/menu">MENU</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./about.html">ABOUT US</a>
+                  <a class="nav-link" href="/about-sign-in">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./faqs.html">FAQS</a>
+                  <a class="nav-link" href="/faqs-sign-in">FAQS</a>
                 </li>
               </ul>
               <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
