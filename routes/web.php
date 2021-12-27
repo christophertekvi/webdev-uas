@@ -26,7 +26,7 @@ Route::get('/faqs', function () {
 
 Route::get('/about', function () {
     return view('about',[
-        "title" => "About"
+        "title" => "About Us"
     ]);
 });
 
@@ -50,7 +50,7 @@ Route::get('/home-sign-in', function () {
 
 Route::get('/about-sign-in', function () {
     return view('about-sign-in',[
-        "title" => "About"
+        "title" => "About Us"
     ]);
 });
 

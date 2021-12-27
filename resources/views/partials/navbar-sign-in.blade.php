@@ -3,17 +3,17 @@
       <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
       <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
           <ul class="navbar-nav w-100 justify-content-center">
-              <li class="nav-item active">
-                  <a class="nav-link" aria-current="page" href="/">HOME</a>
+              <li class="nav-item {{ ($title === "Home") ? 'active' : '' }}">
+                  <a class="nav-link " href="/">HOME</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/menu" >MENU</a>
+              <li class="nav-item {{ ($title === "Menu") ? 'active' : '' }}">
+                  <a class="nav-link " href="/menu" >MENU</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/about">ABOUT US</a>
+              <li class="nav-item {{ ($title === "About Us") ? 'active' : '' }}">
+                  <a class="nav-link " href="/about">ABOUT US</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/faqs">FAQS</a>
+              <li class="nav-item {{ ($title === "FaQ") ? 'active' : '' }}">
+                  <a class="nav-link " href="/faqs">FAQS</a>
               </li>
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
