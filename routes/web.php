@@ -90,3 +90,9 @@ Route::get('/checkout', function () {
     ]);
 });
 
+
+Route::get('/detailmenu', function () {
+    return view('detailmenu',[
+        "title" => "Detail Menu"
+    ]);
+});

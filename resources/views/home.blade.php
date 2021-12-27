@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@include('partials.head-home')
 @section('isiWeb')
     <div class="banner">
       <div

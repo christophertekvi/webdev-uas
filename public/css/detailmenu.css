@@ -23,16 +23,13 @@ input[type="date"] {
     padding-left: 10%;
 }
 
-.containermenu {
-    width: 200px;
-    height: 320px;
-    border: 3px solid black;
-    align-items: center;
-    box-sizing: border-box;
-    border-radius: 10px;
+.gambarmenu img {
+    width: 250px;
+    height: 250px;
+    transform: translateX(300px);
 }
 
-.containermenu img {
-    padding: 5%;
 
+.detail {
+    transform: translateX(400px);
 }
