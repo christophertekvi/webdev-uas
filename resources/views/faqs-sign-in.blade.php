@@ -77,11 +77,11 @@
                       class="dropdown-menu dropdown-menu-end"
                       aria-labelledby="navbarDropdownMenuLink"
                     >
-                      <li>
-                        <a style="text-align: left; color: black;" class="dropdown-item" href="#">My Profile</a>
+                    <li>
+                        <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                       </li>
                       <li>
-                        <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
+                        <a style="text-align: left; color: black;" class="dropdown-item" >Points : 1000</a>
                       </li>
                       <li>
                         <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
@@ -111,8 +111,8 @@
                       <br> 4. Every transactions will have Rp10.000 added for delivery fee.
                       <br> 5. Payments are made maximum one day before delivery time at 12.00 WIB.
                       <br> 6. Operational Hours :
-                      <br>&emsp; Weekdays (Monday - Friday) &emsp;&emsp; 07.00 WIB - 19.00 WIB
-                      <br>&emsp; Weekends (Saturday & Sunday) &emsp;&emsp; 08.00 WIB - 20.00 WIB
+                      <br>&emsp; Weekdays (Monday - Friday) - 07.00 WIB - 19.00 WIB
+                      <br>&emsp; Weekends (Saturday & Sunday) - 08.00 WIB - 20.00 WIB
                       <br> 7. Orders are closed at 16.00 WIB for next day deliveries.
                       <br> 8. You will receive points in every transactions you made.
                       <br> 9. For every Rp1000 you will receive 1 point.
@@ -122,13 +122,13 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      How can I order?
+                      How do I order?
                     </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body" style="text-align: justify;">
-                      Simply click "Menu" on the navigation bar. Then, choose the date of delivery that you wanted (since we are using the pre-order system and the menus differ by date). Click the menu that you wanted to order then, choose the number of packs that you wanted. If you want to checkout immediately, then click "Order Now". But, if you still want to choose something else, you can click "Add to Cart".
-                      <br>After that, click on the shopping cart icon on the top-right corner and select the menus that you want to order. Then, click the "Checkout" button. Make sure your orders are right then, select the payment method and choose whether or not to use your points. After that, click "Order".
+                      Simply click "Menu" on the navigation bar. Then, choose the date of delivery that you wanted (since we are using the pre-order system and the menus differ by date). Click the menu that you wanted to order. Then, choose the number of packs that you wanted. If you want to checkout immediately, click "Order Now". But, if you still want to choose something else, you can click "Add to Cart".
+                      <br>After that, click on the shopping cart icon on the top-right corner and select the menus that you want to order. Then, click the "Checkout" button. Make sure your orders are right. Do not forget to select the payment method and choose whether or not to use your points. After that, click "Order".
                       <br><br>*Make sure you are already signed in to your account.
                     </div>
                   </div>
@@ -142,7 +142,7 @@
                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body" style="text-align: justify;">
                       Yes.
-                      <br> If you do not have an account yet, you can simply sign up through our website. Click on the Profile icon on the top-right corner then, click "Sign Up" on the dropdown menu.
+                      <br> If you do not have an account yet, you can simply sign up through our website. Click on the Profile icon on the top-right corner. Then, click "Sign Up" on the dropdown menu.
                     </div>
                   </div>
                 </div>
@@ -179,7 +179,7 @@
                   </h2>
                   <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body" style="text-align: justify;">
-                      Click on the profile icon on the top-right corner then, click profile. After that, click "Order Status" on the right-tab. Here, you can see all of your ongoing and completed orders.
+                      Click on the profile icon on the top-right corner then, click profile. After that, click "Orders" on the left horizontal tab. Here, you can see all of your ongoing and completed orders.
                       <br><br>*Make sure you are signed in to your account.
                     </div>
                   </div>

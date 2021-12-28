@@ -188,8 +188,13 @@
                               <textarea id="address" name="address" rows="6" cols="25"></textarea>
                             </div>
                           </div>
-                          <div class="save-profile">
-                            <button>Save</button>
+                          <div class="button-saveProfile">
+                            <div class="cancel-profile">
+                                <button>Cancel</button>
+                            </div>
+                            <div class="save-profile">
+                                <button>Save</button>
+                            </div>
                           </div>
 
                         </div>
@@ -200,7 +205,7 @@
                             <img src="image/user.png" alt="">
                           </div>
                           <div class="textcontrol">
-                            <h2>Name</h2>
+                            <p style="font-size: 20px; text-align: center">Name</p>
                             {{-- <br><p>User ID</p> --}}
                           </div>
                       </div><br>
@@ -230,8 +235,13 @@
                       </div>
                       <br>
                       <br>
-                      <div class="save-password">
-                        <button>Save</button>
+                      <div class="button-savePass">
+                        <div class="cancel-pass">
+                            <button>Cancel</button>
+                        </div>
+                        <div class="save-pass">
+                            <button>Save</button>
+                        </div>
                       </div>
                     </div>
                     <div id="Orders" class="tabcontent">

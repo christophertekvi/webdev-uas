@@ -219,7 +219,7 @@
 
       </div>
       <div class="buttonmenu">
-        <button><a href="/menu.html" style="color: black;">Check out our menus!</a></button>
+        <button><a href="/menu.html" style="color: black;">More menus  ➔</a></button>
       </div>
     </div>
 
@@ -228,10 +228,11 @@
         WHAT THEY SAY
       </h1>
       <div class="container" style="justify-content: center">
-        <div class="g-col-6">.g-col-6</div>
-        <div class="g-col-6">.g-col-6</div>
-        <div class="g-col-6">.g-col-6</div>
-      </div>
+        <div class="container" style="justify-content: center">
+            <img src="image/testi1.png" style="height: 350px">
+            <img src="image/testi2.png" style="height: 350px">
+            <img src="image/testi3.png" style="height: 350px">
+        </div>
     </div>
 
     <div class="footer">
