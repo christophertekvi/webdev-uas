@@ -84,23 +84,32 @@ class SignInController extends Controller
         //
     }
     public function authenticate(Request $request){
-         $request->validate([
+        $request->validate([
             'email' => ['required', 'email:dns'],
             'password' => ['required'],
         ]);
         $email = $request->email;
         $password = $request->password;
         $userdata = DB::table('pembeli')->where('EMAIL', $email)->first();
-        $obj = get_object_vars($userdata);
-        if ($userdata) {
-                 if ($password == $obj['PASSWORD']) {
-                    $request->session()->put('email',$request->email);
-                    return view('home-sign-in', ['title'=>'home']);
-                 } else {
-                    return back()->with('LoginError', 'login Failed');
-                 }
-        } else {
-             return back()->with('Login Error', 'Login Failed');
+        if (is_null($userdata)) {
+            return back()->with('LoginError', 'login Failed');
+        }
+        else{
+            $obj = get_object_vars($userdata);
+            if($obj['EMAIL'] == null){
+                return back()->with('LoginError', 'login Failed');
+            }
+            if ($userdata) {
+                     if ($password == $obj['PASSWORD']) {
+                        $request->session()->put('email',$request->email);
+                        return view('home-sign-in', ['title'=>'home']);
+                     } else {
+                        return back()->with('LoginError', 'login Failed');
+                     }
+            }
+            else {
+                return back()->with('LoginError', 'login Failed');
+            }
         }
     }
 }
