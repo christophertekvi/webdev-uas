@@ -100,7 +100,7 @@ class SignInController extends Controller
                     return back()->with('LoginError', 'login Failed');
                  }
         } else {
-             return back()->with('LoginError', 'login Failed');
+             return back()->with('Login Error', 'Login Failed');
         }
     }
 }
