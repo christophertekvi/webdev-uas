@@ -82,10 +82,10 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="./Sign-In.html">Sign In</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="./Sign-Up.html">Sign Up</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
                   </li>
                 </ul>
             </ul>
@@ -107,36 +107,47 @@
     >
       <h1>Sign Up</h1>
     </div>
-    <div class="container1">
-      <div class="controlcontainer1">
-        <div class="controlnamadepanbelakang">
-          <div class="namadepan">
-            <h1 style="font-size: medium;">First Name :</h1>
+
+    <form action="/home-sign-in" method="post">
+        @csrf
+        <div class="container1">
+        <div class="controlcontainer1">
+            <div class="controlnamadepanbelakang">
+            <div class="namadepan">
+                <h1 style="font-size: medium;">First Name :</h1>
+                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid
+                @enderror">
+                @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="namabelakang">
+                <h1 style="font-size: medium;">Last Name :</h1>
+                <input type="text">
+            </div>
+            </div>
+            <div class="datainputsignup">
+            <h1 style="font-size: medium;">E-mail :</h1>
             <input type="text">
-          </div>
-          <div class="namabelakang">
-            <h1 style="font-size: medium;">Last Name :</h1>
-            <input type="text">
-          </div>
+            </div>
+            <div class="datainputsignup">
+            <h1 style="font-size: medium;">Password :</h1>
+            <input type="password">
+            </div>
+            <div class="datainputsignup">
+            <h1 style="font-size: medium;">Re-enter Password :</h1>
+            <input type="password">
+            </div>
         </div>
-        <div class="datainputsignup">
-          <h1 style="font-size: medium;">E-mail :</h1>
-          <input type="text">
+        <div class="buttoncontrol">
+            <button>
+            <a style="color: black">Sign Up</a>
+            </button>
         </div>
-        <div class="datainputsignup">
-          <h1 style="font-size: medium;">Password :</h1>
-          <input type="password">
-        </div>
-        <div class="datainputsignup">
-          <h1 style="font-size: medium;">Re-enter Password :</h1>
-          <input type="password">
-        </div>
-      </div>
-      <div class="buttoncontrol">
-        <button>
-          <a href="/home-sign-in" style="color: black">Sign Up</a>
-        </button>
-      </div>
+
+    </form>
 
       <div class="ke-signin">
         <a

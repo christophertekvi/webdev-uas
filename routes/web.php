@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,3 +99,8 @@ Route::get('/detailmenu', function () {
         "title" => "Detail Menu"
     ]);
 });
+
+//buat signup
+Route::get('/sign-up', [SignUpController::class, 'index']);
+
+
