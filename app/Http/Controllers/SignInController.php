@@ -96,9 +96,6 @@ class SignInController extends Controller
         }
         else{
             $obj = get_object_vars($userdata);
-            if($obj['EMAIL'] == null){
-                return back()->with('LoginError', 'login Failed');
-            }
             if ($userdata) {
                      if ($password == $obj['PASSWORD']) {
                         $request->session()->put('email',$request->email);
