@@ -16,6 +16,7 @@
 
     <div class="container">
         <div style="margin-left: 12%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach ($menu as $m)
             <div class="col mb-5">
                 <div class="containermenu">
                     <!-- Product image-->
@@ -25,9 +26,9 @@
                         <div class="text-center">
                             <!-- Product name-->
                             <a href=""
-                            class="fw-bolder"><h5 style="color: black">NAMA ITEM</h5></a>
+                            class="fw-bolder"><h5 style="color: black">{{ $m -> nama_menu}}</h5></a>
                             <!-- Product price-->
-                            Rp. XX.XXX
+                            {{ $i -> harga_menu}}
                         </div>
                         <!-- Add to favourite -->
                         <div style="text-align: right;">
@@ -36,57 +37,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col mb-5">
-                <div class="containermenu">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/300x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <a href=""
-                            class="fw-bolder"><h5 style="color: black">NAMA ITEM</h5></a>
-                            <!-- Product price-->
-                            Rp. XX.XXX
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mb-5">
-                <div class="containermenu">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/300x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <a href=""
-                            class="fw-bolder"><h5 style="color: black">NAMA ITEM</h5></a>
-                            <!-- Product price-->
-                            Rp. XX.XXX
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mb-5">
-                <div class="containermenu">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/300x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <a href=""
-                            class="fw-bolder"><h5 style="color: black">NAMA ITEM</h5></a>
-                            <!-- Product price-->
-                            Rp. XX.XXX
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -99,14 +50,4 @@
         document.getElementsByName("somedate")[0].setAttribute('min', tmr);
     </script>
 
-<?php
-
-$users = DB::table('admin')->get();
-
-foreach ($users as $user)
-{
-    var_dump($user);
-}
-
-?>
 @endsection

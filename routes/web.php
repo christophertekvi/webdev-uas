@@ -63,11 +63,11 @@ Route::get('/faqs-sign-in', function () {
     ]);
 });
 
-Route::get('/menu', function () {
-    return view('menu',[
-        "title" => "Menu"
-    ]);
-});
+// Route::get('/menu', function () {
+//     return view('menu',[
+//         "title" => "Menu"
+//     ]);
+// });
 
 Route::get('/profile-signin', function () {
     return view('profile-signin',[
@@ -103,4 +103,4 @@ Route::get('/detailmenu', function () {
 //buat signup
 Route::get('/sign-up', [SignUpController::class, 'index']);
 
-
+Route::get("/menu", [MenuController::class, "list"]);
