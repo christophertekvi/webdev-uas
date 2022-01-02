@@ -1,3 +1,4 @@
+<title>MakanYuk | {{ $menu }}</title>
 @extends('layouts.main')
 @include('partials.head-home')
 @section("isiWeb")
@@ -28,7 +29,7 @@
                             <a href=""
                             class="fw-bolder"><h5 style="color: black">{{ $m -> nama_menu}}</h5></a>
                             <!-- Product price-->
-                            {{ $i -> harga_menu}}
+                            {{ $m -> harga_menu}}
                         </div>
                         <!-- Add to favourite -->
                         <div style="text-align: right;">

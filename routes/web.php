@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
@@ -103,4 +104,16 @@ Route::get('/detailmenu', function () {
 //buat signup
 Route::get('/sign-up', [SignUpController::class, 'index']);
 
-Route::get("/menu", [MenuController::class, "list"]);
+
+Route::prefix("/menu")->group(function() {
+    Route::get("/", [MenuController::class, "list"]);
+    // Route::get('/', function () {
+    //     return view('menu',[
+    //         "title" => "Menu"
+    //     ]);
+    // });
+    // Route::get("/product/{id}", [ShopController::class, "detail"]);
+
+    // Add to Cart
+    // Route::post("/", [ShopController::class, "addSingleCart"]);
+});

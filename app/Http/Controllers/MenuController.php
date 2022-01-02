@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-use App\Models\Cart;
+// use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,11 +15,13 @@ class MenuController extends Controller
         //ini adalah builder model pagination
         // $items = Item::query()->paginate(10);
 
-        $menu = DB::table("menu m, jadwal j, jadwal_catering jc")
-            ->select("m.id_menu", "nama_menu", "harga_menu")
-            ->where("m.id_menu", "=", "jc.id_menu")
-            ->where("j.id_jadwal", "=", "jc.id_jadwal")
-            ->get();
+        // $menu = DB::table("menu m, jadwal j, jadwal_catering jc")
+        //     ->select("m.id_menu", "nama_menu", "harga_menu")
+        //     ->where("m.id_menu", "=", "jc.id_menu")
+        //     ->where("j.id_jadwal", "=", "jc.id_jadwal")
+        //     ->get();
+
+        $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
         // $menu = Menu::menu()
         //      ->select('id_menu', 'nama_menu')
