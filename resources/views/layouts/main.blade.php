@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  @section('partials.head-home')
+  @include('partials.head-home')
 
   <body style="background-color:floralwhite;">
     <!--topbar-->

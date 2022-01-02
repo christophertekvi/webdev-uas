@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Cart;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
-use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "slug" => "home-sign-in"
+
     ]);
 });
 
@@ -78,7 +82,8 @@ Route::get('/profile-signin', function () {
 
 Route::get('/cart', function () {
     return view('cart',[
-        "title" => "Cart"
+        "title" => "Cart",
+        "post" => Cart::all()
     ]);
 });
 

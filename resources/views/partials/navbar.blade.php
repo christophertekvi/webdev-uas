@@ -35,16 +35,12 @@
                 class="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-              <li>
-                <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
-              </li>
-              <li>
-                <a style="text-align: left; color: black;" class="dropdown-item" >Points : 1000</a>
-              </li>
-              <li>
-                <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
-              </li>
-            </ul>
+                <li>
+                  <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
+                </li>
+                <li>
+                  <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
+                </li>
 
               </ul>
           </ul>
