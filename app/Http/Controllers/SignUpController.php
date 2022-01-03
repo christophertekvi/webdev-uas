@@ -23,7 +23,15 @@ class SignUpController extends Controller
             'reenter' => 'required|min:8'
         ]);
 
+        //buat encrypt password -----
+        // $validatedData['password'] = bcrypt($validatedData['password']);
+
         dd('berhasil');
+
+        //insert user -------
         // User::create($validatedData);
+
+        //redirect --------
+        // return redirect('/home-sign-in');
     }
 }
