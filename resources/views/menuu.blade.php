@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MakanYuk | Home</title>
+    <title>MakanYuk | {{'Menu'}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit&display=swap" rel="stylesheet"/>
@@ -105,10 +105,49 @@
       </nav>
     </div>
 
-    <div class="container">
+    <h1 style="text-align: center; margin: 50px 100px 50px 100px; font-family: Outfit, sans-serif;">
+        MENU LIST
+    </h1>
+
+    <div style="margin-left: 18%;" class="container">
         <form action="/action_page.php">
-            <input min=""  class="calendar" type="date" id="datepicker" name="datepicker">
+            <!-- <input type="date"/> -->
+            <input style="margin-left: 8%;" name="somedate" type="date">
+            <!-- <input min=""  class="calendar" type="date" id="datepicker" name="datepicker"> -->
         </form>
+    </div>
+
+    <div class="container">
+        <div style="margin-left: 12%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach ($menu as $m)
+            <div class="col mb-5">
+                <div class="containermenu">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{ $m -> FOTO_MENU}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <a
+                            class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU}}</h5></a>
+                            <!-- Product price-->
+                            {{ $m -> HARGA_MENU}}
+                        </div>
+                        <!-- Add to favourite -->
+                        <div style="text-align: right;">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        {{ $menu->links() }}
+        </div>
     </div>
 
 

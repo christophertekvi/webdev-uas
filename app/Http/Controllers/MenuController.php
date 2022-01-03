@@ -25,7 +25,7 @@ class MenuController extends Controller
 
         $menu = Menu::query()->paginate(10);
 
-        return view("menu", [
+        return view("menuu", [
             "menu" => $menu
         ]);
     }
