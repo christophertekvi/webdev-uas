@@ -59,7 +59,7 @@
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
             <ul class="navbar-nav w-100 justify-content-center">
                 <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="/home-sign-in">HOME</a>
+                    <a class="nav-link" aria-current="page" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/menu" >MENU</a>
@@ -123,15 +123,15 @@
             <div class="col mb-5">
                 <div class="containermenu">
                     <!-- Product image-->
-                    <img class="card-img-top" src="{{ $m -> FOTO_MENU}}" alt="..." />
+                    <img class="card-img-top" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a
-                            class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU}}</h5></a>
+                            <a href=""
+                            class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU }}</h5></a>
                             <!-- Product price-->
-                            {{ $m -> HARGA_MENU}}
+                            Rp. {{ $m -> HARGA_MENU }}
                         </div>
                         <!-- Add to favourite -->
                         <div style="text-align: right;">
