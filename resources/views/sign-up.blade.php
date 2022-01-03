@@ -50,16 +50,16 @@
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
             <ul class="navbar-nav w-100 justify-content-center">
                 <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="./home.html">HOME</a>
+                    <a class="nav-link" aria-current="page" href="/home">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./menu.html" >MENU</a>
+                    <a class="nav-link" href="/menu" >MENU</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                    <a class="nav-link" href="/about">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./faqs.html">FAQS</a>
+                    <a class="nav-link" href="/faqs">FAQS</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
@@ -129,8 +129,14 @@
             </div>
             </div>
             <div class="datainputsignup">
-            <h1 style="font-size: medium;">E-mail :</h1>
-            <input type="text">
+                <h1 style="font-size: medium;">E-mail :</h1>
+                <input type="email" name="name" id="email" class="form-control @error('email') is-invalid
+                @enderror">
+                @error('email')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="datainputsignup">
             <h1 style="font-size: medium;">Password :</h1>
