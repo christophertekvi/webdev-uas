@@ -116,7 +116,7 @@
             <div class="namadepan">
                 <h1 style="font-size: medium;">First Name :</h1>
                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid
-                @enderror">
+                @enderror" required value="{{ old('name') }}">
                 @error('name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -131,7 +131,7 @@
             <div class="datainputsignup">
                 <h1 style="font-size: medium;">E-mail :</h1>
                 <input type="email" name="name" id="email" class="form-control @error('email') is-invalid
-                @enderror">
+                @enderror" required value="{{ old('email') }}">
                 @error('email')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -139,12 +139,24 @@
                 @enderror
             </div>
             <div class="datainputsignup">
-            <h1 style="font-size: medium;">Password :</h1>
-            <input type="password">
+                <h1 style="font-size: medium;">Password :</h1>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid
+                @enderror" required value="{{ old('password') }}">
+                @error('password')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="datainputsignup">
-            <h1 style="font-size: medium;">Re-enter Password :</h1>
-            <input type="password">
+                <h1 style="font-size: medium;">Re-enter Password :</h1>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid
+                @enderror" required value="{{ old('password') }}">
+                @error('password')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
         </div>
         <div class="buttoncontrol">
