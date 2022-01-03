@@ -18,7 +18,7 @@
         <h1>Sign In</h1>
       </div>
     </div>
-<form action="/sign-in" method="post">
+<form action="/home-sign-in" method="post">
     @csrf
     <div class="container">
       <div class="containercontroller">
