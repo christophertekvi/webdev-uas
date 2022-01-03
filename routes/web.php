@@ -42,7 +42,7 @@ Route::get('/sign-in', function () {
         "title" => "Sign In"
     ]);
 });
-Route::post('/sign-in',[SignInController::class,'authenticate']);
+Route::post('/home-sign-in',[SignInController::class,'authenticate']);
 
 Route::get('/sign-up', function () {
     return view('sign-up',[
