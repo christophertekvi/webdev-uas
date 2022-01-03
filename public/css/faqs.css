@@ -1,11 +1,11 @@
-.faqs{
+.faqs {
     text-align: center;
     margin: 75px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: bold;
 }
 
-.faqs-p{
+.faqs-p {
     margin: 75px 100px 75px 100px;
     text-align: justify;
     /* font-family: 'Montserrat', sans-serif; */
@@ -22,4 +22,4 @@
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-  }
+}
