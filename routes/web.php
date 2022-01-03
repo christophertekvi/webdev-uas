@@ -111,12 +111,9 @@ Route::get('/sign-up', [SignUpController::class, 'index']);
 
 
 Route::prefix("/menu")->group(function() {
+
     Route::get("/", [MenuController::class, "list"]);
-    // Route::get('/', function () {
-    //     return view('menu',[
-    //         "title" => "Menu"
-    //     ]);
-    // });
+
     // Route::get("/product/{id}", [ShopController::class, "detail"]);
 
     // Add to Cart

@@ -9,8 +9,8 @@ class Menu extends Model
 {
     use HasFactory;
 
-    protected $table = "menu m, jadwal j, jadwal_catering jc";
-    public $primaryKey = "id_menu, id_jadwal";
+    protected $table = "menu";
+    public $primaryKey = "id_menu";
     //Primary key nya adalah varchar
     public $incrementing = false;
 

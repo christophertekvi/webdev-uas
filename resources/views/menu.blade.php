@@ -1,6 +1,7 @@
-<title>MakanYuk | {{ $menu }}</title>
+
 @extends('layouts.main')
 @include('partials.head-home')
+{{-- <title>MakanYuk | {{ 'Menu' }}</title> --}}
 @section("isiWeb")
 @include('partials.cssmenu')
     <h1 style="text-align: center; margin: 50px 100px 50px 100px; font-family: Outfit, sans-serif;">
@@ -26,7 +27,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a href=""
+                            <a
                             class="fw-bolder"><h5 style="color: black">{{ $m -> nama_menu}}</h5></a>
                             <!-- Product price-->
                             {{ $m -> harga_menu}}

@@ -21,12 +21,9 @@ class MenuController extends Controller
         //     ->where("j.id_jadwal", "=", "jc.id_jadwal")
         //     ->get();
 
-        $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
+        // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
-        // $menu = Menu::menu()
-        //      ->select('id_menu', 'nama_menu')
-        //      ->where($table1)
-        //      ->get();
+        $menu = Menu::query()->paginate(10);
 
         return view("menu", [
             "menu" => $menu
