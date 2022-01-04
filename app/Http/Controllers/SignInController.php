@@ -99,6 +99,7 @@ class SignInController extends Controller
             if ($userdata) {
                      if ($password == $obj['PASSWORD']) {
                         $request->session()->put('email',$request->email);
+                        $request->session()->put('poin',$obj['POIN']);
                         return view('home-sign-in', ['title'=>'home']);
                      } else {
                         return back()->with('LoginError', 'login Failed');
