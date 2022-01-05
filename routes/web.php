@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
@@ -111,6 +112,8 @@ Route::get('/detailmenu', function () {
 Route::get("user", [SignUpController::class, 'create']);
 Route::post("/sign-up", [SignUpController::class, 'store']);
 
+//signout
+Route::get('/home' ,[SignInController::class, 'flush']);
 
 Route::prefix("/menu")->group(function() {
 

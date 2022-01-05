@@ -110,4 +110,10 @@ class SignInController extends Controller
             }
         }
     }
+
+    function flush(Request $request)
+    {
+        $value = session()->flush();
+        return redirect("/home");
+    }
 }

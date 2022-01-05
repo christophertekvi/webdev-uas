@@ -139,7 +139,7 @@
                         <div class="changeProfilePic">
                             <img src="image/user.png">
                             <input type="file" id="file">
-                            <label for="file" id="uploadPhoto">Change Photo</label>
+                            {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
                         </div>
                         <div class="editinfo">
@@ -169,14 +169,17 @@
                           </div>
                           <div class="controlinfo">
                             <div class="controltext">
-                              <h5>Gender</h5>
+                              <h5>Gender :</h5>
                             </div>
                             <div class="inputGender">
                               <div class="rbCowok">
-                                <input type="radio" name="Laki_Laki" id="cowok"> Laki-Laki
+                                <input type="radio" name="gender" id="cowok"> Female
                               </div>
                               <div class="rbCewek">
-                                <input type="radio" name="Perempuan" id="cewek"> Perempuan
+                                <input type="radio" name="gender" id="cewek"> Male
+                              </div>
+                              <div class="rbOther">
+                                <input type="radio" name="gender" id="other"> Other
                               </div>
                             </div>
                           </div>
@@ -263,7 +266,9 @@
                       </div>
                     </div>
                     <div id="FavMenu" class="tabcontent">
-                        <h3>Favorite Menus</h3>
+                        <div class="favMenu">
+                            <h3>You do not have any favorite menus yet.</h3>
+                        </div>
                     </div>
                     <div id="SignOut" href="/home">
                         {{-- <p>balik ke home</p> --}}
