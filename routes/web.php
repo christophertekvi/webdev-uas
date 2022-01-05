@@ -107,7 +107,9 @@ Route::get('/detailmenu', function () {
 });
 
 //buat signup
-Route::get('/sign-up', [SignUpController::class, 'index']);
+// Route::get('/sign-up', [SignUpController::class, 'index']);
+Route::get("user", [SignUpController::class, 'create']);
+Route::post("/sign-up", [SignUpController::class, 'store']);
 
 
 Route::prefix("/menu")->group(function() {

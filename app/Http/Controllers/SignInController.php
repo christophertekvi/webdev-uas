@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -83,7 +84,8 @@ class SignInController extends Controller
     {
         //
     }
-    public function authenticate(Request $request){
+    public function authenticate(Request $request)
+    {
         $request->validate([
             'email' => ['required', 'email:dns'],
             'password' => ['required'],
@@ -92,27 +94,20 @@ class SignInController extends Controller
         $password = $request->password;
         $userdata = DB::table('pembeli')->where('EMAIL', $email)->first();
         if (is_null($userdata)) {
-            return back()->with('LoginError', 'login Failed');
-        }
-        else{
+            return back()->with('LoginError', 'Sign In Failed');
+        } else {
             $obj = get_object_vars($userdata);
             if ($userdata) {
-                     if ($password == $obj['PASSWORD']) {
-                        $request->session()->put('email',$request->email);
-                        $request->session()->put('poin',$obj['POIN']);
-                        return view('home-sign-in', ['title'=>'home']);
-                     } else {
-                        return back()->with('LoginError', 'login Failed');
-                     }
-            }
-            else {
-                return back()->with('LoginError', 'login Failed');
+                if ($password == $obj['PASSWORD']) {
+                    $request->session()->put('email', $request->email);
+                    $request->session()->put('poin', $obj['POIN']);
+                    return view('home-sign-in', ['title' => 'home']);
+                } else {
+                    return back()->with('LoginError', 'Sign In Failed');
+                }
+            } else {
+                return back()->with('LoginError', 'Sign In Failed');
             }
         }
     }
 }
-
-
-
-
-
