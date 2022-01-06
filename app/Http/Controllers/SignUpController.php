@@ -121,6 +121,5 @@ class SignupController extends Controller
         else{
             return back()->with('SignUpError', 'Sign Up Failed!');
         }
-
     }
 }
