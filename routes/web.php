@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignupController;
@@ -124,3 +126,4 @@ Route::prefix("/menu")->group(function() {
     // Add to Cart
     // Route::post("/", [ShopController::class, "addSingleCart"]);
 });
+

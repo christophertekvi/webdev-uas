@@ -137,8 +137,11 @@
                     </div>
                     <div id="EditProfile" class="tabcontent">
                         <div class="changeProfilePic">
+                            {{-- @if(Auth::user()->image)
+                                <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
+                            @endif --}}
                             <img src="image/user.png">
-                            <input type="file" id="file">
+                            <input type="file" id="image" name="image">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
                         </div>

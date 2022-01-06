@@ -60,7 +60,7 @@
                 </div>
                 <div class="datainputsignup">
                   <h1 style="font-size: medium;">Password :</h1>
-                  <input type="password" placeholder="5 characters minimum" name="password" id="inputPassword5" class="form-control @error('password') is-invalid @enderror" required aria-describedby="passwordHelpBlock">
+                  <input type="password" placeholder="min. 5 characters" name="password" id="inputPassword5" class="form-control @error('password') is-invalid @enderror" required aria-describedby="passwordHelpBlock">
                   @error('password')
                     <div class="invalid-feedback" style="padding-bottom : 10px">
                         {{ $message }}
@@ -69,7 +69,7 @@
                 </div>
                 <div class="datainputsignup">
                   <h1 style="font-size: medium;">Re-enter Password :</h1>
-                  <input type="password" placeholder="5 characters minimum" name="reenterpassword" id="inputPassword6" class="form-control @error('reenterpassword') is-invalid @enderror" required>
+                  <input type="password" placeholder="min. 5 characters" name="reenterpassword" id="inputPassword6" class="form-control @error('reenterpassword') is-invalid @enderror" required>
                   @error('reenterpassword')
                     <div class="invalid-feedback" style="padding-bottom : 10px">
                         {{ $message }}
