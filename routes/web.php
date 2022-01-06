@@ -5,8 +5,7 @@ use App\Models\Cart;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
-use App\Http\Controllers\SignUpController;
-
+use App\Http\Controllers\SignupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +49,7 @@ Route::get('/sign-up', function () {
         "title" => "Sign Up"
     ]);
 });
-Route::post('/sign-up',[SignUpController::class,'authenticate']);
+Route::post('/sign-up',[SignupController::class,'authenticate']);
 Route::get('/home-sign-in', function () {
     return view('home-sign-in',[
         "title" => "Home"
