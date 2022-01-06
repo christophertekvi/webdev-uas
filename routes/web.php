@@ -50,6 +50,7 @@ Route::get('/sign-up', function () {
     ]);
 });
 Route::post('/sign-up',[SignupController::class,'authenticate']);
+
 Route::get('/home-sign-in', function () {
     return view('home-sign-in',[
         "title" => "Home"
