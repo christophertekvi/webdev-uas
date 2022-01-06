@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\array_pluck;
-use mysqli;
 
 class SignupController extends Controller
 {
@@ -37,8 +35,7 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {
-
-
+        //
     }
 
     /**
@@ -115,7 +112,7 @@ class SignupController extends Controller
                 'PEMBELI_DELETE'=>0
             ]);
             $request->session()->put('ID',$obj['`GenIdPembeli`()']);
-            return view('home-sign-in', ['title'=>'Home']);
+            return view('home-sign-in', ['title'=>'home']);
             }
             else{
                 return back()->with('SignUpError', 'Sign Up Failed!');
