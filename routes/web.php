@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
-use App\Http\Controllers\SignupController;
+use App\Http\Controllers\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,13 +45,8 @@ Route::get('/sign-in', function () {
     ]);
 });
 Route::post('/home-sign-in',[SignInController::class,'authenticate']);
-
-Route::get('/sign-up', function () {
-    return view('sign-up',[
-        "title" => "Sign Up"
-    ]);
-});
-Route::post('/sign-up',[SignupController::class,'authenticate']);
+Route::get('/sign-up',[SignUpController::class,'index']);
+Route::post('/sign-up',[SignUpController::class,'store']);
 
 Route::get('/home-sign-in', function () {
     return view('home-sign-in',[
