@@ -26,62 +26,61 @@
       <h1>Sign Up</h1>
     </div>
     <div class="container1">
-        <form action="/sign-up" method="post">
-            @csrf
-            <div class="controlcontainer1">
-                <div class="controlnamadepanbelakang">
-                  <div class="namadepan">
-                    <h1 style="font-size: medium;">First Name :</h1>
-                    <input type="text" name="firstname" placeholder="First Name" class="form-control @error('firstname') is-invalid @enderror" required value="{{ old('firstname') }}">
-                    @error('firstname')
+      <div class="controlcontainer1">
+       <form action="/sign-up" method="post">
+        @csrf
+        <div class="controlnamadepanbelakang">
+            <div class="namadepan">
+              <h1 style="font-size: medium;">First Name :</h1>
+              <input type="text" name="firstname" placeholder="First Name" class="form-control @error('firstname')is-invalid @enderror" required >
+              @error('firstname')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                    @enderror
-                  </div>
-                  <div class="namabelakang">
-                    <h1 style="font-size: medium;">Last Name :</h1>
-                    <input type="text" name="lastname" placeholder="Last Name" class="form-control @error('lastname') is-invalid @enderror" required value="{{ old('lastname') }}">
-                    @error('lastname')
+            @enderror
+            </div>
+            <div class="namabelakang">
+              <h1 style="font-size: medium;">Last Name :</h1>
+              <input type="text" name="lastname" placeholder="First Name" class="form-control @error('lastname')is-invalid @enderror" required>
+              @error('lastname')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                    @enderror
-                  </div>
-                </div>
-                <div class="datainputsignup">
-                  <h1 style="font-size: medium;">E-mail :</h1>
-                  <input type="email" name="email" placeholder="e.x : name@gmail.com" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" required value="{{ old('email') }}">
-                  @error('email')
-                    <div class="invalid-feedback" style="padding-bottom : 10px">
+            @enderror
+            </div>
+          </div>
+          <div class="datainputsignup">
+            <h1 style="font-size: medium;">E-mail :</h1>
+            <input type="email" name="email" placeholder="e.x : name@gmail.com" class="form-control @error('email')is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            @error('email')
+                    <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                @enderror
-                </div>
-                <div class="datainputsignup">
-                  <h1 style="font-size: medium;">Password :</h1>
-                  <input type="password" placeholder="min. 5 characters" name="password" id="inputPassword5" class="form-control @error('password') is-invalid @enderror" required aria-describedby="passwordHelpBlock">
-                  @error('password')
-                    <div class="invalid-feedback" style="padding-bottom : 10px">
+            @enderror
+        </div>
+          <div class="datainputsignup">
+            <h1 style="font-size: medium;">Password :</h1>
+            <input type="password" placeholder="5 characters minimum" name="password" id="inputPassword5" class="form-control @error('password')is-invalid @enderror"  aria-describedby="passwordHelpBlock" required>
+            @error('password')
+                    <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                @enderror
-                </div>
-                <div class="datainputsignup">
-                  <h1 style="font-size: medium;">Re-enter Password :</h1>
-                  <input type="password" placeholder="min. 5 characters" name="reenterpassword" id="inputPassword6" class="form-control @error('reenterpassword') is-invalid @enderror" required>
-                  @error('reenterpassword')
-                    <div class="invalid-feedback" style="padding-bottom : 10px">
+            @enderror
+        </div>
+          <div class="datainputsignup">
+            <h1 style="font-size: medium;">Re-enter Password :</h1>
+            <input type="password" placeholder="5 characters minimum" name="reenterpassword" id="inputPassword6" class="form-control @error('reenterpassword')is-invalid @enderror"  aria-describedby="passwordHelpBlock" required>
+            @error('reenterpassword')
+                    <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                @enderror
-                </div>
-              </div>
-              <div class="buttoncontrol" style="padding-top:40px">
-                <button type="submit">Sign Up!</button>
-              </div>
-        </form>
-
+            @enderror
+          </div>
+        </div>
+        <div class="buttoncontrol" style="padding-top:40px">
+            <button type="submit">Sign Up!</button>
+          </div>
+       </form>
 
       <div class="ke-signin">
         <a
@@ -96,4 +95,3 @@
       </div>
     </div>
 @endsection
-
