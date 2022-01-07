@@ -59,7 +59,7 @@ class SignUpController extends Controller
                 'LAST_NAME'=>$request->lastname,
                 'NO_HP'=>' ',
                 'ALAMAT'=>' ',
-                'POIN'=>1000,
+                'POIN'=>0,
                 'EMAIL'=>$request->email,
                 'JENIS_KELAMIN'=>' ',
                 'PASSWORD'=>$request->password,
