@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.blmMasuk')
 
 @section('isiWeb')
 @if (session()->has('LoginError'))

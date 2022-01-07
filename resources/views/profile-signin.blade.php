@@ -118,7 +118,7 @@
                     <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
                   </li>
                 </ul>
               </ul>

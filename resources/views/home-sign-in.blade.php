@@ -85,10 +85,10 @@
                     <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" >Points : {{ session('poin') }}</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" >Points : {{ session('POIN') }}</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
                   </li>
                 </ul>
             </ul>

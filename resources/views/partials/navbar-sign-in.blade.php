@@ -39,10 +39,10 @@
                 <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
               </li>
               <li>
-                <a style="text-align: left; color: black;" class="dropdown-item" >Points : 1000</a>
+                <a style="text-align: left; color: black;" class="dropdown-item" >Points : </a>
               </li>
               <li>
-                <a style="text-align: left; color: black;" class="dropdown-item" href="/home">Sign Out</a>
+                <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
               </li>
             </ul>
 
