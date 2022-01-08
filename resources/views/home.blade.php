@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.blmMasuk')
 @include('partials.head-home')
 @section('isiWeb')
     <div class="banner">
