@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 // use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
@@ -35,7 +36,8 @@ class MenuController extends Controller
 
         return view("detailmenuu", [
             "nama" => $menu -> NAMA_ITEM,
-            "m" => $menu
+            "m" => $menu,
+            "title" => "Detail Menu"
         ]);
     }
 
