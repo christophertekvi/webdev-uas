@@ -40,5 +40,10 @@ class HomeController extends Controller
     //     return redirect()->route('profiles.index')
     //                     ->with('success','Profile updated successfully');
     // }
+
+
+    public function store(Request $request){
+        return $request->file('image')->store('post-images');
+    }
 }
 

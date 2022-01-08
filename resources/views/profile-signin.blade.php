@@ -246,7 +246,7 @@
                             <button>Cancel</button>
                         </div>
                         <div class="save-pass">
-                            <button>Save</button>
+                            <button type="submit" formaction="POST">Save</button>
                         </div>
                       </div>
                     </div>
