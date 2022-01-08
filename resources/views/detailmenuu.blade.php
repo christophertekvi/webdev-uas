@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MakanYuk | {{'Menu'}}</title>
+    <title>MakanYuk | {{'Detail Menu'}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
-    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/detailmenu.css" />
     <link rel="stylesheet" href="css/template.css" />
-    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/detail.js"></script>
     <script type="text/javascript" src="js/template.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -106,40 +106,42 @@
     </div>
 
     <h1 style="text-align: center; margin: 50px 100px 50px 100px; font-family: Outfit, sans-serif;">
-        MENU LIST
+        DETAIL
     </h1>
 
 
     <div class="container">
-        <div style="margin-left: 12%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach ($menu as $m)
-            <div class="col mb-5">
-                <div class="containermenu">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <a href="{{ url('menu/'.$m->ID_MENU) }}"
-                            class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU }}</h5></a>
-                            <!-- Product price-->
-                            Rp. {{ $m -> HARGA_MENU }}
-                        </div>
-                        <!-- Add to favourite -->
-                        <div style="text-align: right;">
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </div>
+        <div class="row gx-4 gx-lg-5 align-items-center">
+
+            <div class="col-md-6">
+                <div class="gambarmenu">
+                    <img class="mb-5 mb-md-0" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="...">
                 </div>
             </div>
-            @endforeach
+            <div class="col-md-6">
+                <div class="detail">
+                    <h1 style="font-size: 30px;" class="display-5 fw-bolder">{{$m -> NAMA_MENU}}</h1>
+                    <div class="fs-5 mb-4">
+                        <span>{{$m -> HARGA_MENU}}</span>
+                    </div>
+                    <p style="margin-bottom: 1px;" class="lead">
+                        Description : <br>
+                        <p>{{$m -> DESKRIPSI_MENU}}</p>
+                    </p>
+                    <div class="d-flex">
+                        <p style="margin-right: 10px" class="lead">
+                            Jumlah :
+                        </p>
+                        <input class="form-control text-center me-3" name="inputQuantity" type="number" value="1" min="1"  style="max-width: 6rem">
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        {{ $menu->links() }}
+                    </div>
+                    <button style="background-color: #e25f21; width: 180px; color: white; border: solid 1px #b2b2b2;" class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-plus-fill me-1"></i>
+                        Add to cart
+                    </button>
+                </div>
+
+            </div>
         </div>
     </div>
 

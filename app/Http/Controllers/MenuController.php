@@ -30,14 +30,14 @@ class MenuController extends Controller
         ]);
     }
 
-    // public function detail($id){
-    //     $item = Item::query()->findOrFail($id);
+    public function detail($id){
+        $menu = Menu::query()->findOrFail($id);
 
-    //     return view("detail", [
-    //         "nama" => $item -> ITEM_NAME,
-    //         "i" => $item
-    //     ]);
-    // }
+        return view("detailmenuu", [
+            "nama" => $menu -> NAMA_ITEM,
+            "m" => $menu
+        ]);
+    }
 
     // public function addSingleCart(Request $request) {
     //     $id = $request->input("btnAddCart");

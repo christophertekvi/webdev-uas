@@ -98,11 +98,11 @@ Route::get('/checkout', function () {
 });
 
 
-Route::get('/detailmenu', function () {
-    return view('detailmenu',[
-        "title" => "Detail Menu"
-    ]);
-});
+// Route::get('/detailmenu', function () {
+//     return view('detailmenu',[
+//         "title" => "Detail Menu"
+//     ]);
+// });
 
 //buat signup
 // Route::get('/sign-up', [SignUpController::class, 'index']);
@@ -116,7 +116,7 @@ Route::prefix("/menu")->group(function() {
 
     Route::get("/", [MenuController::class, "list"]);
 
-    // Route::get("/product/{id}", [ShopController::class, "detail"]);
+    Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
     // Route::post("/", [ShopController::class, "addSingleCart"]);

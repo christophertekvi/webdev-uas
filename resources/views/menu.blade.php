@@ -27,10 +27,10 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a
-                            class="fw-bolder"><h5 style="color: black">{{ $m -> nama_menu}}</h5></a>
+                            <a href="{{ url('menu/product/'.$m->ID_MENU) }}"
+                            class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU}}</h5></a>
                             <!-- Product price-->
-                            {{ $m -> harga_menu}}
+                            {{ $m -> HARGA_MENU}}
                         </div>
                         <!-- Add to favourite -->
                         <div style="text-align: right;">

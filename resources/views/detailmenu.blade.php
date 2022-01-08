@@ -24,13 +24,13 @@
             </div>
             <div class="col-md-6">
                 <div class="detail">
-                    <h1 style="font-size: 30px;" class="display-5 fw-bolder">NAMA</h1>
+                    <h1 style="font-size: 30px;" class="display-5 fw-bolder">{{$nama}}</h1>
                     <div class="fs-5 mb-4">
-                        <span>Rp. XX.XXX</span>
+                        <span>{{$m -> HARGA_MENU}}</span>
                     </div>
                     <p style="margin-bottom: 1px;" class="lead">
                         Description : <br>
-                        <p>lalala</p>
+                        <p>{{$m -> DESKRIPSI_MENU}}</p>
                     </p>
                     <div class="d-flex">
                         <p style="margin-right: 10px" class="lead">
