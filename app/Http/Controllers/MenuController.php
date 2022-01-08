@@ -34,6 +34,7 @@ class MenuController extends Controller
         $menu = Menu::query()->findOrFail($id);
 
         return view("detailmenuu", [
+            "nama" => $menu -> NAMA_ITEM,
             "m" => $menu
         ]);
     }
