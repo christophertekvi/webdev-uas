@@ -107,7 +107,6 @@ class SignInController extends Controller
                     $request->session()->put('firstname', $obj['FIRST_NAME']);
                     $request->session()->put('lastname', $obj['LAST_NAME']);
                     $request->session()->put('foto', $obj['FOTO_PEMBELI']);
-<<<<<<< HEAD
 
                      $idPembeli = $obj['ID_PEMBELI'];
                      $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
@@ -118,7 +117,6 @@ class SignInController extends Controller
                      $obj = get_object_vars($orders);
                      $request->session()->put('orders', $obj['ID_MENU']);
 
-=======
                     $idPembeli = $obj['ID_PEMBELI'];
 
                     $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
@@ -133,7 +131,6 @@ class SignInController extends Controller
                         $request->session()->put('orders', $obj['ID_TB']);
                     } else {
                     }
->>>>>>> 8b1f9b715174890bb3946afe7fa1e48aba809f85
                     return view('home-sign-in', ['title' => 'home']);
                 } else {
                     return back()->with('LoginError', 'Sign In Failed');
