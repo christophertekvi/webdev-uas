@@ -66,7 +66,7 @@ class MenuController extends Controller
         $menu = Menu::query()->findOrFail($id);
 
         return view("detailmenu-sign-in", [
-            "nama" => $menu -> NAMA_ITEM,
+            "nama" => $menu -> NAMA_MENU,
             "m" => $menu,
             "title" => "Detail Menu"
         ]);
@@ -76,15 +76,18 @@ class MenuController extends Controller
         $menu = Menu::query()->findOrFail($id);
         Cart::add($menu);
         return redirect()->back()
-            ->with("success", "Berhasil menambah cart ".$menu->ID_MENU);
+            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
     }
 
-    // public function addDetailCart(Request $request, $id) {
-    //     $request->validate([
-    //         "inputQuantity" => "numeric"
-    //     ]);
-    //     $item = Item::query()->findOrFail($id);
+    public function addDetailCart(Request $request, $id) {
+        $request->validate([
+            "inputQuantity" => "numeric"
+        ]);
+        $menu = Menu::query()->findOrFail($id);
 
-    // }
+        Cart::add($menu, $request->input("inputQuantity"));
+        return redirect()->back()
+            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+    }
 
 }

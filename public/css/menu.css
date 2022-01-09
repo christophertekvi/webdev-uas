@@ -11,17 +11,6 @@
     color: black;
 }
 
-input[type="date"] {
-    color: black;
-    background: white;
-    box-shadow: 0.2px 0.2px 2px;
-    border: transparent;
-    border-radius: 4px;
-}
-
-::-webkit-datetime-edit {
-    padding-left: 10%;
-}
 
 .containermenu {
     width: 200px;
@@ -39,7 +28,7 @@ input[type="date"] {
 }
 
 .card-body {
-    height: 80px;
+    height: 85px;
 
 }
 
@@ -47,4 +36,21 @@ input[type="date"] {
     display: flex;
     margin: auto;
     justify-content: space-between;
+}
+
+.row {
+    display: flex;
+}
+
+.column{
+    flex: 50%;
+}
+
+.buttonadd {
+    background-color: white;
+    color: black;
+    border: solid 1px #e25f21;
+    font-family: "Outfit", sans-serif;
+    font-size: smallerS;
+    border-radius: 4px;
 }

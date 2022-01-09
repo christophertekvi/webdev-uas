@@ -80,8 +80,21 @@
                     <div class="text-center">
                         Rp. {{ $m -> HARGA_MENU }}
                     </div>
-                    <div style="text-align: right; padding-right : 15px;">
-                        <i class="far fa-heart"></i>
+                    <div class="row" style="text-align: right; padding-right: 15px;">
+                        <div class="column left">
+                            <form method="POST">
+                                @csrf
+                                <!-- Product actions-->
+                                <button class="text-center buttonadd" name="btnAddCart" value="{{ $m->ID_MENU }}">
+                                    <i class="fas fa-shopping-cart"></i>
+                                     Add
+                                </button>
+                            </form>
+                        </div>
+                        <div class="column right">
+                            <i class="far fa-heart"></i>
+                        </div>
+
                     </div>
                 </div>
             </div>

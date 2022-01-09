@@ -54,7 +54,7 @@
     </div>
 
     @include('partials.navbar')
-
+    @include('message')
     {{-- <div class="topbar">
       <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
@@ -120,7 +120,7 @@
                     <!-- Product image-->
                     <img class="card-img-top" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="..." />
                     <!-- Product details-->
-                    <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px;">
+                    <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px; padding-bottom: 0px; height: 70px;">
                         <div class="text-center">
                             <!-- Product name-->
                             <a href="{{ ('menu/'.$m->ID_MENU) }}"
@@ -129,11 +129,26 @@
                         <!-- Add to favourite -->
 
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" style="margin-bottom: 15px;">
                         Rp. {{ $m -> HARGA_MENU }}
                     </div>
-                    <div style="text-align: right; padding-right : 15px;">
-                        <i class="far fa-heart"></i>
+
+
+                    <div class="row" style="text-align: right; padding-right: 15px;">
+                        <div class="column left">
+                            <form method="POST">
+                                @csrf
+                                <!-- Product actions-->
+                                <button class="text-center buttonadd" name="btnAddCart" value="{{ $m->ID_MENU }}">
+                                    <i class="fas fa-shopping-cart"></i>
+                                     Add
+                                </button>
+                            </form>
+                        </div>
+                        <div class="column right">
+                            <i class="far fa-heart"></i>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -36,7 +36,10 @@ class Cart
 
     }
 
-
+    public static function getCount()
+    {
+        return count(Cart::getAll());
+    }
 
     // private static $cart_menu = [
     //     "title" => "Ini Judul",

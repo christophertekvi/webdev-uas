@@ -78,7 +78,7 @@ Route::get('/profile-signin', function () {
 Route::get('/cart', function () {
     return view('cart',[
         "title" => "Cart",
-        "post" => Cart::all()
+        // "post" => Cart::all()
     ]);
 });
 
@@ -122,5 +122,6 @@ Route::prefix("/menu")->group(function() {
     Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
-    // Route::post("/", [ShopController::class, "addSingleCart"]);
+    Route::post("/", [MenuController::class, "addSingleCart"]);
+    Route::post("/{id}", [MenuController::class, "addDetailCart"]);
 });
