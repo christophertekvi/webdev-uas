@@ -115,7 +115,7 @@ class SignInController extends Controller
 
                     $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
                     $obj = get_object_vars($orders);
-                    $request->session()->put('orders', $obj['ID_MENU']);
+                    $request->session()->put('orders', $obj['ID_TB']);
 
                     return view('home-sign-in', ['title' => 'home']);
                 } else {
