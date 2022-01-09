@@ -42,3 +42,9 @@ input[type="date"] {
     height: 80px;
 
 }
+
+.container1 {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}

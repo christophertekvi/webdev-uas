@@ -53,9 +53,7 @@
       </div>
     </div>
 
-    @include('partials.navbar')
-
-    {{-- <div class="topbar">
+    <div class="topbar">
       <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
@@ -105,7 +103,7 @@
             </ul>
         </div>
       </nav>
-    </div> --}}
+    </div>
 
     <h1 style="text-align: center; margin: 50px 100px 50px 100px; font-family: Outfit, sans-serif;">
         MENU LIST

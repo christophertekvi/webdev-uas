@@ -26,8 +26,29 @@ class MenuController extends Controller
 
         $menu = Menu::query()->paginate(10);
 
+        return view("menu-sign-in", [
+            "menu" => $menu,
+            "title" => "Menu"
+        ]);
+    }
+
+    public function lists() {
+        //ini adalah builder model pagination
+        // $items = Item::query()->paginate(10);
+
+        // $menu = DB::table("menu m, jadwal j, jadwal_catering jc")
+        //     ->select("m.id_menu", "nama_menu", "harga_menu")
+        //     ->where("m.id_menu", "=", "jc.id_menu")
+        //     ->where("j.id_jadwal", "=", "jc.id_jadwal")
+        //     ->get();
+
+        // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
+
+        $menu = Menu::query()->paginate(10);
+
         return view("menu", [
-            "menu" => $menu
+            "menu" => $menu,
+            "title" => "Menu"
         ]);
     }
 
@@ -41,6 +62,15 @@ class MenuController extends Controller
         ]);
     }
 
+    public function details($id){
+        $menu = Menu::query()->findOrFail($id);
+
+        return view("detailmenu", [
+            "nama" => $menu -> NAMA_ITEM,
+            "m" => $menu,
+            "title" => "Detail Menu"
+        ]);
+    }
     // public function addSingleCart(Request $request) {
     //     $id = $request->input("btnAddCart");
     //     $item = Item::query()->findOrFail($id);
