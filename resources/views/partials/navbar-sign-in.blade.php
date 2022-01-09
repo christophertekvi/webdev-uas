@@ -7,7 +7,7 @@
                   <a class="nav-link " href="/">HOME</a>
               </li>
               <li class="nav-item {{ ($title === "Menu") ? 'active' : '' }}">
-                  <a class="nav-link " href="/menu" >MENU</a>
+                  <a class="nav-link " href="/menu-sign-in" >MENU</a>
               </li>
               <li class="nav-item {{ ($title === "About Us") ? 'active' : '' }}">
                   <a class="nav-link " href="/about">ABOUT US</a>

@@ -83,7 +83,7 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/menu">MENU</a>
+                  <a class="nav-link" href="/menu-sign-in">MENU</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/about-sign-in">ABOUT US</a>
