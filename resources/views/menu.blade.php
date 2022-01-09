@@ -111,7 +111,7 @@
 
 
     <div class="container">
-        <div style="margin-left: 12%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach ($menu as $m)
             <div class="col mb-5">
                 <div class="containermenu">
