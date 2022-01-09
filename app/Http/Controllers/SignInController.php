@@ -108,6 +108,15 @@ class SignInController extends Controller
                     $request->session()->put('lastname', $obj['LAST_NAME']);
                     $request->session()->put('foto', $obj['FOTO_PEMBELI']);
 
+                    $idPembeli = $obj['ID_PEMBELI'];
+                    $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
+                    $obj = get_object_vars($fav);
+                    $request->session()->put('fav', $obj['ID_MENU']);
+
+                    $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+                    $obj = get_object_vars($orders);
+                    $request->session()->put('orders', $obj['ID_MENU']);
+
                     return view('home-sign-in', ['title' => 'home']);
                 } else {
                     return back()->with('LoginError', 'Sign In Failed');
