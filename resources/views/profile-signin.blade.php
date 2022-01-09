@@ -153,20 +153,20 @@
                         <div class="editinfo">
                           <div class="controlinfo">
                             <div class="controltext">
-                              <h5>First Name :</h5>
+                              <h5>Name :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} ">
+                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
                             </div>
                           </div>
-                          <div class="controlinfo">
+                          {{-- <div class="controlinfo">
                             <div class="controltext">
                                 <h5>Last Name :</h5>
                               </div>
                               <div class="inputProfile">
                                 <input type="text" name="nama" id="input-name" value=" {{ session('lastname') }} ">
                               </div>
-                            </div>
+                            </div> --}}
                           <div class="controlinfo">
                             <div class="controltext">
                               <h5>E-mail :</h5>
