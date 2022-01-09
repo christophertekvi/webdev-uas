@@ -229,7 +229,7 @@
 .orderOngoingAll {
     width: 80%;
     height: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-left: 10px;
     margin-top: 10px;
 }

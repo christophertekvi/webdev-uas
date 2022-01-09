@@ -273,7 +273,7 @@
                       </div>
                       <div id="orderOngoing" class="orderOngoing">
                         <div class="orderOngoingAll">
-                            proses
+                           <p style="margin: 100px">  {{session('orders')}} </p>
                         </div>
                       </div>
                       <div id="orderCompleted" class="orderOngoing">
@@ -283,6 +283,7 @@
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
                             <h3>You do not have any favorite menus yet.</h3>
+
                         </div>
                     </div>
                     <div id="SignOut" href="/home">
