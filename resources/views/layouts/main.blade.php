@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    @include('partials.navbar-sign-in')
+    @include('partials.navbar')
 
     <div class="cointainer">
         @yield('isiWeb')
