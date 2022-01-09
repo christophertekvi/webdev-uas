@@ -24,12 +24,11 @@ input[type="date"] {
 }
 
 .gambarmenu img {
-    width: 250px;
-    height: 250px;
+    width: 50%;
     transform: translateX(300px);
 }
 
 
-.detail {
+/* .detail {
     transform: translateX(400px);
-}
+} */
