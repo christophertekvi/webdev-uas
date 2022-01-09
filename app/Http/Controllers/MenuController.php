@@ -26,7 +26,7 @@ class MenuController extends Controller
 
         $menu = Menu::query()->paginate(10);
 
-        return view("menuu", [
+        return view("menu", [
             "menu" => $menu
         ]);
     }
@@ -34,7 +34,7 @@ class MenuController extends Controller
     public function detail($id){
         $menu = Menu::query()->findOrFail($id);
 
-        return view("detailmenuu", [
+        return view("detailmenu", [
             "nama" => $menu -> NAMA_ITEM,
             "m" => $menu,
             "title" => "Detail Menu"

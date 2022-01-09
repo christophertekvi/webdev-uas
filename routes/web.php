@@ -110,9 +110,7 @@ Route::post("/sign-up", [SignUpController::class, 'store']);
 Route::get('/home' ,[SignInController::class, 'flush']);
 
 Route::prefix("/menu")->group(function() {
-
     Route::get("/", [MenuController::class, "list"]);
-
     Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
