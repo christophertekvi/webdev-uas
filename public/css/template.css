@@ -29,14 +29,14 @@ body {
 }
 
 
-/* .bar {
+.bar {
   background-color: #e25f21;
   overflow: hidden;
   padding: 1%;
   overflow: hidden;
   display: flex;
   justify-content: center;
-} */
+}
 
 
 .navbar-nav .nav-item .nav-link {
@@ -47,17 +47,17 @@ body {
   color: black;
 }
 
-/* .nav li {
+.nav li {
   text-decoration: none;
   list-style: none;
   display: block;
-} */
+}
 
-/* .bar a:hover,
+.bar a:hover,
 .bar a.active {
   background-color: transparent;
   color: black;
-} */
+}
 
 .cart {
   float: right;
