@@ -151,7 +151,7 @@
                               <h5>Name :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name">
+                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} ">
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -181,9 +181,6 @@
                                 <div class="rbCewek">
                                     <input type="radio" name="gender" id="cewek"> Male
                                 </div>
-                                <div class="rbOther">
-                                    <input type="radio" name="gender" id="other"> Other
-                                </div>
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -191,7 +188,7 @@
                               <h5>Address :</h5>
                             </div>
                             <div class="inputAddress">
-                              <textarea id="address" name="address" rows="6" cols="25"></textarea>
+                              <textarea id="address" name="address" rows="6" cols="25"> {{session('alamat')}} </textarea>
                             </div>
                           </div>
                           <div class="button-saveProfile">
@@ -211,7 +208,7 @@
                             <img src="image/user.png" alt="">
                           </div>
                           <div class="textcontrol">
-                            <p style="font-size: 20px; text-align: center">Name</p>
+                            <p style="font-size: 20px; text-align: center"> {{session('firstname')}} </p>
                             {{-- <br><p>User ID</p> --}}
                           </div>
                       </div><br>

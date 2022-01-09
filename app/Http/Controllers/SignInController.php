@@ -104,7 +104,8 @@ class SignInController extends Controller
                     $request->session()->put('noHP', $obj['NO_HP']);
                     $request->session()->put('alamat', $obj['ALAMAT']);
                     $request->session()->put('gender', $obj['JENIS_KELAMIN']);
-
+                    $request->session()->put('firstname', $obj['FIRST_NAME']);
+                    $request->session()->put('lastname', $obj['LAST_NAME']);
 
                     return view('home-sign-in', ['title' => 'home']);
                 } else {
@@ -115,4 +116,12 @@ class SignInController extends Controller
             }
         }
     }
+
+    // public function pembeli()
+    // {
+    //     $pembeli = DB::table('pembeli')->select("*", DB::raw("CONCAT(pembeli.FIRST_NAME,' ',pembeli.LAST_NAME) AS full_name"))
+    //         ->get();
+
+    //     return view('home-sign-in', compact('pembeli'));
+    // }
 }

@@ -160,15 +160,18 @@
 .controltextandimg {
     display: flex;
     margin-top: 30px;
+    justify-content: center;
 }
 .imgcontrol {
-    width: 30%;
+    /* width: 30%; */
     display: flex;
+    justify-content: center;
 }
 .textcontrol {
-    width: 50%;
+    /* width: 50%; */
     display: flex;
-    margin: 0px 200px 20px 325px;
+    justify-content: center;
+    /* margin: 0px 200px 20px 325px; */
 }
 .imgcontrol img {
     width: 100px;

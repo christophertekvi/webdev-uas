@@ -118,18 +118,20 @@
                     <!-- Product image-->
                     <img class="card-img-top" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="..." />
                     <!-- Product details-->
-                    <div class="card-body p-4">
+                    <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px;">
                         <div class="text-center">
                             <!-- Product name-->
                             <a href="{{ ('menu/'.$m->ID_MENU) }}"
                             class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU }}</h5></a>
-                            <!-- Product price-->
-                            Rp. {{ $m -> HARGA_MENU }}
                         </div>
                         <!-- Add to favourite -->
-                        <div style="text-align: right;">
-                            <i class="far fa-heart"></i>
-                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        Rp. {{ $m -> HARGA_MENU }}
+                    </div>
+                    <div style="text-align: right; padding-right : 15px;">
+                        <i class="far fa-heart"></i>
                     </div>
                 </div>
             </div>
