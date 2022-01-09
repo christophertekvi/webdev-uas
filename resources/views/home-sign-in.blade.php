@@ -344,16 +344,16 @@
               Quick Links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a href="/home-sign-in" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Menu</a>
+              <a href="/menu" class="text-reset">Menu</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">About Us</a>
+              <a href="/" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">FAQs</a>
+              <a href="faqs-sign-in" class="text-reset">FAQs</a>
             </p>
           </div>
           <!-- Grid column -->
