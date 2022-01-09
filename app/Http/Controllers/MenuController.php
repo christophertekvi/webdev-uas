@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-// use App\Models\Cart;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -71,13 +71,13 @@ class MenuController extends Controller
             "title" => "Detail Menu"
         ]);
     }
-    // public function addSingleCart(Request $request) {
-    //     $id = $request->input("btnAddCart");
-    //     $item = Item::query()->findOrFail($id);
-    //     Cart::add($item);
-    //     return redirect()->back()
-    //         ->with("success", "Berhasil menambah cart ".$item->ITEM_NAME);
-    // }
+    public function addSingleCart(Request $request) {
+        $id = $request->input("btnAddCart");
+        $menu = Menu::query()->findOrFail($id);
+        Cart::add($menu);
+        return redirect()->back()
+            ->with("success", "Berhasil menambah cart ".$menu->ID_MENU);
+    }
 
     // public function addDetailCart(Request $request, $id) {
     //     $request->validate([
@@ -86,4 +86,5 @@ class MenuController extends Controller
     //     $item = Item::query()->findOrFail($id);
 
     // }
+
 }
