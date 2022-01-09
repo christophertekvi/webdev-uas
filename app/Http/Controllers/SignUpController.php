@@ -66,7 +66,10 @@ class SignUpController extends Controller
                 'PEMBELI_DELETE'=>0
             ]);
             $request->session()->put('ID',$obj['`GenIdPembeli`()']);
-            return view('home-sign-in', ['title'=>'home']);
+            $usersession = DB::table('pembeli')->where('ID_PEMBELI', session('ID'))->first();
+            $objsession = get_object_vars($usersession);
+            $request->session()->put('poin',$objsession['POIN']);
+            return view('home-sign-in', ['title' => 'home']);
             }
             else{
                 return back()->with('SignUpError', 'Sign Up Failed!');
