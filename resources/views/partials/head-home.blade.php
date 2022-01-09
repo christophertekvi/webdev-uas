@@ -12,7 +12,7 @@
 
     <link rel="icon" href="image/icon-logo.png" type="image/png">
 
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/detailmenu.css" />
     <link rel="stylesheet" href="css/template.css" />
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="js/template.js"></script>
