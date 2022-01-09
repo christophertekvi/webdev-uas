@@ -1,18 +1,18 @@
 .body {
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
-.container{
+.container {
     margin-top: 50px;
     margin-bottom: 30px;
 }
 
-.fas fa-filter{
+.fas fa-filter {
     color: black;
 }
 
 input[type="date"] {
-    color:black;
+    color: black;
     background: white;
     box-shadow: 0.2px 0.2px 2px;
     border: transparent;
@@ -34,5 +34,4 @@ input[type="date"] {
 
 .containermenu img {
     padding: 5%;
-
 }

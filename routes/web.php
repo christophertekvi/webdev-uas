@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Controller;
-use App\Models\Cart;
 use App\User;
-use Illuminate\Support\Facades\Route;
+use App\Models\Cart;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
@@ -19,13 +20,9 @@ use App\Http\Controllers\SignUpController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home",
-        "slug" => "home-sign-in"
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home/{slug}', [HomeController::class, 'index']);
 
-    ]);
-});
 
 Route::get('/faqs', function () {
     return view('faqs', [
@@ -113,9 +110,7 @@ Route::post("/sign-up", [SignUpController::class, 'store']);
 Route::get('/home' ,[SignInController::class, 'flush']);
 
 Route::prefix("/menu")->group(function() {
-
     Route::get("/", [MenuController::class, "list"]);
-
     Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
