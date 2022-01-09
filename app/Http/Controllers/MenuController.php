@@ -12,7 +12,7 @@ class MenuController extends Controller
 {
     //
 
-    public function list() {
+    public function lists() {
         //ini adalah builder model pagination
         // $items = Item::query()->paginate(10);
 
@@ -32,7 +32,7 @@ class MenuController extends Controller
         ]);
     }
 
-    public function lists() {
+    public function list() {
         //ini adalah builder model pagination
         // $items = Item::query()->paginate(10);
 
@@ -65,7 +65,7 @@ class MenuController extends Controller
     public function details($id){
         $menu = Menu::query()->findOrFail($id);
 
-        return view("detailmenu", [
+        return view("detailmenu-sign-in", [
             "nama" => $menu -> NAMA_ITEM,
             "m" => $menu,
             "title" => "Detail Menu"

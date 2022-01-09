@@ -79,20 +79,14 @@
                             Add to cart
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
 
-
-
-
-
-
+        <div>
             <button id="btnScrollTop" onclick="scrollToTop()">
             <i class="material-icons">keyboard_double_arrow_up</i>
             </button>
-        </div>
         </div>
   </body>
 

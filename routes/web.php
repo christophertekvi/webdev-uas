@@ -110,16 +110,16 @@ Route::post("/sign-up", [SignUpController::class, 'store']);
 Route::get('/home' ,[SignInController::class, 'flush']);
 
 Route::prefix("/menu-sign-in")->group(function() {
-    Route::get("/", [MenuController::class, "list"]);
-    Route::get("/{id}", [MenuController::class, "detail"]);
+    Route::get("/", [MenuController::class, "lists"]);
+    Route::get("/{id}", [MenuController::class, "details"]);
 
     // Add to Cart
     // Route::post("/", [ShopController::class, "addSingleCart"]);
 });
 
 Route::prefix("/menu")->group(function() {
-    Route::get("/", [MenuController::class, "lists"]);
-    Route::get("/{id}", [MenuController::class, "details"]);
+    Route::get("/", [MenuController::class, "list"]);
+    Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
     // Route::post("/", [ShopController::class, "addSingleCart"]);
