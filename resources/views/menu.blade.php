@@ -121,7 +121,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a href="{{ url('menu/'.$m->ID_MENU) }}"
+                            <a href="{{ ('menu/'.$m->ID_MENU) }}"
                             class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU }}</h5></a>
                             <!-- Product price-->
                             Rp. {{ $m -> HARGA_MENU }}

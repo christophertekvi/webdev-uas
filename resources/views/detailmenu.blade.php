@@ -13,12 +13,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
-        <link rel="icon" href="image/icon-logo.png" type="image/png">
+        <link rel="icon" href="/image/icon-logo.png" type="image/png">
 
-        <link rel="stylesheet" href="css/detailmenu.css" />
-        <link rel="stylesheet" href="css/template.css" />
-        <script type="text/javascript" src="js/home.js"></script>
-        <script type="text/javascript" src="js/template.js"></script>
+        <link rel="stylesheet" href="/css/detailmenu.css" />
+        <link rel="stylesheet" href="/css/template.css" />
+        <script type="text/javascript" src="/js/home.js"></script>
+        <script type="text/javascript" src="/js/template.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap.css" />
@@ -32,17 +32,12 @@
 
   <body style="background-color:floralwhite;">
     <!--topbar-->
-    <div class="header-top">
+    <div class="header-top" style="background-color: white;">
       <div class="row">
         <div>
             <a href="/home-sign-in">
-            <img
-              class="logo"
-              src="image/logo.png"
-              style="height: 100%"
-              alt="Logo"
-            />
-          </a>
+                <img class="logo" src="/image/logo.png" style="height: 100%"/>
+            </a>
         </div>
       </div>
     </div>
@@ -111,7 +106,7 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <img style="width: 90%; height: 38%;"src="image/logo.png">
+            <img style="width: 90%; height: 38%;"src="/image/logo.png">
             <p>
               MakanYuk provides an online catering service. We have various menus and are all scheduled.
             </p>
