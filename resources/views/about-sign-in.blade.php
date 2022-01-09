@@ -46,7 +46,7 @@
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
             <ul class="navbar-nav w-100 justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">HOME</a>
+                    <a class="nav-link" aria-current="page" href="/home-sign-in">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/menu" >MENU</a>
@@ -81,7 +81,7 @@
                     <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" >Points : </a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" >Points : {{session('poin')}} </a>
                   </li>
                   <li>
                     <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
