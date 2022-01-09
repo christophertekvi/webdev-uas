@@ -176,7 +176,7 @@
                             </div>
                             <div class="inputGender">
                                 <div class="rbCowok">
-                                    <input type="radio" name="gender" id="cowok" > Female
+                                    <input type="radio" name="gender" id="cowok"> Female
                                 </div>
                                 <div class="rbCewek">
                                     <input type="radio" name="gender" id="cewek"> Male
