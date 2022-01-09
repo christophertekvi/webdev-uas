@@ -101,6 +101,11 @@ class SignInController extends Controller
                 if ($password == $obj['PASSWORD']) {
                     $request->session()->put('email', $request->email);
                     $request->session()->put('poin', $obj['POIN']);
+                    $request->session()->put('noHP', $obj['NO_HP']);
+                    $request->session()->put('alamat', $obj['ALAMAT']);
+                    $request->session()->put('gender', $obj['JENIS_KELAMIN']);
+
+
                     return view('home-sign-in', ['title' => 'home']);
                 } else {
                     return back()->with('LoginError', 'Sign In Failed');

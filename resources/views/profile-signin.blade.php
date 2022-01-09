@@ -115,7 +115,7 @@
                     <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : 1000</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : {{ session('poin') }}</a>
                   </li>
                   <li>
                     <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
@@ -159,7 +159,7 @@
                               <h5>E-mail :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name">
+                              <input type="text" name="nama" id="input-name" value="{{ session('email') }}">
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -167,7 +167,7 @@
                               <h5>Phone :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nohp" id="input-phone">
+                              <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -175,15 +175,15 @@
                               <h5>Gender :</h5>
                             </div>
                             <div class="inputGender">
-                              <div class="rbCowok">
-                                <input type="radio" name="gender" id="cowok"> Female
-                              </div>
-                              <div class="rbCewek">
-                                <input type="radio" name="gender" id="cewek"> Male
-                              </div>
-                              <div class="rbOther">
-                                <input type="radio" name="gender" id="other"> Other
-                              </div>
+                                <div class="rbCowok">
+                                    <input type="radio" name="gender" id="cowok" > Female
+                                </div>
+                                <div class="rbCewek">
+                                    <input type="radio" name="gender" id="cewek"> Male
+                                </div>
+                                <div class="rbOther">
+                                    <input type="radio" name="gender" id="other"> Other
+                                </div>
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -323,16 +323,16 @@
               Quick Links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a href="\home-sign-in" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Menu</a>
+              <a href="\menu" class="text-reset">Menu</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">About Us</a>
+              <a href="\about-sign-in" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">FAQs</a>
+              <a href="\faqs-sign-in" class="text-reset">FAQs</a>
             </p>
           </div>
           <!-- Grid column -->
