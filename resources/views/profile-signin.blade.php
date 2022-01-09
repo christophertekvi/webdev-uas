@@ -140,6 +140,11 @@
                             {{-- @if(Auth::user()->image)
                                 <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
                             @endif --}}
+                            {{-- @if (isnull( {{session('foto')}} ))
+                            <img src="image/user.png">
+                            @else
+                            <img src=" {{session('foto')}} "
+                            @endif --}}
                             <img src="image/user.png">
                             <input type="file" id="image" name="image">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
@@ -151,9 +156,17 @@
                               <h5>Name :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} ">
+                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
                             </div>
                           </div>
+                          {{-- <div class="controlinfo">
+                            <div class="controltext">
+                                <h5>Last Name :</h5>
+                              </div>
+                              <div class="inputProfile">
+                                <input type="text" name="nama" id="input-name" value=" {{ session('lastname') }} ">
+                              </div>
+                            </div> --}}
                           <div class="controlinfo">
                             <div class="controltext">
                               <h5>E-mail :</h5>
@@ -208,7 +221,9 @@
                             <img src="image/user.png" alt="">
                           </div>
                           <div class="textcontrol">
-                            <p style="font-size: 20px; text-align: center"> {{session('firstname')}} </p>
+                            <p style="font-size: 20px; text-align: center"> {{session('firstname')}}  </p>
+                            <p style="font-size: 20px; text-align: center"> &nbsp {{session('lastname')}}  </p>
+
                             {{-- <br><p>User ID</p> --}}
                           </div>
                       </div><br>
