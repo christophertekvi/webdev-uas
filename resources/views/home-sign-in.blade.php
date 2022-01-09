@@ -350,10 +350,10 @@
               <a href="/menu" class="text-reset">Menu</a>
             </p>
             <p>
-              <a href="/" class="text-reset">About Us</a>
+              <a href="/about-sign-in" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="faqs-sign-in" class="text-reset">FAQs</a>
+              <a href="/faqs-sign-in" class="text-reset">FAQs</a>
             </p>
           </div>
           <!-- Grid column -->
