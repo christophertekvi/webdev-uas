@@ -118,6 +118,7 @@ class SignInController extends Controller
                         $request->session()->put('fav', '');
                     }
                     $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+                    
                     if (!is_null($orders)) {
                         $obj = get_object_vars($orders);
                         $request->session()->put('orders', $obj['ID_TB']);
