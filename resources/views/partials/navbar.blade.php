@@ -49,6 +49,7 @@
                   <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
                 </li>
               </ul>
+
           </ul>
       </div>
     </nav>
