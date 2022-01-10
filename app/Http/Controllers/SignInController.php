@@ -124,7 +124,7 @@ class SignInController extends Controller
                     } else {
                         $request->session()->put('orders', '');
                     }
-                    return view('home-sign-in', ['title' => 'home']);
+                    return view('home-sign-in', ['title' => 'Home']);
                 } else {
                     return back()->with('LoginError', 'Sign In Failed');
                 }
