@@ -102,17 +102,16 @@
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                      1. The menus displayed are available starting one day after the website is accessed (i.e. The menus displayed on December 7 are menus available starting on December 8).
-                      <br> 2. Orders are made maximum one day before delivery time.
-                      <br> 3. The maximum amount of orders of every meal is 50 packs. If you wanted to order more, you can contact us directly via e-mail (subject : "Order") or WhatsApp.
-                      <br> 4. Every transactions will have Rp10.000 added for delivery fee.
-                      <br> 5. Payments are made maximum one day before delivery time at 12.00 WIB.
-                      <br> 6. Operational Hours :
+                        1. Orders are made maximum one day before delivery time.
+                      <br> 2. The maximum amount of orders of every meal is 50 packs. If you wanted to order more, you can contact us directly via e-mail (subject : "Order") or WhatsApp.
+                      <br> 3. Every transactions will have Rp10.000 added by default for delivery fee.
+                      <br> 4. Payments are made maximum 2 hours after the order was placed.
+                      <br> 5. Operational Hours :
                       <br>&emsp; Weekdays (Monday - Friday) - 07.00 WIB - 19.00 WIB
                       <br>&emsp; Weekends (Saturday & Sunday) - 08.00 WIB - 20.00 WIB
-                      <br> 7. Orders are closed at 16.00 WIB for next day deliveries.
-                      <br> 8. You will receive points in every transactions you made.
-                      <br> 9. For every Rp1000 you will receive 1 point.
+                      <br> 6. Orders are closed at 16.00 WIB for next day deliveries.
+                      <br> 7. You will receive points in every transactions you made.
+                      <br> 8. For every Rp1000 you will receive 1 point.
                     </div>
                   </div>
                 </div>
@@ -124,7 +123,7 @@
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body" style="text-align: justify;">
-                      Simply click "Menu" on the navigation bar. Then, choose the date of delivery that you wanted (since we are using the pre-order system and the menus differ by date). Click the menu that you wanted to order. Then, choose the number of packs that you wanted. If you want to checkout immediately, click "Order Now". But, if you still want to choose something else, you can click "Add to Cart".
+                      Simply click "Menu" on the navigation bar. Click the menu that you wanted to order. Then, choose the number of packs that you wanted. If you want to checkout immediately, click "Order Now". But, if you still want to choose something else, you can click "Add to Cart".
                       <br>After that, click on the shopping cart icon on the top-right corner and select the menus that you want to order. Then, click the "Checkout" button. Make sure your orders are right. Do not forget to select the payment method and choose whether or not to use your points. After that, click "Order".
                       <br><br>*Make sure you are already signed in to your account.
                     </div>
@@ -232,16 +231,16 @@
                   Quick Links
                 </h6>
                 <p>
-                  <a href="#!" class="text-reset">Home</a>
+                  <a href="\" class="text-reset">Home</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Menu</a>
+                  <a href="\menu" class="text-reset">Menu</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">About Us</a>
+                  <a href="\about" class="text-reset">About Us</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">FAQs</a>
+                  <a href="\faqs" class="text-reset">FAQs</a>
                 </p>
               </div>
               <!-- Grid column -->

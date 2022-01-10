@@ -153,7 +153,7 @@
               <a href="/home-sign-in" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="/menu-sign-in" class="text-reset">Menu</a>
+              <a href="/menu" class="text-reset">Menu</a>
             </p>
             <p>
               <a href="/about-sign-in" class="text-reset">About Us</a>
