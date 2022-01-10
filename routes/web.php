@@ -114,7 +114,8 @@ Route::prefix("/menu-sign-in")->group(function() {
     Route::get("/{id}", [MenuController::class, "details"]);
 
     // Add to Cart
-    // Route::post("/", [ShopController::class, "addSingleCart"]);
+    Route::post("/", [MenuController::class, "addSingleCart"]);
+    Route::post("/{id}", [MenuController::class, "addDetailCart"]);
 });
 
 Route::prefix("/menu")->group(function() {
@@ -122,6 +123,6 @@ Route::prefix("/menu")->group(function() {
     Route::get("/{id}", [MenuController::class, "detail"]);
 
     // Add to Cart
-    Route::post("/", [MenuController::class, "addSingleCart"]);
-    Route::post("/{id}", [MenuController::class, "addDetailCart"]);
+    // Route::post("/", [MenuController::class, "addSingleCart"]);
+    // Route::post("/{id}", [MenuController::class, "addDetailCart"]);
 });
