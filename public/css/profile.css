@@ -233,3 +233,10 @@
     margin-left: 10px;
     margin-top: 10px;
 }
+
+.detail {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 10px 50px 200px 0;
+}
