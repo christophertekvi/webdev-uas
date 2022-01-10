@@ -119,37 +119,31 @@ class SignInController extends Controller
                         $request->session()->put('fav', '');
                     }
 
-<<<<<<< HEAD
                     $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI',$idPembeli])->first();
 
                     $selesai = DB::table('transaksi_beli')->where([
                         ['ID_PEMBELI', '=', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
                     ])->get();
-=======
                     $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI', $idPembeli])->first();
                     // $selesai = DB::table('transaksi_beli')->where([
                     //     ['ID_PEMBELI', '=', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
                     // ])->get();
->>>>>>> fb3951f8ef26f6712f0d3d2e09bd8c67de7700f5
 
                     if (!is_null($orders)) {
 
                         $selesai = DB::table('transaksi_beli')
-<<<<<<< HEAD
                                     ->select('ID_TB', 'TOTAL_BAYAR')
                                     ->where('ID_PEMBELI', '=' ,$idPembeli)
                                     ->where('STATUS_PESANAN', '=' ,'On Process')
                                     ->orWhere('STATUS_PESANAN', '=', 'Pending')
                                     ->get();
 
-=======
                             ->select('ID_TB', 'TOTAL_BAYAR')
                             ->where('ID_PEMBELI', '=', $idPembeli)
                             ->where('STATUS_PESANAN', '=', 'On Process')
                             ->orWhere('STATUS_PESANAN', '=', 'Pending')
                             ->get();
                         // $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
->>>>>>> fb3951f8ef26f6712f0d3d2e09bd8c67de7700f5
 
                         if (!is_null($orders)) {
                             $obj = get_object_vars($orders);
