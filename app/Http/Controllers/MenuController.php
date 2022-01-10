@@ -93,10 +93,19 @@ class MenuController extends Controller
     public function showCart()
     {
         $cart = Cart::getAll();
+        //pake database
+        // $cart = Cart::keranjang();
 
         return view("cart", [
             "cart" => $cart,
             "title" => "Cart"
         ]);
+    }
+
+    public function checkout()
+    {
+        $cart = Cart::getAll();
+
+
     }
 }

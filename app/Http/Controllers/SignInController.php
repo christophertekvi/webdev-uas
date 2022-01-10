@@ -119,6 +119,9 @@ class SignInController extends Controller
                         $request->session()->put('fav', '');
                     }
 
+                    //buat cart
+                    //$PID = Cart::keranjang($idPembeli);
+
                     $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI',$idPembeli])->first();
 
                     $selesai = DB::table('transaksi_beli')->where([

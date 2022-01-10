@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\SignInController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Cart
 {
@@ -28,6 +30,18 @@ class Cart
             ];
         }
         Session::put("cart", $data);
+
+        //coba insert database
+        DB::table('keranjang')->insert([
+            'ID_PEMBELI' => 'kayla@example.com',
+            'ID_MENU' => $menu -> ID_MENU,
+            'NAMA_MENU' => $menu -> NAMA_MENU,
+            'FOTO_MENU' => null,
+            'HARGA_MENU' => $menu -> HARGA_MENU,
+            'QTY' => $jumlah,
+            'TANGGAL_KIRIM' => null,
+            'CENTANG' => 0
+        ]);
     }
 
     public static function getAll()
@@ -35,6 +49,15 @@ class Cart
         return Session::get("cart", []);
 
     }
+
+    // public static function keranjang($id)
+    // {
+    //     //coba panggil isi kranjang dri dtabase
+    //     $cart = DB::table('keranjang')->where('ID_PEMBELI', $id);
+
+    //     return Session::get("cart", []);
+
+    // }
 
     public static function getCount()
     {
