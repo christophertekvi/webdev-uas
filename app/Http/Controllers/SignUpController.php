@@ -69,6 +69,13 @@ class SignUpController extends Controller
             $usersession = DB::table('pembeli')->where('ID_PEMBELI', session('ID'))->first();
             $objsession = get_object_vars($usersession);
             $request->session()->put('poin',$objsession['POIN']);
+            $request->session()->put('alamat', $objsession['ALAMAT']);
+            $request->session()->put('gender', $objsession['JENIS_KELAMIN']);
+            $request->session()->put('firstname', $objsession['FIRST_NAME']);
+            $request->session()->put('lastname', $objsession['LAST_NAME']);
+            $request->session()->put('foto', $objsession['FOTO_PEMBELI']);
+            $request->session()->put('noHP', $objsession['NO_HP']);
+            $request->session()->put('email', $objsession['EMAIL']);
             return view('home-sign-in', ['title' => 'home']);
             }
             else{
