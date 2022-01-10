@@ -120,7 +120,9 @@ class SignInController extends Controller
                     }
 
                     $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI', $idPembeli])->first();
-                    $selesai = DB::table('transaksi_beli')->where(['ID_PEMBELI', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"])->get();
+                    $selesai = DB::table('transaksi_beli')->where([
+                        ['ID_PEMBELI', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
+                    ])->get();
                     if (!is_null($orders)) {
                         // $status = $obj['STATUS_PESANAN'];
                         // $orders = DB::table('transaksi_beli')->where('STATUS_PESANAN', $status)->first();
