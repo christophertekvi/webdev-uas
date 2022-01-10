@@ -125,7 +125,14 @@ class SignInController extends Controller
                         // $status = $obj['STATUS_PESANAN'];
                         // $orders = DB::table('transaksi_beli')->where('STATUS_PESANAN', $status)->first();
 
-                        $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
+                        // $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI = $idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
+
+                        $selesai = DB::table('transaksi_beli')
+                                    ->select('ID_TB', 'TOTAL_BAYAR')
+                                    ->where('ID_PEMBELI', '=' ,$idPembeli)
+                                    ->where('STATUS_PESANAN', '=' ,'On Process')
+                                    ->orWhere('STATUS_PESANAN', '=', 'Pending')
+                                    ->get();
 
                         if (!is_null($orders, $selesai)) {
                             $obj = get_object_vars($orders);
