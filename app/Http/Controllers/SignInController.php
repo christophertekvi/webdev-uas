@@ -119,7 +119,10 @@ class SignInController extends Controller
                         $request->session()->put('fav', '');
                     }
 
-                    $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+                    $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI', $idPembeli])->first();
+                    $selesai = DB::table('transaksi_beli')->where([
+                        ['ID_PEMBELI', '=', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
+                    ])->get();
 
                     if (!is_null($orders)) {
                         // $status = $obj['STATUS_PESANAN'];
@@ -133,8 +136,9 @@ class SignInController extends Controller
                                     ->where('STATUS_PESANAN', '=' ,'On Process')
                                     ->orWhere('STATUS_PESANAN', '=', 'Pending')
                                     ->get();
+                        // $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
 
-                        if (!is_null($orders, $selesai)) {
+                        if (!is_null($orders)) {
                             $obj = get_object_vars($orders);
                             $request->session()->put('orders', $obj['ID_TB']);
                             // $obj = get_object_vars($total);
