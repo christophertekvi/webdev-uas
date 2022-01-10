@@ -272,28 +272,31 @@
                           <button class="tabOrders" onclick="openOrders(event, 'orderCompleted')">Completed</button>
                         </div>
                       </div>
-                      <div id="orderOngoing" class="orderOngoing">
-                        <div class="orderOngoingAll">
-                            <ul class="cart_list">
-                                <li class="cart_item clearfix">
-                                    <div style= "width: 70%; " class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                        <div class="cart_item_name cart_info_col">
-                                            <div class="cart_item_title">Transaction ID</div>
-                                            <div class="cart_item_text"> {{session('orders')}} </div>
+                      {{-- @foreach ($orders as $o) --}}
+                        <div id="orderOngoing" class="orderOngoing">
+                            <div class="orderOngoingAll">
+                                <ul class="cart_list">
+                                    <li class="cart_item clearfix">
+                                        <div style= "width: 70%; " class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Transaction ID</div>
+                                                <div class="cart_item_text"> {{session('orders')}} </div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text">Rp. {{session('total')}}</div>
+                                            </div>
                                         </div>
-                                        <div class="cart_item_total cart_info_col">
-                                            <div class="cart_item_title">Total</div>
-                                            <div class="cart_item_text">Rp. {{session('total')}}</div>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="detail">
-                                        <a> Detail </a>
-                                    </div> --}}
-                                </li>
-                            </ul>
-                           {{-- <p style="margin: 100px">  {{session('orders')}} </p> --}}
+                                        {{-- <div class="detail">
+                                            <a> Detail </a>
+                                        </div> --}}
+                                    </li>
+                                </ul>
+                            {{-- <p style="margin: 100px">  {{session('orders')}} </p> --}}
+                            </div>
                         </div>
-                      </div>
+                      {{-- @endforeach --}}
+
                       <div id="orderCompleted" class="orderOngoing">
 
                       </div>
