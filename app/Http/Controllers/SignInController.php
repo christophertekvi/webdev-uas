@@ -120,9 +120,9 @@ class SignInController extends Controller
                     }
 
                     $orders = DB::table('transaksi_beli')->where(['ID_PEMBELI', $idPembeli])->first();
-                    $selesai = DB::table('transaksi_beli')->where([
-                        ['ID_PEMBELI', '=', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
-                    ])->get();
+                    // $selesai = DB::table('transaksi_beli')->where([
+                    //     ['ID_PEMBELI', '=', $idPembeli], ['STATUS_PESANAN', '=', "On Process"], ['STATUS_PESANAN', '=', "Pending"]
+                    // ])->get();
 
                     if (!is_null($orders)) {
                         // $status = $obj['STATUS_PESANAN'];
@@ -131,11 +131,11 @@ class SignInController extends Controller
                         // $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI = $idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
 
                         $selesai = DB::table('transaksi_beli')
-                                    ->select('ID_TB', 'TOTAL_BAYAR')
-                                    ->where('ID_PEMBELI', '=' ,$idPembeli)
-                                    ->where('STATUS_PESANAN', '=' ,'On Process')
-                                    ->orWhere('STATUS_PESANAN', '=', 'Pending')
-                                    ->get();
+                            ->select('ID_TB', 'TOTAL_BAYAR')
+                            ->where('ID_PEMBELI', '=', $idPembeli)
+                            ->where('STATUS_PESANAN', '=', 'On Process')
+                            ->orWhere('STATUS_PESANAN', '=', 'Pending')
+                            ->get();
                         // $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
 
                         if (!is_null($orders)) {
