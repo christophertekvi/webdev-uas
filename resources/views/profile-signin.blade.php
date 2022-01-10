@@ -55,7 +55,7 @@
         <div class="header-top">
           <div class="row">
             <div>
-              <a href="index.html">
+              <a href="\home-sign-in">
                 <img
                   class="logo"
                   src="image/logo.png"

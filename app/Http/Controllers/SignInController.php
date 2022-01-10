@@ -122,25 +122,26 @@ class SignInController extends Controller
                     $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
 
                     if (!is_null($orders)) {
-                    // $status = $obj['STATUS_PESANAN'];
-                    // $orders = DB::table('transaksi_beli')->where('STATUS_PESANAN', $status)->first();
+                        // $status = $obj['STATUS_PESANAN'];
+                        // $orders = DB::table('transaksi_beli')->where('STATUS_PESANAN', $status)->first();
 
-                    $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
+                        $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
 
-                    if (!is_null($orders, $selesai)) {
-                        $obj = get_object_vars($orders);
-                        $request->session()->put('orders', $obj['ID_TB']);
-                        // $obj = get_object_vars($total);
-                        $request->session()->put('total', $obj['TOTAL_BAYAR']);
+                        if (!is_null($orders, $selesai)) {
+                            $obj = get_object_vars($orders);
+                            $request->session()->put('orders', $obj['ID_TB']);
+                            // $obj = get_object_vars($total);
+                            $request->session()->put('total', $obj['TOTAL_BAYAR']);
+                        } else {
+                            $request->session()->put('orders', '');
+                        }
+                        return view('home-sign-in', ['title' => 'Home']);
                     } else {
-                        $request->session()->put('orders', '');
+                        return back()->with('LoginError', 'Sign In Failed');
                     }
-                    return view('home-sign-in', ['title' => 'Home']);
                 } else {
                     return back()->with('LoginError', 'Sign In Failed');
                 }
-            } else {
-                return back()->with('LoginError', 'Sign In Failed');
             }
         }
     }
