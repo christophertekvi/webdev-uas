@@ -67,17 +67,15 @@
                         Description : <br>
                         <p>{{$m -> DESKRIPSI_MENU}}</p>
                     </p>
-                    <form method="POST">
-                        @csrf
-                        <div class="d-flex">
-                            <p style="margin-right: 10px" class="lead">
-                                Jumlah :
-                            </p>
-                            <input class="form-control text-center me-3" name="inputQuantity" type="number" value="1" min="1"  style="max-width: 6rem; height: 35px;">
-
-                        </div>
-                        <button style="background-color: #e25f21; width: 180px; color: white; border: solid 1px #b2b2b2;" class="btn btn-outline-dark flex-shrink-0" type="submit">
-                            <i class="bi-cart-plus-fill me-1"></i>
+                    <div class="d-flex">
+                        <p style="margin-right: 10px" class="lead">
+                            Jumlah :
+                        </p>
+                        <input class="form-control text-center me-3" name="inputQuantity" type="number" value="1" min="1"  style="max-width: 6rem; height: 35px;">
+                    </div>
+                    <form method="GET" action="/sign-in">
+                        <button style="width: 180px; background-color: white;color: black; border: solid 1px #e25f21; font-family: 'Outfit', sans-serif; font-size: smallerS; border-radius: 4px;" class="text-center buttonadd" type="submit">
+                            <i class="fas fa-shopping-cart"></i>
                             Add to cart
                         </button>
                     </form>

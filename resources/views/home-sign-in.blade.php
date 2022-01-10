@@ -44,7 +44,9 @@
       </div>
     </div>
 
-    <div class="topbar">
+    @include('partials.navbar-sign-in')
+
+    {{-- <div class="topbar">
       <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
         <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
@@ -94,7 +96,7 @@
             </ul>
         </div>
       </nav>
-    </div>
+    </div> --}}
 
 
 

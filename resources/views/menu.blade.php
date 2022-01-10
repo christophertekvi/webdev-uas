@@ -136,10 +136,8 @@
 
                     <div class="row" style="text-align: right; padding-right: 15px;">
                         <div class="column left">
-                            <form method="POST">
-                                @csrf
-                                <!-- Product actions-->
-                                <button class="text-center buttonadd" name="btnAddCart" value="{{ $m->ID_MENU }}">
+                            <form method="GET" action="/sign-in">
+                                <button class="text-center buttonadd" type="submit" >
                                     <i class="fas fa-shopping-cart"></i>
                                      Add
                                 </button>
