@@ -110,6 +110,7 @@ class SignInController extends Controller
 
                     $idPembeli = $obj['ID_PEMBELI'];
 
+
                     $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
                     if (!is_null($fav)) {
                         $obj = get_object_vars($fav);
@@ -119,7 +120,12 @@ class SignInController extends Controller
                     }
 
                     $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
-                    if (!is_null($orders)) {
+                    // $status = $obj['STATUS_PESANAN'];
+                    // $orders = DB::table('transaksi_beli')->where('STATUS_PESANAN', $status)->first();
+
+                    $selesai = DB::select('SELECT t.ID_TB, t.TOTAL_BAYAR FROM transaksi_beli t WHERE ID_PEMBELI=$idPembeli and (STATUS_PESANAN="On Process" or STATUS_PESANAN="Pending")');
+
+                    if (!is_null($orders, $selesai)) {
                         $obj = get_object_vars($orders);
                         $request->session()->put('orders', $obj['ID_TB']);
                         // $obj = get_object_vars($total);
