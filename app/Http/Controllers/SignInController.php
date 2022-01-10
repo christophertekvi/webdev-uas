@@ -117,11 +117,14 @@ class SignInController extends Controller
                     } else {
                         $request->session()->put('fav', '');
                     }
+
                     $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
 
                     if (!is_null($orders)) {
                         $obj = get_object_vars($orders);
                         $request->session()->put('orders', $obj['ID_TB']);
+                        // $obj = get_object_vars($total);
+                        $request->session()->put('total', $obj['TOTAL_BAYAR']);
                     } else {
                         $request->session()->put('orders', '');
                     }
