@@ -95,83 +95,96 @@
       </nav>
     </div>
 
-    <div class="cart_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="cart_container">
-                        <div class="cart_title">Cart<small> (1 item in your cart) </small></div>
-                        <div class="cart_items">
-                            <ul class="cart_list">
-                                <li class="cart_item clearfix">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                    <div class="cart_item_image"><img src="image/ayambakar.png" alt=""></div>
-                                    <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                        <div class="cart_item_name cart_info_col">
-                                            <div class="cart_item_title">Menu Name</div>
-                                            <div class="cart_item_text">Ayam Bakar</div>
+    <form method="POST">
+        <div class="cart_section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="cart_container">
+                            <div class="cart_title">Cart<small> ({{ \App\Models\Cart::getCount() }} item in your cart) </small></div>
+                            <div class="cart_items">
+                                @for ($m = 0; $m < count($cart); $m++)
+                                <ul class="cart_list">
+                                    <li class="cart_item clearfix">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         </div>
-                                        <div class="cart_item_quantity cart_info_col">
-                                            <div class="cart_item_title">Quantity</div>
-                                            <div class="cart_item_text">1</div>
+                                        <div class="cart_item_image"><img style="width: 100%; height: 90%;" src="data:image/png;base64,{{ chunk_split(base64_encode($cart[$m]["menu"]->FOTO_MENU)) }}" alt=""></div>
+                                        <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col" style="width: 20%">
+                                                <div class="cart_item_title">Menu Name</div>
+                                                <div class="cart_item_text">{{$cart[$m]["menu"]->NAMA_MENU}}</div>
+                                            </div>
+                                            <div class="cart_item_quantity cart_info_col">
+                                                <div class="cart_item_title">Quantity</div>
+                                                <div class="quantity" style="transform: translateY(30px);">
+                                                    <input class="form-control d-inline text-center me-3 txtJumlah" type="number" value="{{$cart[$m]["jumlah"]}}" style="max-width: 6rem">
+                                                    <button class="btn btn-outline-dark flex-shrink-0" type="button" name="btnUpdate" value="1">
+                                                        <i class="btnUpdate me-1"></i>
+                                                        Update
+                                                    </button>
+                                                </div>
+                                                {{-- <div class="cart_item_text">{{$cart[$m]["jumlah"]}}</div> --}}
+                                            </div>
+                                            <div class="cart_item_price cart_info_col">
+                                                <div class="cart_item_title">Price</div>
+                                                <div class="cart_item_text">Rp. {{$cart[$m]["menu"]->HARGA_MENU}}</div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Subtotal</div>
+                                                <div class="cart_item_text">Rp. {{$cart[$m]["menu"]->HARGA_MENU*$cart[$m]["jumlah"]}}</div>
+                                            </div>
                                         </div>
-                                        <div class="cart_item_price cart_info_col">
-                                            <div class="cart_item_title">Price</div>
-                                            <div class="cart_item_text">Rp. 15.000</div>
-                                        </div>
-                                        <div class="cart_item_total cart_info_col">
-                                            <div class="cart_item_title">Total</div>
-                                            <div class="cart_item_text">Rp. 15.000</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                                @endfor
 
-                            <ul class="cart_list">
-                              <li class="cart_item clearfix">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                  </div>
-                                  <div class="cart_item_image"><img src="image/nasiputih.png" alt=""></div>
-                                  <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                      <div class="cart_item_name cart_info_col">
-                                          <div class="cart_item_title">Menu Name</div>
-                                          <div class="cart_item_text">Nasi Putih</div>
-                                      </div>
-                                      <div class="cart_item_quantity cart_info_col">
-                                          <div class="cart_item_title">Quantity</div>
-                                          <div class="cart_item_text">1</div>
-                                      </div>
-                                      <div class="cart_item_price cart_info_col">
-                                          <div class="cart_item_title">Price</div>
-                                          <div class="cart_item_text">Rp. 7.000</div>
-                                      </div>
-                                      <div class="cart_item_total cart_info_col">
-                                          <div class="cart_item_title">Total</div>
-                                          <div class="cart_item_text">Rp. 7.000</div>
-                                      </div>
-                                  </div>
-                              </li>
-                          </ul>
-                        </div>
-                        <div class="order_total">
-                            <div style= "float: right; margin-right: 3%"class="order_total_content text-md-right">
-                                <div class="order_total_title">Order Total:</div>
-                                <div class="order_total_amount">Rp. 22.000</div>
+                                {{-- <ul class="cart_list">
+                                    <li class="cart_item clearfix">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        </div>
+                                        <div class="cart_item_image"><img src="image/nasiputih.png" alt=""></div>
+                                        <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Menu Name</div>
+                                                <div class="cart_item_text">Nasi Putih</div>
+                                            </div>
+                                            <div class="cart_item_quantity cart_info_col">
+                                                <div class="cart_item_title">Quantity</div>
+                                                <div class="cart_item_text">1</div>
+                                            </div>
+                                            <div class="cart_item_price cart_info_col">
+                                                <div class="cart_item_title">Price</div>
+                                                <div class="cart_item_text">Rp. 7.000</div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text">Rp. 7.000</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul> --}}
                             </div>
-                        </div>
+                            <div class="order_total">
+                                <div style= "float: right; margin-right: 3%"class="order_total_content text-md-right">
+                                    <div class="order_total_title">Order Total:</div>
+                                    @for ($m = 0; $m < count($cart); $m++)
+                                    <div class="order_total_amount">  {{ $cart[$m]["menu"]->HARGA_MENU*$cart[$m]["jumlah"]}} </div>
+                                    @endfor
+                                </div>
+                            </div>
 
-                        <div class="cart_buttons">
-                            <button href="/home-sign-in"  type="button" class="button cart_button_clear">Back</button>
-                            <button href="/checkout" style= "background-color: #e25f21;" type="button" class="button cart_button_checkout">Check Out</button>
+                            <div class="cart_buttons">
+                                <button href="/home-sign-in"  type="button" class="button cart_button_clear">Back</button>
+                                <button href="/checkout" style= "background-color: #e25f21;" type="button" class="button cart_button_checkout">Check Out</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <div>
         <button id="btnScrollTop" onclick="scrollToTop()">

@@ -54,7 +54,7 @@
     </div>
 
     @include('partials.navbar')
-    @include('message')
+
     {{-- <div class="topbar">
       <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
         <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>

@@ -74,7 +74,6 @@
                                     Jumlah :
                                 </p>
                                 <input class="form-control text-center me-3" name="inputQuantity" type="number" value="1" min="1"  style="max-width: 6rem; height: 35px;">
-
                             </div>
 
                             <button style="background-color: #e25f21; width: 180px; color: white; border: solid 1px #b2b2b2;" class="btn btn-outline-dark flex-shrink-0" type="submit">

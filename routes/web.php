@@ -126,3 +126,7 @@ Route::prefix("/menu")->group(function() {
     // Route::post("/", [MenuController::class, "addSingleCart"]);
     // Route::post("/{id}", [MenuController::class, "addDetailCart"]);
 });
+
+Route::prefix("/cart")->group(function() {
+    Route::get("/", [MenuController::class, "showCart"]);
+});

@@ -54,6 +54,7 @@
     </div>
 
     @include('partials.navbar-sign-in')
+    @include('message')
 
     <h1 style="text-align: center; margin: 50px 100px 50px 100px; font-family: Outfit, sans-serif;">
         MENU LIST
