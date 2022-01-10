@@ -76,6 +76,24 @@ class SignUpController extends Controller
             $request->session()->put('foto', $objsession['FOTO_PEMBELI']);
             $request->session()->put('noHP', $objsession['NO_HP']);
             $request->session()->put('email', $objsession['EMAIL']);
+
+            $idPembeli = $objsession['ID_PEMBELI'];
+
+            $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
+            if (!is_null($fav)) {
+                $obj = get_object_vars($fav);
+                $request->session()->put('fav', $obj['ID_MENU']);
+            } else {
+                $request->session()->put('fav', '');
+            }
+            $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+
+            if (!is_null($orders)) {
+                $obj = get_object_vars($orders);
+                $request->session()->put('orders', $obj['ID_TB']);
+            } else {
+                $request->session()->put('orders', '');
+            }
             return view('home-sign-in', ['title' => 'home']);
             }
             else{
