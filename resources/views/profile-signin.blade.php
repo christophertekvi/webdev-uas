@@ -187,7 +187,7 @@
                               <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
                             </div>
                           </div>
-                          <div class="controlinfo">
+                          {{-- <div class="controlinfo">
                             <div class="controltext">
                               <h5>Gender :</h5>
                             </div>
@@ -199,13 +199,13 @@
                                     <input type="radio" name="gender" id="cewek"> Male
                                 </div>
                             </div>
-                          </div>
+                          </div> --}}
                           <div class="controlinfo">
                             <div class="controltext">
                               <h5>Address :</h5>
                             </div>
                             <div class="inputAddress">
-                              <textarea id="address" name="address" rows="6" cols="25"> {{session('alamat')}} </textarea>
+                              <textarea id="address" name="address" rows="6" cols="28"> {{session('alamat')}} </textarea>
                             </div>
                           </div>
                           <div class="button-saveProfile">
