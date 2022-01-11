@@ -141,12 +141,13 @@
                             {{-- @if(Auth::user()->image)
                                 <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
                             @endif --}}
-                            {{-- @if (isnull( {{session('foto')}} ))
-                            <img src="image/user.png">
-                            @else
-                            <img src=" {{session('foto')}} "
-                            @endif --}}
-                            <img src="image/user.png">
+                            @if (session()->has('foto'))
+                            {{-- <img src="data:image/jpg;base64,{{ chunk_split(base64_encode({{session('foto')}})) }}" alt="..."> --}}
+                            <img src="'.$src.'">
+                            @elseif (session()->get('foto'))
+                            <img img src="data:image/JPG;base64,'.$src.'"/>'; ?>
+                            @endif
+                            {{-- <img src="image/user.png"> --}}
                             <input type="file" id="image" name="image">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
