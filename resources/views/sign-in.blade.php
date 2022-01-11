@@ -1,14 +1,15 @@
 @extends('layouts.blmMasuk')
 
 @section('isiWeb')
-@if (session()->has('LoginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('LoginError') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
 
+@if (session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('loginError') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
         </button>
     </div>
 @endif
+
 <link rel="stylesheet" href="css/Sign-In.css" />
 <link rel="stylesheet" href="css/template.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />

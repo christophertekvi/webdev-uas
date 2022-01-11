@@ -58,13 +58,13 @@
               Menu
             </h6>
             <p>
-              <a href="#!" class="text-reset">Foods</a>
+              <a href="/menu" class="text-reset">Foods</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Drinks</a>
+              <a href="/menu" class="text-reset">Drinks</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Bestseller</a>
+              <a href="/menu" class="text-reset">Bestseller</a>
             </p>
           </div>
           <!-- Grid column -->

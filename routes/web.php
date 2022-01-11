@@ -36,11 +36,9 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/sign-in', function () {
-    return view('sign-in',[
-        "title" => "Sign In"
-    ]);
-});
+Route::get('/sign-in', [SignInController::class, 'index']);
+Route::post('/sign-in', [SignInController::class, 'authenticate']);
+
 Route::post('/home-sign-in',[SignInController::class,'authenticate']);
 Route::get('/sign-up',[SignUpController::class,'index']);
 Route::post('/sign-up',[SignUpController::class,'store']);
