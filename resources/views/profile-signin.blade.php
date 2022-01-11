@@ -146,6 +146,7 @@
                             {{-- <img src="image/user.png"> --}}
                             @if (session()->get('foto'))
                             {{-- <img img src="data:image/JPG;base64,'.$src.'"/> --}}
+                            <img>
                             @else
                             <img src="image/user.png">
                             @endif
