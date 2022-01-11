@@ -71,7 +71,17 @@ class MenuController extends Controller
             "title" => "Detail Menu"
         ]);
     }
+
     public function addSingleCart(Request $request) {
+        $id = $request->input("btnAddCart");
+
+        $menu = Menu::query()->findOrFail($id);
+        Cart::add($menu);
+        return redirect()->back()
+            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+    }
+
+    public function updateQty(Request $request) {
         $id = $request->input("btnAddCart");
 
         $menu = Menu::query()->findOrFail($id);
@@ -85,7 +95,6 @@ class MenuController extends Controller
             "inputQuantity" => "numeric"
         ]);
         $menu = Menu::query()->findOrFail($id);
-        $idPembeli = SESSION('ID_PEMBELI');
         Cart::add($menu, $request->input("inputQuantity"));
         return redirect()->back()
             ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);

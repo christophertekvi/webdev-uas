@@ -111,12 +111,12 @@
                                 {{-- @for ($m = 0; $m < count($cart); $m++) --}}
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
-                                        <div class="form-check">
+                                        {{-- <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        </div>
-                                        <div class="cart_item_image"><img style="width: 100%; height: 90%;"  alt=""></div>
-                                        <div style= "width: 70%; margin-left: 15%;" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                            <div class="cart_item_name cart_info_col" style="width: 20%">
+                                        </div> --}}
+                                        <div class="cart_item_image"><img style="width: 100%; height: 90%; margin-top:11%" src="data:image/png;base64,{{ chunk_split(base64_encode($m->foto_menu)) }}" alt=""></div>
+                                        <div style= "width: 70%; margin-left: 5%; margin-top:1%" class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col" style="width: 30%">
                                                 <div class="cart_item_title">Menu Name</div>
                                                 <div class="cart_item_text">{{ $m->nama_menu }} </div>
                                             </div>
@@ -124,10 +124,14 @@
                                                 <div class="cart_item_title">Quantity</div>
                                                 <div class="quantity" style="transform: translateY(30px);">
                                                     <input class="form-control d-inline text-center me-3 txtJumlah" type="number" value="{{$m->qty}}" style="max-width: 6rem">
-                                                    <button class="btn btn-outline-dark flex-shrink-0" type="button" name="btnUpdate" value="1">
-                                                        <i class="btnUpdate me-1"></i>
-                                                        Update
-                                                    </button>
+                                                    <form method="POST">
+                                                        @csrf
+
+                                                        <button class="btn btn-outline-dark flex-shrink-0" type="button" name="btnUpdate" value="1">
+                                                            <i class="btnUpdate me-1"></i>
+                                                            Update
+                                                        </button>
+                                                    </form>
                                                 </div>
                                                 {{-- <div class="cart_item_text">{{ $m->qty }} </div> --}}
                                            </div>
@@ -145,19 +149,19 @@
                                 {{-- @endfor --}}
                                 @endforeach
                             </div>
-                            {{-- <div class="order_total">
+                            <div class="order_total">
                                 <div style= "float: right; margin-right: 3%"class="order_total_content text-md-right">
                                     <div class="order_total_title">Order Total:</div>
-                                    @for ($m = 0; $m < count($cart); $m++)
+                                    {{-- @for ($m = 0; $m < count($cart); $m++)
                                     <div class="order_total_amount">  {{ $cart[$m]["menu"]->HARGA_MENU*$cart[$m]["jumlah"]}} </div>
-                                    @endfor
+                                    @endfor --}}
                                 </div>
                             </div>
 
                             <div class="cart_buttons">
                                 <button href="/home-sign-in"  type="button" class="button cart_button_clear">Back</button>
                                 <button href="/checkout" style= "background-color: #e25f21;" type="button" class="button cart_button_checkout">Check Out</button>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>

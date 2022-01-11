@@ -15,11 +15,12 @@ class Cart
         //     Session::put("cart",[]);
         // }
         $id = session('idPembeli');
-        $data = Session::get("cart", []);
+        $data = DB::table('keranjang')->where('ID_PEMBELI', $id)->get();
+        //dd($data);
         $check = false;
         foreach ($data as $d) {
-            if ($d["menu"] -> ID_MENU == $menu -> ID_MENU) {
-                $d["jumlah"] = $d["jumlah"] + $jumlah;
+            if ($d -> id_menu == $menu -> ID_MENU) {
+                $d -> qty = $d -> qty + $jumlah;
                 $check = true;
             }
         }
@@ -40,17 +41,26 @@ class Cart
             ]);
         }
         else {
+            $data[] = [
+                "menu" => $menu,
+                "jumlah" => $jumlah
+            ];
+            DB::table('keranjang')
+            ->where([
+                ['ID_PEMBELI', '=', $id],
+                ['ID_MENU', '=', $menu -> ID_MENU]
+                ])
+            ->update(['QTY' => $d -> qty]);
 
-            // DB::table('keranjang')
-            // ->whereColumn([
-            //     ['ID_PEMBELI', '=', $id],
-            //     ['ID_MENU', '=',$menu -> ID_MENU]
-            //     ])
-            // ->update(['QTY' => $jumlah]);
         }
         // Session::put("cart", $data);
 
         //coba insert database
+
+    }
+
+    public static function updateCart()
+    {
 
     }
 
@@ -72,7 +82,10 @@ class Cart
 
     public static function getCount()
     {
-        //return count(Cart::keranjang());
+        $id = session('idPembeli');
+        $data = DB::table('keranjang')->where('ID_PEMBELI', $id)->get();
+        //dd(count($data));
+        return count($data);
         //return count(Cart::getAll());
     }
 

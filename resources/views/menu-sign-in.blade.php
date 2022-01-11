@@ -72,7 +72,7 @@
                     <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px;">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a href="{{ ('menu/'.$m->ID_MENU) }}"
+                            <a href="{{ ('menu-sign-in/'.$m->ID_MENU) }}"
                             class="fw-bolder"><h5 style="color: black">{{ $m -> NAMA_MENU }}</h5></a>
                         </div>
                         <!-- Add to favourite -->
