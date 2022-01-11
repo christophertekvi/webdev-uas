@@ -16,7 +16,7 @@ class SignInController extends Controller
      */
     public function index()
     {
-        return view('sign-in',[
+        return view('sign-in', [
             "title" => "Sign In"
         ]);
     }
@@ -100,40 +100,39 @@ class SignInController extends Controller
             return back()->with('LoginError', 'Sign In Failed');
         } else {
             $obj = get_object_vars($userdata);
-                if ($password == $obj['PASSWORD']) {
-                    $request->session()->put('email', $request->email);
-                    $request->session()->put('poin', $obj['POIN']);
-                    $request->session()->put('noHP', $obj['NO_HP']);
-                    $request->session()->put('alamat', $obj['ALAMAT']);
-                    $request->session()->put('gender', $obj['JENIS_KELAMIN']);
-                    $request->session()->put('firstname', $obj['FIRST_NAME']);
-                    $request->session()->put('lastname', $obj['LAST_NAME']);
-                    $request->session()->put('foto', $obj['FOTO_PEMBELI']);
-                    //titip buat id pembeli
-                    $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
-                    $idPembeli = $obj['ID_PEMBELI'];
-                    $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
-                    if (!is_null($fav)) {
-                        $obj = get_object_vars($fav);
-                        $request->session()->put('fav', $obj['ID_MENU']);
-                        $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
-                            if (!is_null($orders)) {
-                                $obj = get_object_vars($orders);
-                                 $request->session()->put('orders', $obj['ID_TB']);
-                                 return view('home-sign-in', ['title' => 'Home']);
-                            }
-                            else {
-                                $request->session()->put('orders', '');
-                            }
+            if ($password == $obj['PASSWORD']) {
+                $request->session()->put('email', $request->email);
+                $request->session()->put('poin', $obj['POIN']);
+                $request->session()->put('noHP', $obj['NO_HP']);
+                $request->session()->put('alamat', $obj['ALAMAT']);
+                $request->session()->put('gender', $obj['JENIS_KELAMIN']);
+                $request->session()->put('firstname', $obj['FIRST_NAME']);
+                $request->session()->put('lastname', $obj['LAST_NAME']);
+                $request->session()->put('foto', $obj['FOTO_PEMBELI']);
+                $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli');
+                $imageData = base64_encode(file_get_contents($image));
+                $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
+                //titip buat id pembeli
+                $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
+                $idPembeli = $obj['ID_PEMBELI'];
+                $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
+                if (!is_null($fav)) {
+                    $obj = get_object_vars($fav);
+                    $request->session()->put('fav', $obj['ID_MENU']);
+                    $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+                    if (!is_null($orders)) {
+                        $obj = get_object_vars($orders);
+                        $request->session()->put('orders', $obj['ID_TB']);
+                        return view('home-sign-in', ['title' => 'Home']);
+                    } else {
+                        $request->session()->put('orders', '');
                     }
-                    else {
-                        $request->session()->put('fav', '');
-                    }
+                } else {
+                    $request->session()->put('fav', '');
                 }
-                else
-                {
-                    return back()->with('LoginError', 'Sign In Failed');
-                }
+            } else {
+                return back()->with('LoginError', 'Sign In Failed');
+            }
         }
     }
 }
