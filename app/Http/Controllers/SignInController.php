@@ -111,9 +111,9 @@ class SignInController extends Controller
                 $request->session()->put('lastname', $obj['LAST_NAME']);
                 $request->session()->put('foto', $obj['FOTO_PEMBELI']);
                 // $image = session('foto');
-                $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli')->get();
-                $imageData = base64_encode(file_get_contents($image));
-                $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
+                // $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli')->get();
+                // $imageData = base64_encode(file_get_contents($image));
+                // $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
                 //titip buat id pembeli
                 $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
                 $idPembeli = $obj['ID_PEMBELI'];
@@ -129,7 +129,8 @@ class SignInController extends Controller
                     $obj = get_object_vars($orders);
                     $request->session()->put('orders', $obj['ID_TB']);
                     $request->session()->put('total', $obj['TOTAL_BAYAR']);
-                    return view('home-sign-in', ['title' => 'Home']);
+                    return view('home-sign-in',
+                        ['title' => 'Home']);
                 } else {
                     $request->session()->put('orders', '');
                 }

@@ -145,7 +145,7 @@
                             {{-- <img src="data:image/jpg;base64,{{ chunk_split(base64_encode({{session('foto')}})) }}" alt="..."> --}}
                             {{-- <img src="image/user.png"> --}}
                             @if (session()->get('foto'))
-                            <img img src="data:image/JPG;base64,'.$src.'"/>
+                            {{-- <img img src="data:image/JPG;base64,'.$src.'"/> --}}
                             @else
                             <img src="image/user.png">
                             @endif
