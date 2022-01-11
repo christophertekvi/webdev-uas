@@ -73,6 +73,7 @@ class MenuController extends Controller
     }
     public function addSingleCart(Request $request) {
         $id = $request->input("btnAddCart");
+
         $menu = Menu::query()->findOrFail($id);
         Cart::add($menu);
         return redirect()->back()
@@ -84,7 +85,7 @@ class MenuController extends Controller
             "inputQuantity" => "numeric"
         ]);
         $menu = Menu::query()->findOrFail($id);
-
+        $idPembeli = SESSION('ID_PEMBELI');
         Cart::add($menu, $request->input("inputQuantity"));
         return redirect()->back()
             ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
@@ -92,20 +93,28 @@ class MenuController extends Controller
 
     public function showCart()
     {
-        $cart = Cart::getAll();
+        // $cart = Cart::getAll();
         //pake database
-        // $cart = Cart::keranjang();
-
+        //  Cart::keranjang();
+        $id = session('idPembeli');
+        $cart = DB::table('keranjang')->where('ID_PEMBELI', $id)->get();
+        //dd($cart);
         return view("cart", [
             "cart" => $cart,
             "title" => "Cart"
         ]);
     }
 
+
+
     public function checkout()
     {
         $cart = Cart::getAll();
-
+        foreach ($cart as $c) {
+            $menu = $c["menu"];
+            $jumlah = $c["jumlah"];
+            //DB:beginTransaction();
+        }
 
     }
 }

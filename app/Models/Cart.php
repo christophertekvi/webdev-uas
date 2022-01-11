@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Http\Controllers\SignInController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +14,7 @@ class Cart
         // {
         //     Session::put("cart",[]);
         // }
+        $id = session('idPembeli');
         $data = Session::get("cart", []);
         $check = false;
         foreach ($data as $d) {
@@ -28,20 +28,30 @@ class Cart
                 "menu" => $menu,
                 "jumlah" => $jumlah
             ];
+            DB::table('keranjang')->insert([
+                'ID_PEMBELI' => $id,
+                'ID_MENU' => $menu -> ID_MENU,
+                'NAMA_MENU' => $menu -> NAMA_MENU,
+                'FOTO_MENU' => $menu -> FOTO_MENU,
+                'HARGA_MENU' => $menu -> HARGA_MENU,
+                'QTY' => $jumlah,
+                'TANGGAL_KIRIM' => null,
+                'CENTANG' => null
+            ]);
         }
-        Session::put("cart", $data);
+        else {
+
+            // DB::table('keranjang')
+            // ->whereColumn([
+            //     ['ID_PEMBELI', '=', $id],
+            //     ['ID_MENU', '=',$menu -> ID_MENU]
+            //     ])
+            // ->update(['QTY' => $jumlah]);
+        }
+        // Session::put("cart", $data);
 
         //coba insert database
-        DB::table('keranjang')->insert([
-            'ID_PEMBELI' => 'kayla@example.com',
-            'ID_MENU' => $menu -> ID_MENU,
-            'NAMA_MENU' => $menu -> NAMA_MENU,
-            'FOTO_MENU' => null,
-            'HARGA_MENU' => $menu -> HARGA_MENU,
-            'QTY' => $jumlah,
-            'TANGGAL_KIRIM' => null,
-            'CENTANG' => 0
-        ]);
+
     }
 
     public static function getAll()
@@ -50,18 +60,20 @@ class Cart
 
     }
 
-    // public static function keranjang($id)
-    // {
-    //     //coba panggil isi kranjang dri dtabase
-    //     $cart = DB::table('keranjang')->where('ID_PEMBELI', $id);
+    public static function keranjang()
+    {
+        //coba panggil isi kranjang dri dtabase
 
-    //     return Session::get("cart", []);
+        //DB::table('keranjang')->where('ID_PEMBELI', session('ID_PEMBELI'))->get();
 
-    // }
+
+        // return Session::get("cart", []);
+    }
 
     public static function getCount()
     {
-        return count(Cart::getAll());
+        //return count(Cart::keranjang());
+        //return count(Cart::getAll());
     }
 
     // private static $cart_menu = [
