@@ -141,11 +141,13 @@
                             {{-- @if(Auth::user()->image)
                                 <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
                             @endif --}}
-                            @if (session()->has('foto'))
+                            {{-- @if (session()->has('foto')) --}}
                             {{-- <img src="data:image/jpg;base64,{{ chunk_split(base64_encode({{session('foto')}})) }}" alt="..."> --}}
-                            <img src="'.$image.'">
-                            @elseif (session()->get('foto'))
-                            <img img src="data:image/JPG;base64,'.$src.'"/>'; ?>
+                            {{-- <img src="image/user.png"> --}}
+                            @if (session()->get('foto'))
+                            <img img src="data:image/JPG;base64,'.$src.'"/>
+                            @else
+                            <img src="image/user.png">
                             @endif
                             {{-- <img src="image/user.png"> --}}
                             <input type="file" id="image" name="image">
@@ -304,6 +306,7 @@
                     </div>
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
+
                             <h3>You do not have any favorite menus yet.</h3>
 
                         </div>
