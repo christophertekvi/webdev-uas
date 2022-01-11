@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Makan Yuk</title>
+    <title>Makan Yuk | {{ $title }}</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css/template.css" />
     <link rel="stylesheet" href="css/checkout.css">
     <script type="text/javascript" src="js/template.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -41,59 +46,10 @@
             </div>
         </div>
 
-        <div class="topbar">
-            <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
-              <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
-              <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-                  <ul class="navbar-nav w-100 justify-content-center">
-                      <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="/home-sign-in">HOME</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/menu-sign-in" >MENU</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/about-sign-in">ABOUT US</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/faqs-sign-in">FAQS</a>
-                      </li>
-                  </ul>
-                  <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                      <a class="text-reset me-3" href="/cart">
-                        <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
-                      </a>
-                      <a
-                        style="padding-right: 18%;"
-                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                        href="#"
-                        id="navbarDropdownMenuLink"
-                        role="button"
-                        data-mdb-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                      <i class="fas fa-user" style="color: #ffffff;"></i>
-                      </a>
-                      <ul
-                        class="dropdown-menu dropdown-menu-end"
-                        aria-labelledby="navbarDropdownMenuLink"
-                      >
-                      <li>
-                        <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
-                      </li>
-                      <li>
-                        <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
-                      </li>
-                      </ul>
-                  </ul>
-              </div>
-            </nav>
-        </div>
-
-
+@include('partials.navbar-sign-in')
 
         <div class="container1">
-            <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">Checkout</p>
+            <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">CHECKOUT</p>
         </div>
         <div class="container2" style="margin-top: 30px;">
             <div class="controlcontainer2">
@@ -102,10 +58,14 @@
                         <p>Tanggal Pesanan : .....</p>
                     </div>
                 </div>
+
+
+
                 <div class="bagian2" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Alamat :</h1>
                     <textarea name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;"></textarea>
                 </div>
+
                 <div class="bagian3" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
                     <div class="pesanan" style="border-radius: 10px;">
