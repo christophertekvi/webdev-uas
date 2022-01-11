@@ -115,12 +115,6 @@ class SignInController extends Controller
                     if (!is_null($fav)) {
                         $obj = get_object_vars($fav);
                         $request->session()->put('fav', $obj['ID_MENU']);
-                        $userscoba = DB::table('transaksi_beli')
-                        ->select('ID_TB')
-                        ->where('ID_PEMBELI', $obj['ID_PEMBELI'])
-                        ->where('STATUS_PESANAN','Cancelled')
-                        ->get()
-                        ->toArray();
                              return view('home-sign-in', ['title' => 'Home']);
                     } else {
                         $request->session()->put('fav', '');
