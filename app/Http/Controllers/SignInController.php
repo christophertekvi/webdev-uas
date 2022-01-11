@@ -110,6 +110,8 @@ class SignInController extends Controller
                     $request->session()->put('firstname', $obj['FIRST_NAME']);
                     $request->session()->put('lastname', $obj['LAST_NAME']);
                     $request->session()->put('foto', $obj['FOTO_PEMBELI']);
+                    //titip buat id pembeli
+                    $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
                     $idPembeli = $obj['ID_PEMBELI'];
                     $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
                     if (!is_null($fav)) {
