@@ -122,3 +122,7 @@ Route::prefix("/cart")->group(function() {
     Route::get("/", [MenuController::class, "showCart"]);
     Route::post("/", [MenuController::class, "updateQty"]);
 });
+
+Route::get('/changePassword', [App\Http\Controllers\SignInController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+Route::post('/changePassword', [App\Http\Controllers\SignInController::class, 'changePasswordPost'])->name('changePasswordPost');
+
