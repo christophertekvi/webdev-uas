@@ -420,17 +420,17 @@
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    function openOrders(evt, tipePesanan) {
-      var x, pesanandalamproses, tabOrders;
-      pesanandalamproses = document.getElementsByClassName("pesanandalamproses");
-      for (x = 0; x < pesanandalamproses.length; x++) {
-        pesanandalamproses[x].style.display = "none";
+    function openOrders(evt, Orders) {
+      var x, orderOngoing, tabOrders;
+      orderOngoing = document.getElementsByClassName("orderOngoing");
+      for (x = 0; x < orderOngoing.length; x++) {
+        orderOngoing[x].style.display = "none";
       }
       tabOrders = document.getElementsByClassName("tabOrders");
       for (x = 0; x < tabOrders.length; x++) {
         tabOrders[x].className = tabOrders[x].className.replace(" active", "");
       }
-      document.getElementById(tipePesanan).style.display = "block";
+      document.getElementById(Orders).style.display = "block";
       evt.currentTarget.className += " active";
     }
     document.getElementById("ongoing-tab").click();
