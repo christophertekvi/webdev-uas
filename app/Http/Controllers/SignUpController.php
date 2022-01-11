@@ -65,36 +65,7 @@ class SignUpController extends Controller
                 'PASSWORD'=>$request->password,
                 'PEMBELI_DELETE'=>0
             ]);
-            $request->session()->put('ID',$obj['`GenIdPembeli`()']);
-            $usersession = DB::table('pembeli')->where('ID_PEMBELI', session('ID'))->first();
-            $objsession = get_object_vars($usersession);
-            $request->session()->put('poin',$objsession['POIN']);
-            $request->session()->put('alamat', $objsession['ALAMAT']);
-            $request->session()->put('gender', $objsession['JENIS_KELAMIN']);
-            $request->session()->put('firstname', $objsession['FIRST_NAME']);
-            $request->session()->put('lastname', $objsession['LAST_NAME']);
-            $request->session()->put('foto', $objsession['FOTO_PEMBELI']);
-            $request->session()->put('noHP', $objsession['NO_HP']);
-            $request->session()->put('email', $objsession['EMAIL']);
-
-            $idPembeli = $objsession['ID_PEMBELI'];
-
-            $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
-            if (!is_null($fav)) {
-                $obj = get_object_vars($fav);
-                $request->session()->put('fav', $obj['ID_MENU']);
-            } else {
-                $request->session()->put('fav', '');
-            }
-            $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
-
-            if (!is_null($orders)) {
-                $obj = get_object_vars($orders);
-                $request->session()->put('orders', $obj['ID_TB']);
-            } else {
-                $request->session()->put('orders', '');
-            }
-            return view('home-sign-in', ['title' => 'Home']);
+            return view('sign-in', ['title' => 'Sign In']);
             }
             else{
                 return back()->with('SignUpError', 'Sign Up Failed!');
