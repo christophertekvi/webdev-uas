@@ -100,7 +100,6 @@ class SignInController extends Controller
             return back()->with('LoginError', 'Sign In Failed');
         } else {
             $obj = get_object_vars($userdata);
-            if ($userdata) {
                 if ($password == $obj['PASSWORD']) {
                     $request->session()->put('email', $request->email);
                     $request->session()->put('poin', $obj['POIN']);
@@ -115,24 +114,24 @@ class SignInController extends Controller
                     if (!is_null($fav)) {
                         $obj = get_object_vars($fav);
                         $request->session()->put('fav', $obj['ID_MENU']);
-                             return view('home-sign-in', ['title' => 'Home']);
-                    } else {
+                        $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
+                            if (!is_null($orders)) {
+                                $obj = get_object_vars($orders);
+                                 $request->session()->put('orders', $obj['ID_TB']);
+                                 return view('home-sign-in', ['title' => 'Home']);
+                            }
+                            else {
+                                $request->session()->put('orders', '');
+                            }
+                    }
+                    else {
                         $request->session()->put('fav', '');
                     }
-                    $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
-                    if (!is_null($orders)) {
-                        $obj = get_object_vars($orders);
-                        $request->session()->put('orders', $obj['ID_TB']);
-                    } else {
-                        $request->session()->put('orders', '');
-                    }
-                    return view('home-sign-in', ['title' => 'home']);
-                } else {
+                }
+                else
+                {
                     return back()->with('LoginError', 'Sign In Failed');
                 }
-            } else {
-                return back()->with('LoginError', 'Sign In Failed');
-            }
         }
     }
 }
