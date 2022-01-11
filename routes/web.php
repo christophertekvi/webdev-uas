@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\User;
 use App\Models\Cart;
 use App\Http\Controllers\Controller;
@@ -82,11 +83,7 @@ Route::get('/detail-pesanan', function () {
     ]);
 });
 
-Route::get('/checkout', function () {
-    return view('checkout',[
-        "title" => "Checkout"
-    ]);
-});
+Route::get('/checkout', [CheckoutController::class, 'index']);
 
 
 // Route::get('/detailmenu', function () {
@@ -123,6 +120,7 @@ Route::prefix("/menu")->group(function() {
 
 Route::prefix("/cart")->group(function() {
     Route::get("/", [MenuController::class, "showCart"]);
+    Route::post("/", [MenuController::class, "updateQty"]);
 });
 
 Route::get('/changePassword', [App\Http\Controllers\SignInController::class, 'showChangePasswordGet'])->name('changePasswordGet');
