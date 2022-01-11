@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\User;
 use App\Models\Cart;
 use App\Http\Controllers\Controller;
@@ -73,12 +74,7 @@ Route::get('/profile-signin', function () {
     ]);
 });
 
-Route::get('/cart', function () {
-    return view('cart',[
-        "title" => "Cart",
-        // "post" => Cart::all()
-    ]);
-});
+Route::get('/cart', [CartController::class, 'index']);
 
 Route::get('/detail-pesanan', function () {
     return view('detail-pesanan',[
