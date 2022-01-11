@@ -69,7 +69,7 @@ ul {
 .cart_item {
     width: 100%;
     padding: 15px;
-    padding-right: 46px
+    padding-right: 30px
 }
 
 .cart_item_image {
@@ -196,7 +196,7 @@ ul {
 }
 
 .cart_item_image {
-    transform:translateX(55%);
+    transform:translateX(30%);
 }
 
 .cart_item {

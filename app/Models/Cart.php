@@ -59,9 +59,21 @@ class Cart
 
     }
 
-    public static function updateCart()
+    public static function updateCart($menu, $jumlah)
     {
+        $id = session('idPembeli');
+        $data = DB::table('keranjang')->where('ID_PEMBELI', $id)->get();
 
+        $data[] = [
+            "menu" => $menu,
+            "jumlah" => $jumlah
+        ];
+        DB::table('keranjang')
+        ->where([
+            ['ID_PEMBELI', '=', $id],
+            ['ID_MENU', '=', $menu -> ID_MENU]
+            ])
+        ->update(['QTY' => $jumlah]);
     }
 
     public static function getAll()

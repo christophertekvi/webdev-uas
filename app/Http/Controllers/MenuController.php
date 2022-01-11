@@ -81,13 +81,15 @@ class MenuController extends Controller
             ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
     }
 
-    public function updateQty(Request $request) {
-        $id = $request->input("btnAddCart");
-
+    public function updateQty(Request $request, $id) {
+        //$id = $request->input("btnUpdate");
+        $request->validate([
+            "inputQuantity" => "numeric"
+        ]);
         $menu = Menu::query()->findOrFail($id);
-        Cart::add($menu);
+        Cart::updateCart($menu, $request->input("inputQuantity"));
         return redirect()->back()
-            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+            ->with("success", "Quantity Updated ".$menu->NAMA_MENU);
     }
 
     public function addDetailCart(Request $request, $id) {

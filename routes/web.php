@@ -123,4 +123,5 @@ Route::prefix("/menu")->group(function() {
 
 Route::prefix("/cart")->group(function() {
     Route::get("/", [MenuController::class, "showCart"]);
+    Route::post("/", [MenuController::class, "updateQty"]);
 });
