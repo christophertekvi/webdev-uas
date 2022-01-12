@@ -133,8 +133,8 @@
                         <button class="tablinks" onclick="openCity(event, 'EditProfile')" id="defaultOpen">Edit Profile</button>
                         <button class="tablinks" onclick="openCity(event, 'ChangePass')">Change Password</button>
                         <button class="tablinks" onclick="openCity(event, 'Orders')">Orders</button>
-                        <button class="tablinks" onclick="openCity(event, 'FavMenus')">Favorite Menus</button>
-                        <button class="tablinks" onclick="openCity(event, 'SIgnOut')">Sign Out</button>
+                        <button class="tablinks" onclick="openCity(event, 'FavMenu')">Favorite Menus</button>
+                        <button class="tablinks" onclick="openCity(event, 'SignOut')">Sign Out</button>
                     </div>
                     <div id="EditProfile" class="tabcontent">
                         <div class="changeProfilePic">
@@ -142,11 +142,10 @@
                                 <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
                             @endif --}}
                             {{-- @if (session()->has('foto')) --}}
-                            {{-- <img src="data:image/jpg;base64,{{ chunk_split(base64_encode({{session('foto')}})) }}" alt="..."> --}}
                             {{-- <img src="image/user.png"> --}}
-                            @if (session()->get('foto'))
+                            @if (!empty(session('foto')))
+                            <img src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
                             {{-- <img img src="data:image/JPG;base64,'.$src.'"/> --}}
-                            <img>
                             @else
                             <img src="image/user.png">
                             @endif
@@ -486,6 +485,11 @@
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
+        //   if(tabcontent[i].id == cityName){
+        //     tabcontent[i].style.display = "block";
+        //   }else{
+        //     tabcontent[i].style.display = "none";
+        //   }
         tabcontent[i].style.display = "none";
       }
       tablinks = document.getElementsByClassName("tablinks");

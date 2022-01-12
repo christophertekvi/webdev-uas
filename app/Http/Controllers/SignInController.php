@@ -115,8 +115,8 @@ class SignInController extends Controller
                 // $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli')->get();
                 // $imageData = base64_encode(file_get_contents($image));
                 // $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
+                
                 //titip buat id pembeli
-
                 $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
                 $idPembeli = $obj['ID_PEMBELI'];
                 $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->where('STATUS_PESANAN', '=', 'On Process')->where('STATUS_PESANAN', '=', 'Pending')->first();

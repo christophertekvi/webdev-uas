@@ -115,6 +115,7 @@
                       <br> 6. Orders are closed at 16.00 WIB for next day deliveries.
                       <br> 7. You will receive points in every transactions you made.
                       <br> 8. For every Rp1000 you will receive 1 point.
+                      <br> 9. Cancelling orders are maximum one day before delivery time. If you cancel any later then your orders are still can be cancelled, but there would be no refund.
                     </div>
                   </div>
                 </div>
@@ -180,6 +181,19 @@
                     <div class="accordion-body" style="text-align: justify;">
                       Click on the profile icon on the top-right corner then, click profile. After that, click "Orders" on the left horizontal tab. Here, you can see all of your ongoing and completed orders.
                       <br><br>*Make sure you are signed in to your account.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSeven">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        How do I cancel my order?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" style="text-align: justify;">
+                        You can contact us through WhatsApp on +62 821 3456 7891.
+                      </div>
                     </div>
                   </div>
                 </div>
