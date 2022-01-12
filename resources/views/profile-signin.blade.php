@@ -338,7 +338,7 @@
                         </div>
                     </div>
                     </div>
-                    <div id="Orders" class="tabcontent">
+                    {{-- <div id="Orders" class="tabcontent">
                       <div class="buttoncontrolOrders">
                         <div class="button-ongoingTab">
                           <button class="tabOrders" onclick="openOrders(event, 'orderOngoing')" id="ongoing-tab">Ongoing</button>
@@ -348,7 +348,39 @@
                         </div>
                       </div>
                       {{-- @foreach ($orders as $o) --}}
-                        <div id="orderOngoing" class="orderOngoing">
+                        {{-- <div id="orderOngoing" class="orderOngoing">
+                            <div class="orderOngoingAll">
+                                <ul class="cart_list">
+                                    <li class="cart_item clearfix">
+                                        <div style= "width: 70%; " class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Transaction ID</div>
+                                                <div class="cart_item_text"> {{session('orders')}} </div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text">Rp. {{session('total')}}</div>
+                                            </div>
+                                        </div> --}}
+                                        {{-- <div class="detail">
+                                            <a> Detail </a>
+                                        </div> --}}
+                                    {{-- </li>
+                                </ul> --}}
+                            {{-- <p style="margin: 100px">  {{session('orders')}} </p> --}}
+                            {{-- </div>
+                        </div> --}}
+                      {{-- @endforeach --}}
+
+                      {{-- <div id="orderCompleted" class="orderOngoing">
+
+                      </div>
+                    </div> --}}
+                    <div id="Orders" class="tabcontent">
+                        <button class="tablink-orders" onclick="openPage('Ongoing', this, 'rgba(246, 246, 246, 1)')" id="default">Ongoing</button>
+                        <button class="tablink-orders" onclick="openPage('Completed', this, 'rgba(246, 246, 246, 1)')">Completed</button>
+
+                        <div id="Ongoing" class="tabcontent-orders">
                             <div class="orderOngoingAll">
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
@@ -362,20 +394,32 @@
                                                 <div class="cart_item_text">Rp. {{session('total')}}</div>
                                             </div>
                                         </div>
-                                        {{-- <div class="detail">
-                                            <a> Detail </a>
-                                        </div> --}}
                                     </li>
                                 </ul>
-                            {{-- <p style="margin: 100px">  {{session('orders')}} </p> --}}
                             </div>
                         </div>
-                      {{-- @endforeach --}}
 
-                      <div id="orderCompleted" class="orderOngoing">
-
-                      </div>
+                        <div id="Completed" class="tabcontent-orders">
+                            <div class="orderOngoingAll">
+                                <ul class="cart_list">
+                                    <li class="cart_item clearfix">
+                                        <div style= "width: 70%; " class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Transaction ID</div>
+                                                <div class="cart_item_text"> {{session('orders')}} </div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text">Rp. {{session('total')}}</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
                             @if (session()->get('fav'))
@@ -499,23 +543,49 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-
-    // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    function openOrders(evt, Orders) {
-      var x, orderOngoing, tabOrders;
-      orderOngoing = document.getElementsByClassName("orderOngoing");
-      for (x = 0; x < orderOngoing.length; x++) {
-        orderOngoing[x].style.display = "none";
-      }
-      tabOrders = document.getElementsByClassName("tabOrders");
-      for (x = 0; x < tabOrders.length; x++) {
-        tabOrders[x].className = tabOrders[x].className.replace(" active", "");
-      }
-      document.getElementById(Orders).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    document.getElementById("ongoing-tab").click();
+
+
+    // function openOrders(evt, Orders) {
+    //   var x, orderOngoing, tabOrders;
+    //   orderOngoing = document.getElementsByClassName("orderOngoing");
+    //   for (x = 0; x < orderOngoing.length; x++) {
+    //     orderOngoing[x].style.display = "none";
+    //   }
+    //   tabOrders = document.getElementsByClassName("tabOrders");
+    //   for (x = 0; x < tabOrders.length; x++) {
+    //     tabOrders[x].className = tabOrders[x].className.replace(" active", "");
+    //   }
+    //   document.getElementById(Orders).style.display = "block";
+    // //   document.getElementById(Orders).style = "background-color: rgb(255, 144, 103);";
+    //   evt.currentTarget.className += " active";
+    // }
+    // document.getElementById("ongoing-tab").click();
+
+
+        function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, orders, tablink;
+        orders = document.getElementsByClassName("tabcontent-orders");
+        for (i = 0; i < orders.length; i++) {
+            orders[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablink = document.getElementsByClassName("tablink-orders");
+        for (i = 0; i < tablink.length; i++) {
+            tablink[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("default").click();
     </script>
     </body>
 

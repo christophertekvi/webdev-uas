@@ -209,7 +209,7 @@
     height: 100%;
     border: 0.5px solid black;
     /* color: rgb(255, 144, 103); */
-    background-color: rgb(255, 144, 103);
+    /* background-color: rgb(255, 144, 103); */
 }
 .button-completedTab {
     width: 50%;
@@ -240,4 +240,44 @@
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
     margin: 10px 50px 200px 0;
+}
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink-orders {
+    background-color: rgb(255, 144, 103);
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink-orders:hover {
+    background-color: rgb(254, 133, 89);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent-orders {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#Ongoing {
+    background-color: rgba(246, 246, 246, 1);
+}
+#Completed {
+    background-color: rgba(246, 246, 246, 1);
 }
