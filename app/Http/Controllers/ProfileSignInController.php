@@ -32,6 +32,12 @@ class ProfileSignInController extends Controller
         ]);
     }
 
+    public function list(){
+        $imgFavMenu = DB::table('menu')
+        ->where('ID_MENU', session('fav'))
+        ->get();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

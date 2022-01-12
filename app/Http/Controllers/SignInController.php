@@ -115,16 +115,17 @@ class SignInController extends Controller
                 // $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli')->get();
                 // $imageData = base64_encode(file_get_contents($image));
                 // $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
-                
+
                 //titip buat id pembeli
                 $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
                 $idPembeli = $obj['ID_PEMBELI'];
-                $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->where('STATUS_PESANAN', '=', 'On Process')->where('STATUS_PESANAN', '=', 'Pending')->first();
+                $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
                 $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
-
                 if (!is_null($fav)) {
                     $obj = get_object_vars($fav);
                     $request->session()->put('fav', $obj['ID_MENU']);
+                    // $menulist = DB::table('menu')->where('ID_MENU', $favid);
+                    // $request->session()->put('favfoto', $obj['FOTO_MENU']);
                 } else {
                     $request->session()->put('fav', '');
                 }
@@ -133,13 +134,17 @@ class SignInController extends Controller
                     $obj = get_object_vars($orders);
                     $request->session()->put('orders', $obj['ID_TB']);
                     $request->session()->put('total', $obj['TOTAL_BAYAR']);
-                    return view('home-sign-in',
-                        ['title' => 'Home']);
+                    return view(
+                        'home-sign-in',
+                        ['title' => 'Home']
+                    );
                 } else {
                     $request->session()->put('orders', '');
 
-                    return view('home-sign-in',
-                        ['title' => 'Home']);
+                    return view(
+                        'home-sign-in',
+                        ['title' => 'Home']
+                    );
                 }
             } else {
                 return back()->with('LoginError', 'Sign In Failed');

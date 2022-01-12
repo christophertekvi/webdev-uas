@@ -138,18 +138,11 @@
                     </div>
                     <div id="EditProfile" class="tabcontent">
                         <div class="changeProfilePic">
-                            {{-- @if(Auth::user()->image)
-                                <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="..." style="width: 100px;height: 100px; margin: 50px 300px 20px 300px; ">
-                            @endif --}}
-                            {{-- @if (session()->has('foto')) --}}
-                            {{-- <img src="image/user.png"> --}}
                             @if (!empty(session('foto')))
                             <img src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
-                            {{-- <img img src="data:image/JPG;base64,'.$src.'"/> --}}
                             @else
                             <img src="image/user.png">
                             @endif
-                            {{-- <img src="image/user.png"> --}}
                             <input type="file" id="image" name="image">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
@@ -338,44 +331,6 @@
                         </div>
                     </div>
                     </div>
-                    {{-- <div id="Orders" class="tabcontent">
-                      <div class="buttoncontrolOrders">
-                        <div class="button-ongoingTab">
-                          <button class="tabOrders" onclick="openOrders(event, 'orderOngoing')" id="ongoing-tab">Ongoing</button>
-                        </div>
-                        <div class="button-completedTab">
-                          <button class="tabOrders" onclick="openOrders(event, 'orderCompleted')">Completed</button>
-                        </div>
-                      </div>
-                      {{-- @foreach ($orders as $o) --}}
-                        {{-- <div id="orderOngoing" class="orderOngoing">
-                            <div class="orderOngoingAll">
-                                <ul class="cart_list">
-                                    <li class="cart_item clearfix">
-                                        <div style= "width: 70%; " class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                            <div class="cart_item_name cart_info_col">
-                                                <div class="cart_item_title">Transaction ID</div>
-                                                <div class="cart_item_text"> {{session('orders')}} </div>
-                                            </div>
-                                            <div class="cart_item_total cart_info_col">
-                                                <div class="cart_item_title">Total</div>
-                                                <div class="cart_item_text">Rp. {{session('total')}}</div>
-                                            </div>
-                                        </div> --}}
-                                        {{-- <div class="detail">
-                                            <a> Detail </a>
-                                        </div> --}}
-                                    {{-- </li>
-                                </ul> --}}
-                            {{-- <p style="margin: 100px">  {{session('orders')}} </p> --}}
-                            {{-- </div>
-                        </div> --}}
-                      {{-- @endforeach --}}
-
-                      {{-- <div id="orderCompleted" class="orderOngoing">
-
-                      </div>
-                    </div> --}}
                     <div id="Orders" class="tabcontent">
                         <button class="tablink-orders" onclick="openPage('Ongoing', this, 'rgba(246, 246, 246, 1)')" id="default">Ongoing</button>
                         <button class="tablink-orders" onclick="openPage('Completed', this, 'rgba(246, 246, 246, 1)')">Completed</button>
@@ -423,13 +378,53 @@
                         </div>
                     </div>
 
-
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
                             @if (session()->get('fav'))
                             <p> {{session('fav')}} </p>
+                            <div class="container">
+                                <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                                    @foreach ($imgFavMenu as $f)
+                                    <div class="col mb-5">
+                                        <div class="containermenu">
+                                            <!-- Product image-->
+                                            <img class="card-img-top" src="data:image/jpg;base64,{{ chunk_split(base64_encode($f->FOTO_MENU)) }}" alt="...">
+
+                                            <!-- Product details-->
+                                            <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px; padding-bottom: 0px; height: 70px;">
+                                                <div class="text-center">
+                                                    <!-- Product name-->
+                                                    <a href="{{ ('menu/'.$m->ID_MENU) }}"
+                                                    class="fw-bolder"><h5 style="color: black">{{ $f->NAMA_MENU }}</h5></a>
+                                                </div>
+                                                <!-- Add to favourite -->
+
+                                            </div>
+                                            <div class="text-center" style="margin-bottom: 15px;">
+                                                Rp. {{ $f->HARGA_MENU }}
+                                            </div>
+
+                                            <div class="row" style="text-align: right; padding-right: 15px;">
+                                                <div class="column left">
+                                                    <form method="GET" action="/sign-in">
+                                                        <button class="text-center buttonadd" type="submit" >
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                             Add
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                                <div class="column right">
+                                                    <i class="far fa-heart"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
                             @else
-                            <h3>You do not have any favorite menus yet.</h3>
+                            <h5 style="margin: 100px 160px">You do not have any favorite menus yet.</h5>
                             @endif
                         </div>
                     </div>
@@ -529,44 +524,23 @@
   <!-- Footer -->
 
   <script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        //   if(tabcontent[i].id == cityName){
-        //     tabcontent[i].style.display = "block";
-        //   }else{
-        //     tabcontent[i].style.display = "none";
-        //   }
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    document.getElementById("defaultOpen").click();
+        function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
 
 
-    // function openOrders(evt, Orders) {
-    //   var x, orderOngoing, tabOrders;
-    //   orderOngoing = document.getElementsByClassName("orderOngoing");
-    //   for (x = 0; x < orderOngoing.length; x++) {
-    //     orderOngoing[x].style.display = "none";
-    //   }
-    //   tabOrders = document.getElementsByClassName("tabOrders");
-    //   for (x = 0; x < tabOrders.length; x++) {
-    //     tabOrders[x].className = tabOrders[x].className.replace(" active", "");
-    //   }
-    //   document.getElementById(Orders).style.display = "block";
-    // //   document.getElementById(Orders).style = "background-color: rgb(255, 144, 103);";
-    //   evt.currentTarget.className += " active";
-    // }
-    // document.getElementById("ongoing-tab").click();
-
-
+        //tab ongoing & completed ----------------------------
         function openPage(pageName, elmnt, color) {
         // Hide all elements with class="tabcontent" by default */
         var i, orders, tablink;
@@ -591,7 +565,6 @@
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("default").click();
     </script>
+
     </body>
-
-
 </html>
