@@ -74,7 +74,7 @@ Route::get('/profile-signin',[ProfileSignInController::class,'index']);
 // });
 
 
-Route::get('/cart', [CartController::class, 'index']);
+//Route::get('/cart', [CartController::class, 'index']);
 
 Route::get('/detail-pesanan', function () {
     return view('detail-pesanan',[
