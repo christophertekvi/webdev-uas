@@ -341,7 +341,7 @@
                                 @foreach ($dataordersonprocess as $dtp)
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
-                                        <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
+                                        <div style= "width: 100%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
                                             <div class="cart_item_name cart_info_col">
                                                 <div class="cart_item_title">Transaction ID : </div>
                                                 <div class="cart_item_text" style="color:black"> {{ $dtp->ID_TB }} </div>
@@ -350,10 +350,11 @@
                                                 <div class="cart_item_title">Total</div>
                                                 <div class="cart_item_text" style="color:black">Rp. {{ $dtp->SUBTOTAL_TRANSAKSI }}</div>
                                             </div>
+                                            <div class="cart_item_title d-flex justify-content-between">
+                                                <a href="/detailmenu-sign-in">Details</a>
+                                            </div>
                                         </div>
-                                        <div class="detail d-flex justify-content-right">
-                                            <a href="/detailmenu" style="padding-top: 18px; padding-left: 100px">Details</a>
-                                        </div>
+
                                     </li>
                                 </ul>
                                 @endforeach
@@ -365,7 +366,7 @@
                                 @foreach ($dataorderscomplete as $dtc)
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
-                                        <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
+                                        <div style= "width: 100%%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
                                             <div class="cart_item_name cart_info_col" >
                                                 <div class="cart_item_title">Transaction ID : </div>
                                                 <div class="cart_item_text" style="color:black"> {{ $dtc->ID_TB }} </div>
@@ -373,6 +374,9 @@
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
                                                 <div class="cart_item_text" style="color:black">Rp. {{ $dtc->SUBTOTAL_TRANSAKSI }}</div>
+                                            </div>
+                                            <div class="cart_item_title d-flex justify-content-between">
+                                                <a href="/detailmenu-sign-in">Details</a>
                                             </div>
                                         </div>
                                     </li>
