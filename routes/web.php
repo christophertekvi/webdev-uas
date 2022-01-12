@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProfileSignInController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 
@@ -65,11 +66,7 @@ Route::get('/faqs-sign-in', function () {
 //     ]);
 // });
 
-Route::get('/profile-signin', function () {
-    return view('profile-signin',[
-        "title" => "Profile"
-    ]);
-});
+Route::get('/profile-signin',[ProfileSignInController::class,'index']);
 
 Route::get('/cart', [CartController::class, 'index']);
 
