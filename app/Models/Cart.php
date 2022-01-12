@@ -68,7 +68,7 @@ class Cart
             "menu" => $menu,
             "jumlah" => $jumlah
         ];
-        if($jumlah = 0)
+        if($jumlah != 0)
         {
             DB::table('keranjang')
             ->where([

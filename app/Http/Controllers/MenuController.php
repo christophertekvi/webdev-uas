@@ -73,6 +73,18 @@ class MenuController extends Controller
         ]);
     }
 
+    // public function postMenu(Request $request) {
+    //     if (Input::get('btnAddCart'))
+    //     {
+    //         $id = $request->input("btnAddCart");
+
+    //         $menu = Menu::query()->findOrFail($id);
+    //         Cart::add($menu);
+    //         return redirect()->back()
+    //             ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+    //     }
+    // }
+
     public function addSingleCart(Request $request) {
         $id = $request->input("btnAddCart");
 
@@ -146,7 +158,7 @@ class MenuController extends Controller
                 'ID_MENU' => $menu -> ID_MENU,
                 'delete' => '0'
             ]);
-            return redirect()->back()
+            return redirect('menu-sign-in')
                 ->with("success", "Added to Favourite ".$menu->NAMA_MENU);
         }
         else {
@@ -156,7 +168,7 @@ class MenuController extends Controller
                 ['ID_MENU', '=', $menu -> ID_MENU]
             ])
             ->delete();
-            return redirect()->back()
+            return redirect('menu-sign-in')
                 ->with("success", "Removed from Favourite ".$menu->NAMA_MENU);
         }
     }

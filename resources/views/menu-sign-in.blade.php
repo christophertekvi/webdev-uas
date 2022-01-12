@@ -83,7 +83,7 @@
                     </div>
                     <div class="row" style="text-align: right; padding-right: 15px; padding-top: 5px;">
                         <div class="column left">
-                            <form method="POST">
+                            <form method="POST" action="">
                                 @csrf
                                 <!-- Product actions-->
                                 <button class="text-center buttonadd" name="btnAddCart" value="{{ $m->ID_MENU }}">
@@ -93,7 +93,7 @@
                             </form>
                         </div>
                         <div class="column right">
-                            <form method="POST">
+                            <form method="POST" action="{{('faqs-sign-in')}}">
                                 @csrf
                                 <button value="{{ $m->ID_MENU }}" name="AddFav" style="border-style:none; background-color: transparent;">
                                 <i class="far fa-heart"></i>

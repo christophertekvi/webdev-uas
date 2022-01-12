@@ -106,8 +106,10 @@ Route::prefix("/menu-sign-in")->group(function() {
     Route::post("/", [MenuController::class, "addSingleCart"]);
     Route::post("/{id}", [MenuController::class, "addDetailCart"]);
 
-    Route::post("/", [MenuController::class, "addFav"]);
+    //Route::post("/fav", [MenuController::class, "addFav"]);
 });
+
+Route::post("/faqs-sign-in", [MenuController::class, "addFav"]);
 
 Route::prefix("/menu")->group(function() {
     Route::get("/", [MenuController::class, "list"]);
