@@ -66,7 +66,11 @@ Route::get('/faqs-sign-in', function () {
 //     ]);
 // });
 
-Route::get('/profile-signin',[ProfileSignInController::class,'index']);
+//Route::get('/profile-signin',[ProfileSignInController::class,'index']);
+Route::prefix("/profile-signin")->group(function() {
+    Route::get('/',[ProfileSignInController::class,'index']);
+    Route::get('/',[ProfileSignInController::class,'list']);
+});
 
 Route::get('/cart', [CartController::class, 'index']);
 
