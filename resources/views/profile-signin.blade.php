@@ -18,7 +18,7 @@
 
         <link rel="stylesheet" href="css/template.css" />
         <link rel="stylesheet" href="css/profile.css" />
-        <link rel="stylesheet" href="css/cart.css" />
+        <link rel="stylesheet" href="css/menu.css" />
         <script type="text/javascript" src="js/template.js"></script>
         <script type="text/javascript" src="js/profile.js"></script>
 
@@ -381,40 +381,39 @@
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
                             @if (session()->get('fav'))
-                            <p> {{session('fav')}} </p>
                             <div class="container">
-                                <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                                <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
                                     @foreach ($imgFavMenu as $f)
                                     <div class="col mb-5">
-                                        <div class="containermenu">
+                                        <div class="containermenu2">
                                             <!-- Product image-->
                                             <img class="card-img-top" src="data:image/jpg;base64,{{ chunk_split(base64_encode($f->FOTO_MENU)) }}" alt="...">
 
                                             <!-- Product details-->
-                                            <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px; padding-bottom: 0px; height: 70px;">
+                                            <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px; padding-bottom: 0px; height: 50px;">
                                                 <div class="text-center">
                                                     <!-- Product name-->
                                                     <a href="{{ ('menu/'.$f->ID_MENU) }}"
-                                                    class="fw-bolder"><h5 style="color: black">{{ $f->NAMA_MENU }}</h5></a>
+                                                    class="fw-bolder"><h5 style="color: black; font-size: large">{{ $f->NAMA_MENU }}</h5></a>
                                                 </div>
                                                 <!-- Add to favourite -->
 
                                             </div>
-                                            <div class="text-center" style="margin-bottom: 15px;">
+                                            <div class="text-center" style="font-size: small">
                                                 Rp. {{ $f->HARGA_MENU }}
                                             </div>
 
                                             <div class="row" style="text-align: right; padding-right: 15px;">
-                                                <div class="column left">
+                                                {{-- <div class="column left">
                                                     <form method="GET" action="/sign-in">
                                                         <button class="text-center buttonadd" type="submit" >
                                                             <i class="fas fa-shopping-cart"></i>
                                                              Add
                                                         </button>
                                                     </form>
-                                                </div>
+                                                </div> --}}
                                                 <div class="column right">
-                                                    <i class="far fa-heart"></i>
+                                                    <i class="far fa-heart" style="color: rgb(248, 45, 79)"></i>
                                                 </div>
 
                                             </div>
