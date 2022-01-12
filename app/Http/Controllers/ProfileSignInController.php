@@ -38,8 +38,9 @@ class ProfileSignInController extends Controller
         $imgFavMenu = DB::table('menu')
             ->where('ID_MENU', session('fav'))
             ->get();
-        return view('profile-sign-in', [
-            "imgFavMenu" => $imgFavMenu
+        return view('profile-signin', [
+            "imgFavMenu" => $imgFavMenu,
+            "title" => "Profile"
         ]);
     }
 
