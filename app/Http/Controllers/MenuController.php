@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Cart;
+use App\Models\MenuFav;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -117,6 +118,47 @@ class MenuController extends Controller
             "total" => $total,
             "title" => "Cart"
         ]);
+    }
+
+    public function addFav(Request $request) {
+        $id = $request->input("AddFav");
+
+        $menu = Menu::query()->findOrFail($id);
+        //MenuFav::add($menu);
+        //return redirect()->back()
+            //->with("success", "Added to Favourite ".$menu->NAMA_MENU);
+
+        $idP = session('idPembeli');
+        $data = DB::table('menu_favorit')->where('ID_PEMBELI', $idP)->get();
+        //dd($data);
+        $check = false;
+        foreach ($data as $d) {
+            if ($d -> ID_MENU == $menu -> ID_MENU) {
+                $check = true;
+            }
+        }
+        if (!$check) {
+            $data[] = [
+                "menu" => $menu
+            ];
+            DB::table('menu_favorit')->insert([
+                'ID_PEMBELI' => $idP,
+                'ID_MENU' => $menu -> ID_MENU,
+                'delete' => '0'
+            ]);
+            return redirect()->back()
+                ->with("success", "Added to Favourite ".$menu->NAMA_MENU);
+        }
+        else {
+            DB::table('menu_favorit')
+                ->where([
+                ['ID_PEMBELI', '=', $idP],
+                ['ID_MENU', '=', $menu -> ID_MENU]
+            ])
+            ->delete();
+            return redirect()->back()
+                ->with("success", "Removed from Favourite ".$menu->NAMA_MENU);
+        }
     }
 
 

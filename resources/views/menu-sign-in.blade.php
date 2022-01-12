@@ -69,7 +69,7 @@
                     <!-- Product image-->
                     <img class="card-img-top" src="data:image/png;base64,{{ chunk_split(base64_encode($m->FOTO_MENU)) }}" alt="..." />
                     <!-- Product details-->
-                    <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px;">
+                    <div class="card-body" style="height: 70px; padding-top: 15px; padding-left: 15px; padding-right: 15px;">
                         <div class="text-center">
                             <!-- Product name-->
                             <a href="{{ ('menu-sign-in/'.$m->ID_MENU) }}"
@@ -78,10 +78,10 @@
                         <!-- Add to favourite -->
 
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" style="padding-bottom: 10px;">
                         Rp. {{ $m -> HARGA_MENU }}
                     </div>
-                    <div class="row" style="text-align: right; padding-right: 15px;">
+                    <div class="row" style="text-align: right; padding-right: 15px; padding-top: 5px;">
                         <div class="column left">
                             <form method="POST">
                                 @csrf
@@ -93,9 +93,13 @@
                             </form>
                         </div>
                         <div class="column right">
-                            <i class="far fa-heart"></i>
+                            <form method="POST">
+                                @csrf
+                                <button value="{{ $m->ID_MENU }}" name="AddFav" style="border-style:none; background-color: transparent;">
+                                <i class="far fa-heart"></i>
+                                </button>
+                            </form>
                         </div>
-
                     </div>
                 </div>
             </div>

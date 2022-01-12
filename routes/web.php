@@ -105,6 +105,8 @@ Route::prefix("/menu-sign-in")->group(function() {
     // Add to Cart
     Route::post("/", [MenuController::class, "addSingleCart"]);
     Route::post("/{id}", [MenuController::class, "addDetailCart"]);
+
+    Route::post("/", [MenuController::class, "addFav"]);
 });
 
 Route::prefix("/menu")->group(function() {
