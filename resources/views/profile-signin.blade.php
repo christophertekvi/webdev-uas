@@ -382,43 +382,43 @@
 
                         <div id="Ongoing" class="tabcontent-orders">
                             <div class="orderOngoingAll">
+                                @foreach ($dataordersonprocess as $dtp)
                                 <ul class="cart_list">
-                                    @foreach ($dataordersonprocess as $dtp)
-                                  <li class="cart_item clearfix">
-                                    <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
-                                        <div class="cart_item_name cart_info_col" style="margin-top : 10px">
-                                            <div class="cart_item_title">Transaction ID : {{ $dtp->ID_TB }}</div>
-                                            <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
+                                    <li class="cart_item clearfix">
+                                        <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
+                                            <div class="cart_item_name cart_info_col" style="margin-top : 10px">
+                                                <div class="cart_item_title">Transaction ID : {{ $dtp->ID_TB }}</div>
+                                                <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtp->SUBTOTAL_TRANSAKSI }}</div>
+                                            </div>
                                         </div>
-                                        <div class="cart_item_total cart_info_col">
-                                            <div class="cart_item_title">Total</div>
-                                            <div class="cart_item_text" style="color:black">Rp. {{ $dtp->SUBTOTAL_TRANSAKSI }}</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                  @endforeach
+                                    </li>
                                 </ul>
+                                @endforeach
                             </div>
                         </div>
 
                         <div id="Completed" class="tabcontent-orders">
                             <div class="orderOngoingAll">
+                                @foreach ($dataorderscomplete as $dtc)
                                 <ul class="cart_list">
-                                    @foreach ($dataorderscomplete as $dtc)
-                              <li class="cart_item clearfix">
-                                <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
-                                    <div class="cart_item_name cart_info_col" style="margin-top : 10px">
-                                        <div class="cart_item_title">Transaction ID : {{ $dtc->ID_TB }}</div>
-                                        <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
-                                    </div>
-                                    <div class="cart_item_total cart_info_col">
-                                        <div class="cart_item_title">Total</div>
-                                        <div class="cart_item_text" style="color:black">Rp. {{ $dtc->SUBTOTAL_TRANSAKSI }}</div>
-                                    </div>
-                                </div>
-                            </li>
-                              @endforeach
+                                    <li class="cart_item clearfix">
+                                        <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
+                                            <div class="cart_item_name cart_info_col" style="margin-top : 10px">
+                                                <div class="cart_item_title">Transaction ID : {{ $dtc->ID_TB }}</div>
+                                                <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtc->SUBTOTAL_TRANSAKSI }}</div>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
+                                @endforeach
                             </div>
                         </div>
                     </div>
