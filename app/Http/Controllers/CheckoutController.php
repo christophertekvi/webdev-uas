@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
@@ -12,6 +11,4 @@ class CheckoutController extends Controller
             "title" => "Checkout"
         ]);
     }
-
-    // public function
 }
