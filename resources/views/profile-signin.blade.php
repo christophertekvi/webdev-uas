@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/template.css" />
         <link rel="stylesheet" href="css/profile.css" />
         <link rel="stylesheet" href="css/menu.css" />
+        <link rel="stylesheet" href="css/cart.css" />
         <script type="text/javascript" src="js/template.js"></script>
         <script type="text/javascript" src="js/profile.js"></script>
 
@@ -341,14 +342,17 @@
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
                                         <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
-                                            <div class="cart_item_name cart_info_col" style="margin-top : 10px">
-                                                <div class="cart_item_title">Transaction ID : {{ $dtp->ID_TB }}</div>
-                                                <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Transaction ID : </div>
+                                                <div class="cart_item_text" style="color:black"> {{ $dtp->ID_TB }} </div>
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
                                                 <div class="cart_item_text" style="color:black">Rp. {{ $dtp->SUBTOTAL_TRANSAKSI }}</div>
                                             </div>
+                                        </div>
+                                        <div class="detail d-flex justify-content-right">
+                                            <a href="/detailmenu" style="padding-top: 18px; padding-left: 100px">Details</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -362,9 +366,9 @@
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
                                         <div style= "width: 70%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
-                                            <div class="cart_item_name cart_info_col" style="margin-top : 10px">
-                                                <div class="cart_item_title">Transaction ID : {{ $dtc->ID_TB }}</div>
-                                                <div class="cart_item_text" style="color:black"> {{ session('idPembeli') }} </div>
+                                            <div class="cart_item_name cart_info_col" >
+                                                <div class="cart_item_title">Transaction ID : </div>
+                                                <div class="cart_item_text" style="color:black"> {{ $dtc->ID_TB }} </div>
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
