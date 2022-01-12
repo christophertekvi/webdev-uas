@@ -2,10 +2,6 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-use App\User;
-use App\Models\Cart;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
@@ -84,7 +80,6 @@ Route::get('/detail-pesanan', function () {
 });
 
 Route::get('/checkout', [CheckoutController::class, 'index']);
-
 
 // Route::get('/detailmenu', function () {
 //     return view('detailmenu',[

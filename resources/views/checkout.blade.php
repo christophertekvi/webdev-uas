@@ -48,7 +48,7 @@
 @include('partials.navbar-sign-in')
 <form method="post">
         <div class="container1">
-            <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">CHECKOUT</p>
+            <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px; font-weight: bold;">CHECKOUT</p>
         </div>
         <div class="container2" style="margin-top: 30px;">
             <div class="controlcontainer2">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="input-control text" data-role="datepicker" >
+                <div class="input-control text" data-role="datepicker" style="border-radius: 10px" >
                     <input type="text" name="tanggalPesan" required style="border-radius: 10px"/>
 
                 </div>
@@ -75,13 +75,13 @@
                         <div class="pesanan" style="border-radius: 10px;">
                             <div class="fotomenu">
                                 <div class="gambar">
-                                    <img src="user" alt="" style="width: 100%; height: 100%; margin-left: 10px;">
+                                    <img src="data:image/png;base64,{{ chunk_split(base64_encode($c->foto_menu)) }}" alt="" style="width: 100%; height: 100%; margin-left: 10px; border-radius: 10px;">
                                 </div>
                             </div>
                             <div class="detailmenu">
                                 <div class="detailmenu1">
                                     <h1>{{ $c->nama_menu }}</h1>
-                                    <h3>Rp. {{ $checkout->harga_menu }}</h3>
+                                    <h3>Rp. {{ $c->harga_menu }}</h3>
                                 </div>
                                 <div class="detailmenu2">
                                     <h3>Jumlah : {{ $c->qty }}</h3>
@@ -92,12 +92,13 @@
 
                                 </div>
                                 <div class="subtotaltext">
-                                    <h3>Subtotal : Rp. {{ $c->harga_menu * $c->qty }}</h3>
+                                    <h3>Subtotal : Rp. {{ $total = ($c->harga_menu * $c->qty) }}</h3>
                                 </div>
                             </div>
                         </div>
+                        <br />
                     @endforeach
-
+                    </div>
                 <div class="bagian4" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
                     <div class="pesaninput">
@@ -107,12 +108,12 @@
                 <div class="bagian5" style=" border-radius: 10px;">
                     <div class="empty"></div>
                     <div class="bagian5text1">
-                        <h3>Ongkos kirim :</h3>
-                        <h3>Subtotal :</h3>
+                        <h3>Ongkos kirim : </h3>
+                        <h3>Subtotal : </h3>
                     </div>
                     <div class="bagian5text2">
-                        <h3>........</h3>
-                        <h3>......</h3>
+                        <h3>Rp. 10.000,-</h3>
+                        <h3>Rp. {{ $subtotal = $total }},-</h3>
                     </div>
                 </div>
                 <div class="bagian7" style=" border-radius: 10px;">
