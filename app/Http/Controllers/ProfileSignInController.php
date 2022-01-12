@@ -26,23 +26,29 @@ class ProfileSignInController extends Controller
             ->where('STATUS_PESANAN', 'Selesai')
             ->orWhere('STATUS_PESANAN', 'Cancelled')
             ->simplePaginate(5);
-        return view('profile-signin', [
-            "dataorderscomplete" => $dataorderscomplete,
-            "dataordersonprocess" => $dataordersonprocess,
-            "title" => "Profile"
-        ]);
-    }
 
-    public function list()
-    {
         $imgFavMenu = DB::table('menu')
             ->where('ID_MENU', session('fav'))
             ->get();
+
         return view('profile-signin', [
+            "dataorderscomplete" => $dataorderscomplete,
+            "dataordersonprocess" => $dataordersonprocess,
             "imgFavMenu" => $imgFavMenu,
             "title" => "Profile"
         ]);
     }
+
+    // public function list()
+    // {
+    //     $imgFavMenu = DB::table('menu')
+    //         ->where('ID_MENU', session('fav'))
+    //         ->get();
+    //     return view('profile-signin', [
+    //         "imgFavMenu" => $imgFavMenu,
+    //         "title" => "Profile"
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
