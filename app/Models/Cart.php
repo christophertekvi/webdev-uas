@@ -68,12 +68,25 @@ class Cart
             "menu" => $menu,
             "jumlah" => $jumlah
         ];
-        DB::table('keranjang')
-        ->where([
-            ['ID_PEMBELI', '=', $id],
-            ['ID_MENU', '=', $menu -> ID_MENU]
-            ])
-        ->update(['QTY' => $jumlah]);
+        if($jumlah = 0)
+        {
+            DB::table('keranjang')
+            ->where([
+                ['ID_PEMBELI', '=', $id],
+                ['ID_MENU', '=', $menu -> ID_MENU]
+                ])
+            ->update(['QTY' => $jumlah]);
+        }
+        else
+        {
+            DB::table('keranjang')
+            ->where([
+                ['ID_PEMBELI', '=', $id],
+                ['ID_MENU', '=', $menu -> ID_MENU]
+                ])
+            ->delete();
+        }
+
     }
 
     public static function getAll()
@@ -92,6 +105,8 @@ class Cart
         return count($data);
         //return count(Cart::getAll());
     }
+
+
 
     // private static $cart_menu = [
     //     "title" => "Ini Judul",

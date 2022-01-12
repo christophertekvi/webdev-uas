@@ -195,9 +195,9 @@ ul {
 
 }
 
-.cart_item_image {
-    transform:translateX(30%);
-}
+/* .cart_item_image {
+    transform:translateX(10%);
+} */
 
 .cart_item {
     padding-top: 0;

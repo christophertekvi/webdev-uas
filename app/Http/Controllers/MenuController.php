@@ -81,8 +81,8 @@ class MenuController extends Controller
             ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
     }
 
-    public function updateQty(Request $request, $id) {
-        //$id = $request->input("btnUpdate");
+    public function updateQty(Request $request) {
+        $id = $request->input("btnUpdate");
         $request->validate([
             "inputQuantity" => "numeric"
         ]);
@@ -109,9 +109,12 @@ class MenuController extends Controller
         //  Cart::keranjang();
         $id = session('idPembeli');
         $cart = DB::table('keranjang')->where('ID_PEMBELI', $id)->get();
-        //dd($cart);
+        // $total = DB::table('keranjang')->where('ID_PEMBELI', $id)->sum(DB::raw('harga_menu'*'qty'));
+        $total = DB::table('keranjang')->select(DB::raw('sum(harga_menu*qty) as total'))->where('ID_PEMBELI', $id)->get();
+        //dd($total);
         return view("cart", [
             "cart" => $cart,
+            "total" => $total,
             "title" => "Cart"
         ]);
     }
