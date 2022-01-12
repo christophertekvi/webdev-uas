@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
     <link rel="stylesheet" href="css/template.css" />
-    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/checkout.css" />
     <script type="text/javascript" src="js/template.js"></script>
 
     <link href="css/metro.css" rel="stylesheet">
@@ -46,7 +46,7 @@
         </div>
 
 @include('partials.navbar-sign-in')
-
+<form method="post">
         <div class="container1">
             <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">CHECKOUT</p>
         </div>
@@ -54,12 +54,12 @@
             <div class="controlcontainer2">
                 <div class="bagian1">
                     <div class="tanggalpesanan" style="border-radius: 10px;">
-                        <p>Tanggal Pesanan : .....</p>
+                        <p>Tanggal Pesanan</p>
                     </div>
                 </div>
 
-                <div class="input-control text" data-role="datepicker">
-                    <input type="text" name="tanggalPesan" required/>
+                <div class="input-control text" data-role="datepicker" >
+                    <input type="text" name="tanggalPesan" required style="border-radius: 10px"/>
 
                 </div>
 
@@ -70,79 +70,34 @@
 
                 <div class="bagian3" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
-                    <div class="pesanan" style="border-radius: 10px;">
-                        <div class="fotomenu">
-                            <div class="gambar">
-                                <img src="user" alt="" style="width: 100%; height: 100%;">
-                            </div>
-                        </div>
-                        <div class="detailmenu">
-                            <div class="detailmenu1">
-                                <h1>Mie Goreng</h1>
-                                <h3>Rp. XX.XXX</h3>
-                            </div>
-                            <div class="detailmenu2">
-                                <h3>Jumlah :</h3>
-                            </div>
-                        </div>
-                        <div class="subtotal">
-                            <div class="emptysubtotal">
 
+                    @foreach ($checkout as $c)
+                        <div class="pesanan" style="border-radius: 10px;">
+                            <div class="fotomenu">
+                                <div class="gambar">
+                                    <img src="user" alt="" style="width: 100%; height: 100%; margin-left: 10px;">
+                                </div>
                             </div>
-                            <div class="subtotaltext">
-                                <h3>Subtotal : Rp. XX.XXX</h3>
+                            <div class="detailmenu">
+                                <div class="detailmenu1">
+                                    <h1>{{ $c->nama_menu }}</h1>
+                                    <h3>Rp. {{ $checkout->harga_menu }}</h3>
+                                </div>
+                                <div class="detailmenu2">
+                                    <h3>Jumlah : {{ $c->qty }}</h3>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="pesanan" style="border-radius: 10px;">
-                        <div class="fotomenu">
-                            <div class="gambar">
-                                <img src="user" alt="" style="width: 100%; height: 100%;">
-                            </div>
-                        </div>
-                        <div class="detailmenu">
-                            <div class="detailmenu1">
-                                <h1>Mie Goreng</h1>
-                                <h3>Rp. XX.XXX</h3>
-                            </div>
-                            <div class="detailmenu2">
-                                <h3>Jumlah :</h3>
-                            </div>
-                        </div>
-                        <div class="subtotal">
-                            <div class="emptysubtotal">
+                            <div class="subtotal">
+                                <div class="emptysubtotal">
 
-                            </div>
-                            <div class="subtotaltext">
-                                <h3>Subtotal : Rp. XX.XXX</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pesanan" style="border-radius: 10px;">
-                        <div class="fotomenu">
-                            <div class="gambar">
-                                <img src="user" alt="" style="width: 100%; height: 100%;">
+                                </div>
+                                <div class="subtotaltext">
+                                    <h3>Subtotal : Rp. {{ $c->harga_menu * $c->qty }}</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="detailmenu">
-                            <div class="detailmenu1">
-                                <h1>Mie Goreng</h1>
-                                <h3>Rp. XX.XXX</h3>
-                            </div>
-                            <div class="detailmenu2">
-                                <h3>Jumlah :</h3>
-                            </div>
-                        </div>
-                        <div class="subtotal">
-                            <div class="emptysubtotal">
+                    @endforeach
 
-                            </div>
-                            <div class="subtotaltext">
-                                <h3>Subtotal : Rp. XX.XXX</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="bagian4" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
                     <div class="pesaninput">
@@ -212,6 +167,7 @@
                 </div>
             </div>
         </div>
+    </form>
     </body>
     <!-- Footer -->
     <footer style="background-color: #f88753;" class="text-center text-lg-start text-muted">

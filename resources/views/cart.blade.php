@@ -44,7 +44,7 @@
     </div>
 
     @include('partials.navbar-sign-in')
-    <form method="POST">
+    <form method="post">
         <div class="cart_section">
             <div class="container-fluid">
                 <div class="row">
