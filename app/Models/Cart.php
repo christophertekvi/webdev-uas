@@ -82,15 +82,7 @@ class Cart
 
     }
 
-    public static function keranjang()
-    {
-        //coba panggil isi kranjang dri dtabase
 
-        //DB::table('keranjang')->where('ID_PEMBELI', session('ID_PEMBELI'))->get();
-
-
-        // return Session::get("cart", []);
-    }
 
     public static function getCount()
     {
