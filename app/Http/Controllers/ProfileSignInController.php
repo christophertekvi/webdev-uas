@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,27 +16,31 @@ class ProfileSignInController extends Controller
     public function index()
     {
         $dataordersonprocess = DB::table('transaksi_beli')
-        ->where('ID_PEMBELI',session('idPembeli'))
-        ->where('STATUS_PESANAN','On Process')
-        ->orWhere('STATUS_PESANAN','Pending')
-        ->simplePaginate(5);
+            ->where('ID_PEMBELI', session('idPembeli'))
+            ->where('STATUS_PESANAN', 'On Process')
+            ->orWhere('STATUS_PESANAN', 'Pending')
+            ->simplePaginate(5);
 
         $dataorderscomplete = DB::table('transaksi_beli')
-        ->where('ID_PEMBELI',session('idPembeli'))
-        ->where('STATUS_PESANAN','Selesai')
-        ->orWhere('STATUS_PESANAN','Cancelled')
-        ->simplePaginate(5);
-        return view('profile-signin',[
+            ->where('ID_PEMBELI', session('idPembeli'))
+            ->where('STATUS_PESANAN', 'Selesai')
+            ->orWhere('STATUS_PESANAN', 'Cancelled')
+            ->simplePaginate(5);
+        return view('profile-signin', [
             "dataorderscomplete" => $dataorderscomplete,
             "dataordersonprocess" => $dataordersonprocess,
             "title" => "Profile"
         ]);
     }
 
-    public function list(){
+    public function list()
+    {
         $imgFavMenu = DB::table('menu')
-        ->where('ID_MENU', session('fav'))
-        ->get();
+            ->where('ID_MENU', session('fav'))
+            ->get();
+        return view('profile-sign-in', [
+            "imgFavMenu" => $imgFavMenu
+        ]);
     }
 
     /**

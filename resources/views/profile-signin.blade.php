@@ -394,7 +394,7 @@
                                             <div class="card-body" style="padding-top: 15px; padding-left: 15px; padding-right: 15px; padding-bottom: 0px; height: 70px;">
                                                 <div class="text-center">
                                                     <!-- Product name-->
-                                                    <a href="{{ ('menu/'.$m->ID_MENU) }}"
+                                                    <a href="{{ ('menu/'.$f->ID_MENU) }}"
                                                     class="fw-bolder"><h5 style="color: black">{{ $f->NAMA_MENU }}</h5></a>
                                                 </div>
                                                 <!-- Add to favourite -->
