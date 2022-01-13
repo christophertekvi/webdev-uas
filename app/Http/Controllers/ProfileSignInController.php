@@ -19,13 +19,13 @@ class ProfileSignInController extends Controller
             ->where('ID_PEMBELI', session('idPembeli'))
             ->where('STATUS_PESANAN', 'On Process')
             ->orWhere('STATUS_PESANAN', 'Pending')
-            ->simplePaginate(5);
+            ->simplePaginate(session('countdataordersonprocess'));
 
         $dataorderscomplete = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
             ->where('STATUS_PESANAN', 'Selesai')
             ->orWhere('STATUS_PESANAN', 'Cancelled')
-            ->simplePaginate(5);
+            ->simplePaginate(session('countdataorderscomplete'));
 
         $imgFavMenu = DB::table('menu')
             ->where('ID_MENU', session('fav'))
