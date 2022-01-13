@@ -403,7 +403,7 @@
                                                 <div class="text-center">
                                                     <!-- Product name-->
                                                     <a href="{{ ('menu/'.$f->ID_MENU) }}"
-                                                    class="fw-bolder"><h5 style="color: black; font-size: large">{{ $f->NAMA_MENU }}</h5></a>
+                                                    class="fw-bolder"><h5 style="color: black; font-size: medium">{{ $f->NAMA_MENU }}</h5></a>
                                                 </div>
                                                 <!-- Add to favourite -->
 
