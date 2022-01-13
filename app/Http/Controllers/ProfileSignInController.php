@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Symfony\Component\Console\Input\Input;
 
 class ProfileSignInController extends Controller
 {
@@ -106,9 +109,20 @@ class ProfileSignInController extends Controller
         // // $imgfile = $_FILES['image']['name'];
         // $img = base64_encode(file_get_contents(addslashes('img')));
 
+        // $foto = Input::file('img');
+        // $fotoblob = base64_encode(file_get_contents($request->file('img')));
+        // dd($fotoblob);
 
+        // $first = Str::substr('input-name',);
+        // $fullname = 'input-name';
+        // $split = explode(" ", $fullname);
+        // dd($split);
+        // $first = $split[0];
+        // $last = $split[1];
         $updateDetails = [
             // 'FOTO_PEMBELI' => $request->input('img'),
+            // 'FIRST_NAME' => $request->input($first),
+            // 'LAST_NAME' => $request->input($last),
             'EMAIL' => $request->input('email'),
             'NO_HP' =>  $request->input('nohp'),
             'ALAMAT' =>  $request->input('alamat')
@@ -118,13 +132,12 @@ class ProfileSignInController extends Controller
             ->update($updateDetails);
         //->get();
 
-        $request->session()->put('email', $dp -> EMAIL);
-        $request->session()->put('noHP', $dp -> NO_HP);
-        $request->session()->put('alamat', $dp -> ALAMAT);
+        $request->session()->put('email', $dp->EMAIL);
+        $request->session()->put('noHP', $dp->NO_HP);
+        $request->session()->put('alamat', $dp->ALAMAT);
 
         return redirect('profile-signin')
             ->with("success", "Profile successfully updated!");
-
     }
 
     // public function profileUpdated(){

@@ -161,14 +161,6 @@
                                     {{-- <input type="text" name="nama" id="input-name" value=" {{ $detailpembeli -> FIRST_NAME }} {{$detailpembeli -> LAST_NAME}} "> --}}
                                     </div>
                                 </div>
-                                {{-- <div class="controlinfo">
-                                    <div class="controltext">
-                                        <h5>Last Name :</h5>
-                                    </div>
-                                    <div class="inputProfile">
-                                        <input type="text" name="nama" id="input-name" value=" {{ session('lastname') }} ">
-                                    </div>
-                                    </div> --}}
                                 <div class="controlinfo">
                                     <div class="controltext">
                                     <h5>E-mail :</h5>
