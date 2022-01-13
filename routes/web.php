@@ -20,8 +20,10 @@ use App\Http\Controllers\SignUpController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/home/{slug}', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'showbestseller']);
+//Route::get('/home/{slug}', [HomeController::class, 'showbestseller']);
+//Route::get('/home', [HomeController::class, 'showbestseller']);
+Route::get('/home-sign-in', [HomeController::class, 'showbestsellers']);
 
 
 Route::get('/faqs', function () {
@@ -43,11 +45,11 @@ Route::post('/home-sign-in', [SignInController::class, 'authenticate']);
 Route::get('/sign-up', [SignUpController::class, 'index']);
 Route::post('/sign-up', [SignUpController::class, 'store']);
 
-Route::get('/home-sign-in', function () {
-    return view('home-sign-in', [
-        "title" => "Home"
-    ]);
-});
+// Route::get('/home-sign-in', function () {
+//     return view('home-sign-in', [
+//         "title" => "Home"
+//     ]);
+// });
 
 Route::get('/about-sign-in', function () {
     return view('about-sign-in', [

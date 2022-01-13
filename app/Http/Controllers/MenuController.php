@@ -123,6 +123,8 @@ class MenuController extends Controller
             ->with("success", "Added to cart successfully " . $menu->NAMA_MENU);
     }
 
+
+
     public function showCart()
     {
         // $cart = Cart::getAll();

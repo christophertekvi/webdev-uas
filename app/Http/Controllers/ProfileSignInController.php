@@ -53,10 +53,13 @@ class ProfileSignInController extends Controller
         $pembeli = session('idPembeli');
         $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
 
+        //$detailpembeli = DB::table('pembeli')->where('ID_PEMBELI', $pembeli)->get();
+
         return view('profile-signin', [
             "dataorderscomplete" => $dataorderscomplete,
             "dataordersonprocess" => $dataordersonprocess,
             "listFav" => $listFav,
+            //"detailpembeli" => $detailpembeli,
             "title" => "Profile"
         ]);
     }
@@ -93,6 +96,11 @@ class ProfileSignInController extends Controller
         // $request->validate(["email" => "email"]);
         $request->validate(["nohp" => "numeric"]);
         // $request->validate(["alamat"]);
+        $dp = DB::table('pembeli')->where('ID_PEMBELI', $pembeli)->first();
+
+        // $request->session()->forget(['email']);
+        // $request->session()->forget(['noHP']);
+        // $request->session()->forget(['alamat']);
 
         // $img = $_FILES['img']['tmp_name'];
         // // $imgfile = $_FILES['image']['name'];
@@ -110,8 +118,13 @@ class ProfileSignInController extends Controller
             ->update($updateDetails);
         //->get();
 
+        $request->session()->put('email', $dp -> EMAIL);
+        $request->session()->put('noHP', $dp -> NO_HP);
+        $request->session()->put('alamat', $dp -> ALAMAT);
+
         return redirect('profile-signin')
             ->with("success", "Profile successfully updated!");
+
     }
 
     // public function profileUpdated(){

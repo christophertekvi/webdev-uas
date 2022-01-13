@@ -158,6 +158,7 @@
                                     </div>
                                     <div class="inputProfile">
                                     <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
+                                    {{-- <input type="text" name="nama" id="input-name" value=" {{ $detailpembeli -> FIRST_NAME }} {{$detailpembeli -> LAST_NAME}} "> --}}
                                     </div>
                                 </div>
                                 {{-- <div class="controlinfo">
