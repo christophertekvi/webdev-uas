@@ -391,7 +391,7 @@
                             @if (session()->get('fav'))
                             <div class="container">
                                 <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
-                                    @foreach ($imgFavMenu as $f)
+                                    @foreach ($listFav as $f)
                                     <div class="col mb-5">
                                         <div class="containermenu2">
                                             <!-- Product image-->
