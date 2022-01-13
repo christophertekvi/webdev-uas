@@ -422,7 +422,12 @@
                                                     </form>
                                                 </div> --}}
                                                 <div class="column right">
-                                                    <i class="far fa-heart" style="color: rgb(248, 45, 79)"></i>
+                                                    <form method="POST">
+                                                        @csrf
+                                                        <button value="{{ $f->ID_MENU }}" name="favv" id="favv" style="border-style:none; background-color: transparent;">
+                                                        <i class="far fa-heart" style="color: rgb(248, 45, 79)"></i>
+                                                        </button>
+                                                    </form>
                                                 </div>
 
                                             </div>

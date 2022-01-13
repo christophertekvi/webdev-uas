@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class ProfileSignInController extends Controller
 {
@@ -81,6 +82,32 @@ class ProfileSignInController extends Controller
             "listFav" => $listFav,
             "title" => "Profile"
         ]);
+    }
+
+    public function delFav(Request $request)
+    {
+        $idfav = $request->input("favv");
+        $imgFavMenu = Menu::query()->findOrFail($idfav);
+
+        $pembeli = session('idPembeli');
+        $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
+        
+        $check = false;
+        foreach ($listFav as $lf) {
+            if ($lf->ID_MENU == $imgFavMenu->ID_MENU) {
+                $check = true;
+            }
+        }
+        if ($check) {
+            DB::table('menu_favorit')
+                ->where([
+                    ['ID_PEMBELI', '=', $pembeli],
+                    ['ID_MENU', '=', $imgFavMenu->ID_MENU]
+                ])
+                ->delete();
+        }
+        return redirect()->back()
+            ->with("success", "Removed from Favorite " . $imgFavMenu->NAMA_MENU);
     }
 
     // public function list()
