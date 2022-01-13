@@ -313,7 +313,7 @@
                                             <br><br>
                                             <div class="form-group">
                                                 <div class="col-md-6 col-md-offset-4">
-                                                    <button  class="btn btn-primary" style="background-color: #e25f21; margin-bottom: 50px; margin-right:12px">
+                                                    <button onclick="cancelpw()" class="btn btn-primary" style="background-color: #e25f21; margin-bottom: 50px; margin-right:12px">
                                                         Cancel
                                                     </button>
                                                     <button type="submit" class="btn btn-primary" style="background-color: #e25f21; margin-bottom: 50px">

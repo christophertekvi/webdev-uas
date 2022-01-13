@@ -22,6 +22,12 @@ function cancel() {
     document.getElementById("address").reset();
   }
 
+ function cancelpw(){
+    document.getElementById("current-password").reset();
+    document.getElementById("new-password").reset();
+    document.getElementById("new-password-confirm").reset();
+ }
+
 document.getElementById("image").onchange = function(e) {
     var file = document.getElementById("image").files[0];
     var reader = new FileReader();
