@@ -119,31 +119,13 @@ class SignInController extends Controller
                 //titip buat id pembeli
                 $idPembeli = $obj['ID_PEMBELI'];
                 $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
-                $dataordersonprocess = DB::table('transaksi_beli')
-                ->where('ID_PEMBELI', session('idPembeli'))
-                ->where('STATUS_PESANAN', 'On Process')
-                ->orWhere('STATUS_PESANAN', 'Pending')
-                ->get()
-                ->toArray();
-                $countdataordersonprocess = count($dataordersonprocess);
-
-                $request->session()->put('countdataordersonprocess', $countdataordersonprocess);
-
-                 $dataorderscomplete = DB::table('transaksi_beli')
-                ->where('ID_PEMBELI', session('idPembeli'))
-                ->where('STATUS_PESANAN', 'Selesai')
-                ->orWhere('STATUS_PESANAN', 'Cancelled')
-                ->get()
-                ->toArray();
-                $countdataorderscomplete = count($dataorderscomplete);
-                $request->session()->put('countdataorderscomplete', $countdataorderscomplete);
 
                 $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
                 $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
                 if (!is_null($fav)) {
                     $obj = get_object_vars($fav);
                     $request->session()->put('fav', $obj['ID_MENU']);
-                    
+
                     // $menulist = DB::table('menu')->where('ID_MENU', $favid);
                     // $request->session()->put('favfoto', $obj['FOTO_MENU']);
                 } else {
