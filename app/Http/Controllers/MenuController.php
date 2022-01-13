@@ -13,7 +13,8 @@ class MenuController extends Controller
 {
     //
 
-    public function lists() {
+    public function lists()
+    {
         //ini adalah builder model pagination
         // $items = Item::query()->paginate(10);
 
@@ -33,7 +34,8 @@ class MenuController extends Controller
         ]);
     }
 
-    public function list() {
+    public function list()
+    {
         //ini adalah builder model pagination
         // $items = Item::query()->paginate(10);
 
@@ -53,21 +55,23 @@ class MenuController extends Controller
         ]);
     }
 
-    public function detail($id){
+    public function detail($id)
+    {
         $menu = Menu::query()->findOrFail($id);
 
         return view("detailmenu", [
-            "nama" => $menu -> NAMA_ITEM,
+            "nama" => $menu->NAMA_ITEM,
             "m" => $menu,
             "title" => "Detail Menu"
         ]);
     }
 
-    public function details($id){
+    public function details($id)
+    {
         $menu = Menu::query()->findOrFail($id);
 
         return view("detailmenu-sign-in", [
-            "nama" => $menu -> NAMA_MENU,
+            "nama" => $menu->NAMA_MENU,
             "m" => $menu,
             "title" => "Detail Menu"
         ]);
@@ -85,16 +89,18 @@ class MenuController extends Controller
     //     }
     // }
 
-    public function addSingleCart(Request $request) {
+    public function addSingleCart(Request $request)
+    {
         $id = $request->input("btnAddCart");
 
         $menu = Menu::query()->findOrFail($id);
         Cart::add($menu);
         return redirect()->back()
-            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+            ->with("success", "Added to cart successfully " . $menu->NAMA_MENU);
     }
 
-    public function updateQty(Request $request) {
+    public function updateQty(Request $request)
+    {
         $id = $request->input("btnUpdate");
         $request->validate([
             "inputQuantity" => "numeric"
@@ -102,17 +108,18 @@ class MenuController extends Controller
         $menu = Menu::query()->findOrFail($id);
         Cart::updateCart($menu, $request->input("inputQuantity"));
         return redirect()->back()
-            ->with("success", "Quantity Updated ".$menu->NAMA_MENU);
+            ->with("success", "Quantity Updated " . $menu->NAMA_MENU);
     }
 
-    public function addDetailCart(Request $request, $id) {
+    public function addDetailCart(Request $request, $id)
+    {
         $request->validate([
             "inputQuantity" => "numeric"
         ]);
         $menu = Menu::query()->findOrFail($id);
         Cart::add($menu, $request->input("inputQuantity"));
         return redirect()->back()
-            ->with("success", "Added to cart successfully ".$menu->NAMA_MENU);
+            ->with("success", "Added to cart successfully " . $menu->NAMA_MENU);
     }
 
     public function showCart()
@@ -132,20 +139,21 @@ class MenuController extends Controller
         ]);
     }
 
-    public function addFav(Request $request) {
+    public function addFav(Request $request)
+    {
         $id = $request->input("AddFav");
 
         $menu = Menu::query()->findOrFail($id);
         //MenuFav::add($menu);
         //return redirect()->back()
-            //->with("success", "Added to Favourite ".$menu->NAMA_MENU);
+        //->with("success", "Added to Favourite ".$menu->NAMA_MENU);
 
         $idP = session('idPembeli');
         $data = DB::table('menu_favorit')->where('ID_PEMBELI', $idP)->get();
         //dd($data);
         $check = false;
         foreach ($data as $d) {
-            if ($d -> ID_MENU == $menu -> ID_MENU) {
+            if ($d->ID_MENU == $menu->ID_MENU) {
                 $check = true;
             }
         }
@@ -155,21 +163,20 @@ class MenuController extends Controller
             ];
             DB::table('menu_favorit')->insert([
                 'ID_PEMBELI' => $idP,
-                'ID_MENU' => $menu -> ID_MENU,
+                'ID_MENU' => $menu->ID_MENU,
                 'delete' => '0'
             ]);
             return redirect('menu-sign-in')
-                ->with("success", "Added to Favourite ".$menu->NAMA_MENU);
-        }
-        else {
+                ->with("success", "Added to Favorite " . $menu->NAMA_MENU);
+        } else {
             DB::table('menu_favorit')
                 ->where([
-                ['ID_PEMBELI', '=', $idP],
-                ['ID_MENU', '=', $menu -> ID_MENU]
-            ])
-            ->delete();
+                    ['ID_PEMBELI', '=', $idP],
+                    ['ID_MENU', '=', $menu->ID_MENU]
+                ])
+                ->delete();
             return redirect('menu-sign-in')
-                ->with("success", "Removed from Favourite ".$menu->NAMA_MENU);
+                ->with("success", "Removed from Favorite " . $menu->NAMA_MENU);
         }
     }
 
@@ -183,6 +190,5 @@ class MenuController extends Controller
             $jumlah = $c["jumlah"];
             //DB:beginTransaction();
         }
-
     }
 }

@@ -143,6 +143,7 @@ class SignInController extends Controller
                 if (!is_null($fav)) {
                     $obj = get_object_vars($fav);
                     $request->session()->put('fav', $obj['ID_MENU']);
+                    
                     // $menulist = DB::table('menu')->where('ID_MENU', $favid);
                     // $request->session()->put('favfoto', $obj['FOTO_MENU']);
                 } else {

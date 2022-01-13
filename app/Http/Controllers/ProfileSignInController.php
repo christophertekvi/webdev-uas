@@ -27,14 +27,37 @@ class ProfileSignInController extends Controller
             ->orWhere('STATUS_PESANAN', 'Cancelled')
             ->simplePaginate(session('countdataorderscomplete'));
 
+        //buat ngambil gambar dr tabel menu yg id nya sama di menu fav
         $imgFavMenu = DB::table('menu')
             ->where('ID_MENU', session('fav'))
             ->get();
+        // dd($imgFavMenu->ID_MENU);
+
+        $pembeli = session('idPembeli');
+        $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
+        // dd($listFav);
+        $check = false;
+        foreach ($listFav as $lf) {
+            // dd($imgFavMenu->ID_MENU);
+            if ($lf->ID_MENU == $imgFavMenu->ID_MENU) {
+                $check = true;
+            }
+        }
+        if ($check) {
+            DB::table('menu_favorit')
+                ->where([
+                    ['ID_PEMBELI', '=', $pembeli],
+                    ['ID_MENU', '=', $imgFavMenu->ID_MENU]
+                ])
+                ->delete();
+        } else {
+        }
 
         return view('profile-signin', [
             "dataorderscomplete" => $dataorderscomplete,
             "dataordersonprocess" => $dataordersonprocess,
             "imgFavMenu" => $imgFavMenu,
+            "listFav" => $listFav,
             "title" => "Profile"
         ]);
     }
