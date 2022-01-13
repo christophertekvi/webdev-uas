@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="cart_container">
-                            <div class="cart_title">Cart<small> ({{ \App\Models\Cart::getCount() }} item in your cart) </small></div>
+                            <div class="cart_title">Cart<small> ({{ \App\Models\Cart::getCount() }} item(s) in your cart) </small></div>
                             <div class="cart_items" >
 
                                 @foreach ($cart as $m)
