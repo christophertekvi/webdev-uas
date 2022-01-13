@@ -181,14 +181,16 @@
         BESTSELLER
       </h1>
       <div class="container1">
-        <div class="bs1">
-          <img style="height: 50%; margin-top: 10%;" src="image/menu/ayambakar.png">
-          <p class="deskripsi" style="font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px;">Ayam Bakar</p>
-          <p style="font-style: italic; ">
-            Rp. 15.000
-          </p>
-        </div>
-        <div class="bs1">
+        @foreach ($bestseller as $bs)
+            <div class="bs1">
+                <img style="width: 75%; height: 50%; margin-top: 10%;" src="data:image/png;base64,{{ chunk_split(base64_encode($bs->FOTO_MENU)) }}">
+                <p href="{{ ('menu-sign-in/'.$bs->ID_MENU) }}" class="deskripsi" style="font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px;">{{ $bs->NAMA_MENU }}</p>
+                <p style="font-style: italic; ">
+                    {{ $bs->HARGA_MENU }}
+                </p>
+            </div>
+        @endforeach
+        {{-- <div class="bs1">
           <img style="height: 50%; margin-top: 10%;" src="image/menu/esteh.png">
           <p class="deskripsi" style="font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px;">Es Teh</p>
           <p style="font-style: italic; ">
@@ -217,7 +219,7 @@
           <p style="font-style: italic; ">
             Rp. 18.000
           </p>
-        </div>
+        </div> --}}
 
       </div>
       <div class="buttonmenu">
