@@ -149,72 +149,74 @@
                             {{-- <p>UserID</p> --}}
                         </div>
                         <div class="editinfo">
-                          <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>Name :</h5>
-                            </div>
-                            <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
-                            </div>
-                          </div>
-                          {{-- <div class="controlinfo">
-                            <div class="controltext">
-                                <h5>Last Name :</h5>
-                              </div>
-                              <div class="inputProfile">
-                                <input type="text" name="nama" id="input-name" value=" {{ session('lastname') }} ">
-                              </div>
-                            </div> --}}
-                          <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>E-mail :</h5>
-                            </div>
-                            <div class="inputProfile">
-                              <input type="text" name="email" id="input-email" value="{{ session('email') }}">
-                            </div>
-                          </div>
-                          <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>Phone :</h5>
-                            </div>
-                            <div class="inputProfile">
-                              <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
-                            </div>
-                          </div>
-                          {{-- <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>Gender :</h5>
-                            </div>
-                            <div class="inputGender">
-                                <div class="rbCowok">
-                                    <input type="radio" name="gender" id="cowok"> Female
-                                </div>
-                                <div class="rbCewek">
-                                    <input type="radio" name="gender" id="cewek"> Male
-                                </div>
-                            </div>
-                          </div> --}}
-                          <div class="controlinfo">
-                            <div class="controltext">
-                              <h5>Address :</h5>
-                            </div>
-                            <div class="inputAddress">
-                              <textarea id="address" name="alamat" rows="6" cols="28"> {{session('alamat')}} </textarea>
-                            </div>
-                          </div>
-                          <div class="button-saveProfile">
-                            <div class="cancel-profile">
-                                <button>Cancel</button>
-                            </div>
-                            <form method="POST">
+                            <form method="POST" action="/about-sign-in">
                                 @csrf
-                                <div class="save-profile">
-                                    <button name="saveprofile" value=" {{session('idPembeli')}} ">Save</button>
+                                <div class="controlinfo">
+                                    <div class="controltext">
+                                    <h5>Name :</h5>
+                                    </div>
+                                    <div class="inputProfile">
+                                    <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
+                                    </div>
+                                </div>
+                                {{-- <div class="controlinfo">
+                                    <div class="controltext">
+                                        <h5>Last Name :</h5>
+                                    </div>
+                                    <div class="inputProfile">
+                                        <input type="text" name="nama" id="input-name" value=" {{ session('lastname') }} ">
+                                    </div>
+                                    </div> --}}
+                                <div class="controlinfo">
+                                    <div class="controltext">
+                                    <h5>E-mail :</h5>
+                                    </div>
+                                    <div class="inputProfile">
+                                    <input type="text" name="email" id="input-email" value="{{ session('email') }}">
+                                    </div>
+                                </div>
+                                <div class="controlinfo">
+                                    <div class="controltext">
+                                    <h5>Phone :</h5>
+                                    </div>
+                                    <div class="inputProfile">
+                                    <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
+                                    </div>
+                                </div>
+                                {{-- <div class="controlinfo">
+                                    <div class="controltext">
+                                    <h5>Gender :</h5>
+                                    </div>
+                                    <div class="inputGender">
+                                        <div class="rbCowok">
+                                            <input type="radio" name="gender" id="cowok"> Female
+                                        </div>
+                                        <div class="rbCewek">
+                                            <input type="radio" name="gender" id="cewek"> Male
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div class="controlinfo">
+                                    <div class="controltext">
+                                    <h5>Address :</h5>
+                                    </div>
+                                    <div class="inputAddress">
+                                    <input id="address" name="alamat" rows="" cols="" value=" {{session('alamat')}}">
+                                    </div>
+                                </div>
+                                <div class="button-saveProfile">
+                                    <div class="cancel-profile">
+                                        <button>Cancel</button>
+                                    </div>
+                                    {{-- <form method="POST" action="/about-sign-in">
+                                        @csrf --}}
+                                        <div class="save-profile">
+                                            <button name="saveprofile" value=" {{session('idPembeli')}} ">Save</button>
+                                        </div>
+                                    {{-- </form> --}}
+
                                 </div>
                             </form>
-
-                          </div>
-
                         </div>
                     </div>
                     <div id="ChangePass" class="tabcontent">

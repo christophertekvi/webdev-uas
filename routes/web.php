@@ -69,6 +69,7 @@ Route::get('/faqs-sign-in', function () {
 
 Route::get('/profile-signin', [ProfileSignInController::class, 'index']);
 Route::post('/profile-signin', [ProfileSignInController::class, 'delFav']);
+Route::post('/about-sign-in', [ProfileSignInController::class, 'editProfile']);
 //Route::get('/profile-signin',[ProfileSignInController::class,'list']);
 // Route::prefix("/profile-signin")->group(function() {
 //     Route::get('/',[ProfileSignInController::class,'index']);

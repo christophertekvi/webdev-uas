@@ -90,16 +90,21 @@ class ProfileSignInController extends Controller
     public function editProfile(Request $request)
     {
         $pembeli = session('idPembeli');
-        $request->validate(["email" => "email"]);
+        // $request->validate(["email" => "email"]);
         $request->validate(["nohp" => "numeric"]);
-        $request->validate(["alamat" => "text"]);
+        // $request->validate(["alamat"]);
 
+        $updateDetails = [
+            'EMAIL' => $request->input('email'),
+            'NO_HP' =>  $request->input('nohp'),
+            'ALAMAT' =>  $request->input('alamat')
+        ];
         DB::table('pembeli')
-            ->where('ID_PEMBELI', $pembeli)
-            ->update(['EMAIL', '=', $request->input('email')], ['NO_HP', '=', $request->input('nohp')], ['ALAMAT', '=', $request->input('alamat')])
-            ->get();
+            ->where('ID_PEMBELI', '=', $pembeli)
+            ->update($updateDetails);
+            //->get();
 
-        return redirect()->back()
+        return redirect('profile-signin')
             ->with("success", "Profile successfully updated!");
     }
 
