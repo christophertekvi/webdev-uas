@@ -98,17 +98,18 @@
 .inputProfile input {
     width: 100%;
 }
-.inputGender {
+/* .inputGender {
     width: 52%;
     display: flex;
     justify-content: space-around;
-}
+} */
 .inputAddress {
     width: 52%;
 }
 .inputAddress input {
     width: 100%;
-    height: 300px;
+    height: 200px;
+    padding-bottom: 160px;
 }
 .button-saveProfile {
     display: flex;

@@ -15,7 +15,40 @@
 //   // Get the element with id="defaultOpen" and click on it
 //   document.getElementById("defaultOpen").click();
 
+function cancel() {
+    document.getElementById("input-name").reset();
+    document.getElementById("input-email").reset();
+    document.getElementById("input-phone").reset();
+    document.getElementById("address").reset();
+  }
 
+document.getElementById("image").onchange = function(e) {
+    var file = document.getElementById("image").files[0];
+    var reader = new FileReader();
+    reader.onload = function() {
+      console.log(reader.result);
+      document.getElementById("display").src = reader.result;
+      // image editing
+      // ...
+      var blob = window.dataURLtoBlob(reader.result);
+      console.log(blob, new File([blob], "image.png", {
+        type: "image/png"
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+
+// const fr = new FileReader()
+// const file = document.querySelector("input[name='img[]']").files[0]
+// fr.readAsArrayBuffer(file)
+// fr.onload = function() {
+//     // you can keep blob or save blob to another position
+//     const blob = new Blob([fr.result])
+
+//     // url for download
+//     const url = URL.createObjectURL(blob, {type: "image/png"});
+//  }
 
 
 

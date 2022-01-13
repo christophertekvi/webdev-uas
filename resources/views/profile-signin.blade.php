@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/cart.css" />
         <script type="text/javascript" src="js/template.js"></script>
         <script type="text/javascript" src="js/profile.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.4.0/js/canvas-to-blob.min.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap.css" />
@@ -140,11 +141,11 @@
                     <div id="EditProfile" class="tabcontent">
                         <div class="changeProfilePic">
                             @if (!empty(session('foto')))
-                            <img src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
+                            <img id="display" src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
                             @else
                             <img src="image/user.png">
                             @endif
-                            <input type="file" id="image" name="image">
+                            <input type="file" id="image" name="img">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
                         </div>
@@ -183,38 +184,23 @@
                                     <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
                                     </div>
                                 </div>
-                                {{-- <div class="controlinfo">
-                                    <div class="controltext">
-                                    <h5>Gender :</h5>
-                                    </div>
-                                    <div class="inputGender">
-                                        <div class="rbCowok">
-                                            <input type="radio" name="gender" id="cowok"> Female
-                                        </div>
-                                        <div class="rbCewek">
-                                            <input type="radio" name="gender" id="cewek"> Male
-                                        </div>
-                                    </div>
-                                </div> --}}
                                 <div class="controlinfo">
                                     <div class="controltext">
                                     <h5>Address :</h5>
                                     </div>
                                     <div class="inputAddress">
-                                    <input id="address" name="alamat" rows="" cols="" value=" {{session('alamat')}}">
+                                    <input id="address" name="alamat" value=" {{session('alamat')}}">
                                     </div>
                                 </div>
-                                <div class="button-saveProfile">
-                                    <div class="cancel-profile">
-                                        <button>Cancel</button>
+                                <div class="form-group" style="margin-left: 110px; margin-top: 50px">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button onclick="cancel()" class="btn btn-primary" style="background-color: #e25f21; margin-right:12px">
+                                            Cancel
+                                        </button>
+                                        <button onclick="window.location.reload(true)" name="saveprofile" value=" {{session('idPembeli')}}" type="submit" class="btn btn-primary" style="background-color: #e25f21">
+                                            Save
+                                        </button>
                                     </div>
-                                    {{-- <form method="POST" action="/about-sign-in">
-                                        @csrf --}}
-                                        <div class="save-profile">
-                                            <button name="saveprofile" value=" {{session('idPembeli')}} ">Save</button>
-                                        </div>
-                                    {{-- </form> --}}
-
                                 </div>
                             </form>
                         </div>
@@ -326,6 +312,9 @@
                                             <br><br>
                                             <div class="form-group">
                                                 <div class="col-md-6 col-md-offset-4">
+                                                    <button  class="btn btn-primary" style="background-color: #e25f21; margin-bottom: 50px; margin-right:12px">
+                                                        Cancel
+                                                    </button>
                                                     <button type="submit" class="btn btn-primary" style="background-color: #e25f21; margin-bottom: 50px">
                                                         Change Password
                                                     </button>
@@ -447,8 +436,7 @@
                             @endif
                         </div>
                     </div>
-                    <div id="SignOut" href="/home">
-                        {{-- <p>balik ke home</p> --}}
+                    <div id="SignOut" class="tabcontent" href="/">
                     </div>
                 </div>
         </div>
