@@ -388,7 +388,7 @@
 
                     <div id="FavMenu" class="tabcontent">
                         <div class="favMenu">
-                            @if (session()->get('fav'))
+                            @if (!empty(session('fav')))
                             <div class="container">
                                 <div style="margin: 5%;" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
                                     @foreach ($listFav as $f)
