@@ -130,5 +130,7 @@ Route::prefix("/cart")->group(function () {
     Route::post("/", [MenuController::class, "updateQty"]);
 });
 
+Route::post("/checkout", [CheckoutController::class, "checkout"]);
+
 Route::get('/changePassword', [App\Http\Controllers\SignInController::class, 'showChangePasswordGet'])->name('changePasswordGet');
 Route::post('/changePassword', [App\Http\Controllers\SignInController::class, 'changePasswordPost'])->name('changePasswordPost');

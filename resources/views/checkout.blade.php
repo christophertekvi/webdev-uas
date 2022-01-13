@@ -48,6 +48,7 @@
 
 @include('partials.navbar-sign-in')
 <form method="post">
+    @csrf
         <div class="container1">
             <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px; font-weight: bold;">CHECKOUT</p>
         </div>
@@ -123,8 +124,8 @@
                         <h3>Pakai Poin :</h3>
                     </div>
                     <div class="bagian7text2">
-                        <input class="coba" type="checkbox" name="" id="myCheck" onclick="myFunction()">
-                        <span class="checkmark"></span>
+                        {{-- <input class="coba" type="checkbox" name="" id="myCheck" onclick="myFunction()">
+                        <span class="checkmark"></span> --}}
                         <h3>{{ $poin[0]->poin}}</h3>
                     </div>
                 </div>
@@ -132,11 +133,11 @@
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Metode Pembayaran :</h1>
                     <div class="bagian6radiobutton" style="border-radius: 10px; display: flex; align-items: center;">
                         <div class="rdbuttoncod" style="display: flex; padding: 10px; font-family: 'Readex Pro', sans-serif; align-items: center">
-                            <input value= "1" class ="rd" type="radio" name="payment" id="radiobuttoncod" style="height:15px; width:15px;" data-color = "blue">
+                            <input value= "0" class ="rd" type="radio" name="payment"  style="height:15px; width:15px;" data-color = "blue">
                             <h3 style="font-size: 120%; ">COD</h3>
                         </div>
                         <div class="rdbuttontransferbank" style="display: flex; padding: 10px; font-family: 'Readex Pro', sans-serif; align-items: center;">
-                            <input value= "2" type="radio" name="payment" id="radiobuttontransferbank" style="height:15px; width:15px;" class ="rd" >
+                            <input value= "1" type="radio" name="payment" style="height:15px; width:15px;" class ="rd" >
                             <h3 style="font-size: 120%;">Transfer Bank</h3>
                         </div>
                     </div>
@@ -145,14 +146,14 @@
                         <div class="bagian6text1">
                             <h3>Subtotal Pesanan:</h3>
                             <h3>Ongkos kirim :</h3>
-                            <h3 id="text1" style="display:none">Pakai Point :</h3>
+                            <h3 id="text1" >Pakai Point :</h3>
                             <h3>Total :</h3>
                             <h3>Dapat Poin :</h3>
                         </div>
                         <div class="bagian6text2">
                             <h3>Rp. {{ $total[0]->total}},-</h3>
                             <h3>Rp. 10000,-</h3>
-                            <h3 id="text2" style="display:none">{{ $poin[0]->poin}}</h3>
+                            <h3 id="text2" >{{ $poin[0]->poin}}</h3>
                             <h3>Rp. {{ $total[0]->total + 10000 - $poin[0]->poin}},-</h3>
                             <h3>{{ ($total[0]->total + 10000 - $poin[0]->poin) * 0.1}}</h3>
 

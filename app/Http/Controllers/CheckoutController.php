@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Carbon\Carbon;
 
 class CheckoutController extends Controller
@@ -39,7 +40,10 @@ class CheckoutController extends Controller
         $tglKirim = $request->input("tanggalPesan");
         $alamat = $request->input("alamat");
         $pesan = $request->input("pesan");
+        $ongkir = 10000;
+
         $paymentmethod = $type[$request->input("payment")];
+        //dd($paymentmethod);
         $data = DB::table('keranjang')
                     ->select('id_menu', 'nama_menu', 'foto_menu', 'harga_menu', 'qty')
                     ->where('id_pembeli' ,$id)
@@ -47,7 +51,8 @@ class CheckoutController extends Controller
         $total = DB::table('keranjang')->select(DB::raw('sum(harga_menu*qty) as total'))->where('ID_PEMBELI', $id)->get();
 
         $poin = DB::table('pembeli')->select(DB::raw('poin'))->where('ID_PEMBELI', $id)->get();
-
+        $totalbayar = $total - $poin + $ongkir;
+        $dapet = $totalbayar * 0.1;
         DB::table('transaksi_beli')->insert([
             'ID_PEMBELI' => $genidtb,
             'TANGGAL_TRANSAKSI' => now(),
@@ -56,10 +61,10 @@ class CheckoutController extends Controller
             'TANGGAL_KIRIM' => $tglKirim,
             'NOTES_PESAN' => $pesan,
             'ALAMAT' => $alamat,
-            'ONGKIR' => 10000,
-            'TOTAL_BAYAR' => $total-$poin+10000,
+            'ONGKIR' => $ongkir,
+            'TOTAL_BAYAR' => $totalbayar,
             'CARA_PEMBAYARAN' => $paymentmethod,
-            'DAPET_POIN' => ($total-$poin+10000)*0.1,
+            'DAPET_POIN' => $dapet,
             'STATUS_PESANAN' => 'PENDING',
             'TB_DELETE' => 0
         ]);
@@ -77,5 +82,7 @@ class CheckoutController extends Controller
                 'DB_DELETE' => 0
             ]);
         }
+
+        return redirect('detail-pesanan');
     }
 }
