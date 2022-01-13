@@ -17,42 +17,42 @@ class ProfileSignInController extends Controller
     {
         $data1 = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where(function($query){
+            ->where(function ($query) {
                 $query->where('STATUS_PESANAN', 'On Process')
-                        ->orWhere('STATUS_PESANAN', 'Pending');
+                    ->orWhere('STATUS_PESANAN', 'Pending');
             })
             ->get()
             ->toArray();
-            $countdataordersonprocess = count($data1);
+        $countdataordersonprocess = count($data1);
         $data2 = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where(function($query){
+            ->where(function ($query) {
                 $query->where('STATUS_PESANAN', 'Selesai')
-                        ->orWhere('STATUS_PESANAN', 'Cancelled');
+                    ->orWhere('STATUS_PESANAN', 'Cancelled');
             })
             ->get()
             ->toArray();
-            $countdataorderscomplete = count($data2);
+        $countdataorderscomplete = count($data2);
         $dataordersonprocess = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where(function($query){
+            ->where(function ($query) {
                 $query->where('STATUS_PESANAN', 'On Process')
-                        ->orWhere('STATUS_PESANAN', 'Pending');
+                    ->orWhere('STATUS_PESANAN', 'Pending');
             })
             ->simplePaginate($countdataordersonprocess);
 
         $dataorderscomplete = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where(function($query){
+            ->where(function ($query) {
                 $query->where('STATUS_PESANAN', 'Selesai')
-                        ->orWhere('STATUS_PESANAN', 'Cancelled');
+                    ->orWhere('STATUS_PESANAN', 'Cancelled');
             })
             ->simplePaginate($countdataorderscomplete);
 
         //buat ngambil gambar dr tabel menu yg id nya sama di menu fav
-        $imgFavMenu = DB::table('menu')
-            ->where('ID_MENU', session('fav'))
-            ->get();
+        // $imgFavMenu = DB::table('menu')
+        //     ->where('ID_MENU', session('fav'))
+        //     ->get();
         // dd($imgFavMenu->ID_MENU);
 
         $pembeli = session('idPembeli');
@@ -78,7 +78,6 @@ class ProfileSignInController extends Controller
         return view('profile-signin', [
             "dataorderscomplete" => $dataorderscomplete,
             "dataordersonprocess" => $dataordersonprocess,
-            "imgFavMenu" => $imgFavMenu,
             "listFav" => $listFav,
             "title" => "Profile"
         ]);
