@@ -26,7 +26,8 @@ class MenuController extends Controller
 
         // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
-        $menu = Menu::query()->paginate(10);
+        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(10);
+        //Menu::query()->where('MENU_DELETE' != '0')->paginate(10);
 
         return view("menu-sign-in", [
             "menu" => $menu,
@@ -47,7 +48,7 @@ class MenuController extends Controller
 
         // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
-        $menu = Menu::query()->paginate(10);
+        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(10);
 
         return view("menu", [
             "menu" => $menu,
@@ -57,7 +58,7 @@ class MenuController extends Controller
 
     public function detail($id)
     {
-        $menu = Menu::query()->findOrFail($id);
+        $menu = DB::table('menu')->where('MENU_DELETE', 0)->findOrFail($id);
 
         return view("detailmenu", [
             "nama" => $menu->NAMA_ITEM,
@@ -164,6 +165,9 @@ class MenuController extends Controller
             DB::table('menu_favorit')->insert([
                 'ID_PEMBELI' => $idP,
                 'ID_MENU' => $menu->ID_MENU,
+                'FOTO_MENU' => $menu->FOTO_MENU,
+                'NAMA_MENU' => $menu->NAMA_MENU,
+                'HARGA_MENU' => $menu->HARGA_MENU,
                 'delete' => '0'
             ]);
             return redirect('menu-sign-in')
