@@ -50,31 +50,8 @@ class ProfileSignInController extends Controller
             })
             ->simplePaginate($countdataorderscomplete);
 
-        //buat ngambil gambar dr tabel menu yg id nya sama di menu fav
-        // $imgFavMenu = DB::table('menu')
-        //     ->where('ID_MENU', session('fav'))
-        //     ->get();
-        // dd($imgFavMenu->ID_MENU);
-
         $pembeli = session('idPembeli');
         $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
-        // dd($listFav);
-        // $check = false;
-        // foreach ($listFav as $lf) {
-        //     // dd($imgFavMenu->ID_MENU);
-        //     if ($lf->ID_MENU == $imgFavMenu->ID_MENU) {
-        //         $check = true;
-        //     }
-        // }
-        // if ($check) {
-        //     DB::table('menu_favorit')
-        //         ->where([
-        //             ['ID_PEMBELI', '=', $pembeli],
-        //             ['ID_MENU', '=', $imgFavMenu->ID_MENU]
-        //         ])
-        //         ->delete();
-        // } else {
-        // }
 
         return view('profile-signin', [
             "dataorderscomplete" => $dataorderscomplete,
@@ -91,7 +68,7 @@ class ProfileSignInController extends Controller
 
         $pembeli = session('idPembeli');
         $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
-        
+
         $check = false;
         foreach ($listFav as $lf) {
             if ($lf->ID_MENU == $imgFavMenu->ID_MENU) {
@@ -108,6 +85,22 @@ class ProfileSignInController extends Controller
         }
         return redirect()->back()
             ->with("success", "Removed from Favorite " . $imgFavMenu->NAMA_MENU);
+    }
+
+    public function editProfile(Request $request)
+    {
+        $pembeli = session('idPembeli');
+        $request->validate(["email" => "email"]);
+        $request->validate(["nohp" => "numeric"]);
+        $request->validate(["alamat" => "text"]);
+
+        DB::table('pembeli')
+            ->where('ID_PEMBELI', $pembeli)
+            ->update(['EMAIL', '=', $request->input('email')], ['NO_HP', '=', $request->input('nohp')], ['ALAMAT', '=', $request->input('alamat')])
+            ->get();
+
+        return redirect()->back()
+            ->with("success", "Profile successfully updated!");
     }
 
     // public function list()

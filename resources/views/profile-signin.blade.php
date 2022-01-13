@@ -170,7 +170,7 @@
                               <h5>E-mail :</h5>
                             </div>
                             <div class="inputProfile">
-                              <input type="text" name="nama" id="input-name" value="{{ session('email') }}">
+                              <input type="text" name="email" id="input-email" value="{{ session('email') }}">
                             </div>
                           </div>
                           <div class="controlinfo">
@@ -199,16 +199,20 @@
                               <h5>Address :</h5>
                             </div>
                             <div class="inputAddress">
-                              <textarea id="address" name="address" rows="6" cols="28"> {{session('alamat')}} </textarea>
+                              <textarea id="address" name="alamat" rows="6" cols="28"> {{session('alamat')}} </textarea>
                             </div>
                           </div>
                           <div class="button-saveProfile">
                             <div class="cancel-profile">
                                 <button>Cancel</button>
                             </div>
-                            <div class="save-profile">
-                                <button>Save</button>
-                            </div>
+                            <form method="POST">
+                                @csrf
+                                <div class="save-profile">
+                                    <button name="saveprofile" value=" {{session('idPembeli')}} ">Save</button>
+                                </div>
+                            </form>
+
                           </div>
 
                         </div>
