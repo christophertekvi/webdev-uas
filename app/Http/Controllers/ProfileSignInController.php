@@ -15,17 +15,39 @@ class ProfileSignInController extends Controller
      */
     public function index()
     {
+        $data1 = DB::table('transaksi_beli')
+            ->where('ID_PEMBELI', session('idPembeli'))
+            ->where(function($query){
+                $query->where('STATUS_PESANAN', 'On Process')
+                        ->orWhere('STATUS_PESANAN', 'Pending');
+            })
+            ->get()
+            ->toArray();
+            $countdataordersonprocess = count($data1);
+        $data2 = DB::table('transaksi_beli')
+            ->where('ID_PEMBELI', session('idPembeli'))
+            ->where(function($query){
+                $query->where('STATUS_PESANAN', 'Selesai')
+                        ->orWhere('STATUS_PESANAN', 'Cancelled');
+            })
+            ->get()
+            ->toArray();
+            $countdataorderscomplete = count($data2);
         $dataordersonprocess = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where('STATUS_PESANAN', 'On Process')
-            ->orWhere('STATUS_PESANAN', 'Pending')
-            ->simplePaginate(session('countdataordersonprocess'));
+            ->where(function($query){
+                $query->where('STATUS_PESANAN', 'On Process')
+                        ->orWhere('STATUS_PESANAN', 'Pending');
+            })
+            ->simplePaginate($countdataordersonprocess);
 
         $dataorderscomplete = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
-            ->where('STATUS_PESANAN', 'Selesai')
-            ->orWhere('STATUS_PESANAN', 'Cancelled')
-            ->simplePaginate(session('countdataorderscomplete'));
+            ->where(function($query){
+                $query->where('STATUS_PESANAN', 'Selesai')
+                        ->orWhere('STATUS_PESANAN', 'Cancelled');
+            })
+            ->simplePaginate($countdataorderscomplete);
 
         //buat ngambil gambar dr tabel menu yg id nya sama di menu fav
         $imgFavMenu = DB::table('menu')
