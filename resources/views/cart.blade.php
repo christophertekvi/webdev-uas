@@ -102,7 +102,7 @@
                                 <div style= "float: right; margin-right: 3%"class="order_total_content text-md-right">
                                     <div class="order_total_title">Order Total:</div>
                                     {{-- @for ($m = 0; $m < count($cart); $m++) --}}
-                                    <div class="order_total_amount">  {{ $total[0]->total}} </div>
+                                    <div class="order_total_amount"> Rp. {{ $total[0]->total}} </div>
                                     {{-- @endfor --}}
                                 </div>
                             </div>
