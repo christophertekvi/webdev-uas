@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/template.css" />
     <link rel="stylesheet" href="css/checkout.css" />
     <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script>
 
     <link href="css/metro.css" rel="stylesheet">
     <script src="js/jquery-2.1.3.min.js"></script>
@@ -65,7 +66,8 @@
 
                 <div class="bagian2" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Alamat :</h1>
-                    <textarea name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;"></textarea>
+                    <input name="alamat" id="alamatuser" value="{{$alamat[0]->alamat}}" style="border-radius: 10px; width: 755px">
+                    {{-- <textarea name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;"></textarea> --}}
                 </div>
 
                 <div class="bagian3" style="margin-top: 30px;">
@@ -92,7 +94,7 @@
 
                                 </div>
                                 <div class="subtotaltext">
-                                    <h3>Subtotal : Rp. {{ $total = ($c->harga_menu * $c->qty) }}</h3>
+                                    <h3>Subtotal : Rp. {{ $c->harga_menu * $c->qty }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -102,18 +104,17 @@
                 <div class="bagian4" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
                     <div class="pesaninput">
-                        <textarea name="pesanpelanggan" id="textpesan" style="border-radius: 10px;"></textarea>
+                        <input name="pesan" id="alamatuser"  style="border-radius: 10px; width: 755px">
+                        {{-- <textarea name="pesanpelanggan" id="textpesan" style="border-radius: 10px;"></textarea> --}}
                     </div>
                 </div>
                 <div class="bagian5" style=" border-radius: 10px;">
                     <div class="empty"></div>
                     <div class="bagian5text1">
-                        <h3>Ongkos kirim : </h3>
                         <h3>Subtotal : </h3>
                     </div>
                     <div class="bagian5text2">
-                        <h3>Rp. 10.000,-</h3>
-                        <h3>Rp. {{ $subtotal = $total }},-</h3>
+                        <h3>Rp. {{ $total[0]->total}},-</h3>
                     </div>
                 </div>
                 <div class="bagian7" style=" border-radius: 10px;">
@@ -122,41 +123,42 @@
                         <h3>Pakai Poin :</h3>
                     </div>
                     <div class="bagian7text2">
-                        <input class="coba"type="checkbox" name="" id="bluecheckbox">
+                        <input class="coba" type="checkbox" name="" id="myCheck" onclick="myFunction()">
                         <span class="checkmark"></span>
-                        <h3>........</h3>
+                        <h3>{{ $poin[0]->poin}}</h3>
                     </div>
                 </div>
                 <div class="bagian6" style="margin-top: 30px;">
                     <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Metode Pembayaran :</h1>
                     <div class="bagian6radiobutton" style="border-radius: 10px; display: flex; align-items: center;">
                         <div class="rdbuttoncod" style="display: flex; padding: 10px; font-family: 'Readex Pro', sans-serif; align-items: center">
-                            <input class ="rd" type="radio" name="cod" id="radiobuttoncod" style="height:15px; width:15px;" data-color = "blue">
+                            <input value= "1" class ="rd" type="radio" name="payment" id="radiobuttoncod" style="height:15px; width:15px;" data-color = "blue">
                             <h3 style="font-size: 120%; ">COD</h3>
                         </div>
                         <div class="rdbuttontransferbank" style="display: flex; padding: 10px; font-family: 'Readex Pro', sans-serif; align-items: center;">
-                            <input type="radio" name="transferBank" id="radiobuttontransferbank" style="height:15px; width:15px;" class ="rd" >
+                            <input value= "2" type="radio" name="payment" id="radiobuttontransferbank" style="height:15px; width:15px;" class ="rd" >
                             <h3 style="font-size: 120%;">Transfer Bank</h3>
                         </div>
                     </div>
                     <div class="bagian6deatilpembayaran" style="border-radius: 10px;">
                         <div class="empty"></div>
                         <div class="bagian6text1">
+                            <h3>Subtotal Pesanan:</h3>
                             <h3>Ongkos kirim :</h3>
-                            <h3>Subtotal :</h3>
-                            <h3>Pakai Point :</h3>
+                            <h3 id="text1" style="display:none">Pakai Point :</h3>
                             <h3>Total :</h3>
                             <h3>Dapat Poin :</h3>
                         </div>
                         <div class="bagian6text2">
-                            <h3>........</h3>
-                            <h3>......</h3>
-                            <h3>........</h3>
-                            <h3>......</h3>
-                            <h3>........</h3>
+                            <h3>Rp. {{ $total[0]->total}},-</h3>
+                            <h3>Rp. 10000,-</h3>
+                            <h3 id="text2" style="display:none">{{ $poin[0]->poin}}</h3>
+                            <h3>Rp. {{ $total[0]->total + 10000 - $poin[0]->poin}},-</h3>
+                            <h3>{{ ($total[0]->total + 10000 - $poin[0]->poin) * 0.1}}</h3>
 
                         </div>
                     </div>
+
                     <div class="buttoncheckout">
                         <div class="empty2">
 

@@ -107,9 +107,10 @@
                                 </div>
                             </div>
 
-                            <div class="cart_buttons">
-                                <button href="/home-sign-in"  type="button" class="button cart_button_clear">Back</button>
-                                <button href="/checkout" style= "background-color: #e25f21;" type="button" class="button cart_button_checkout">Check Out</button>
+                            <div class="cart_buttons" style="display: flex; justify-content: flex-end">
+                                <form method="GET" action="/checkout">
+                                    <button href="/checkout" style= "background-color: #e25f21;" type="submit" class="button cart_button_checkout">Check Out</button>
+                                </form>
                             </div>
                         </div>
                     </div>
