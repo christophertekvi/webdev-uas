@@ -117,8 +117,27 @@ class SignInController extends Controller
                 // $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
 
                 //titip buat id pembeli
-                $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
                 $idPembeli = $obj['ID_PEMBELI'];
+                $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
+                $dataordersonprocess = DB::table('transaksi_beli')
+                ->where('ID_PEMBELI', session('idPembeli'))
+                ->where('STATUS_PESANAN', 'On Process')
+                ->orWhere('STATUS_PESANAN', 'Pending')
+                ->get()
+                ->toArray();
+                $countdataordersonprocess = count($dataordersonprocess);
+
+                $request->session()->put('countdataordersonprocess', $countdataordersonprocess);
+
+                 $dataorderscomplete = DB::table('transaksi_beli')
+                ->where('ID_PEMBELI', session('idPembeli'))
+                ->where('STATUS_PESANAN', 'Selesai')
+                ->orWhere('STATUS_PESANAN', 'Cancelled')
+                ->get()
+                ->toArray();
+                $countdataorderscomplete = count($dataorderscomplete);
+                $request->session()->put('countdataorderscomplete', $countdataorderscomplete);
+
                 $orders = DB::table('transaksi_beli')->where('ID_PEMBELI', $idPembeli)->first();
                 $fav = DB::table('menu_favorit')->where('ID_PEMBELI', $idPembeli)->first();
                 if (!is_null($fav)) {
