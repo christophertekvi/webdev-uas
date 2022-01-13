@@ -95,9 +95,11 @@
                         <div class="column right">
                             <form method="POST" action="{{('faqs-sign-in')}}">
                                 @csrf
-                                <button value="{{ $m->ID_MENU }}" name="AddFav" style="border-style:none; background-color: transparent;">
+
+                                <button value="{{ $m->ID_MENU }}" name="AddFav" id="AddFav" style="border-style:none; background-color: transparent;">
                                 <i class="far fa-heart"></i>
                                 </button>
+
                             </form>
                         </div>
                     </div>

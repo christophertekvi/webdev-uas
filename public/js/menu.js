@@ -16,3 +16,10 @@ const validate = dateString => {
 
   var today = new Date().toISOString().split('T')[0];
     document.getElementsByName("datepicker")[0].setAttribute('min', today);
+
+
+    document.getElementById('AddFav').onclick = changeColor;
+    function changeColor() {
+        document.body.style.color = "rgb(248, 45, 79)";
+        return false;
+    }
