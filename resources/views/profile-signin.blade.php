@@ -336,7 +336,7 @@
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
-                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtp->SUBTOTAL_TRANSAKSI }}</div>
+                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtp->TOTAL_BAYAR }}</div>
                                             </div>
                                             <div class="cart_item_title d-flex justify-content-between">
                                                 <a href="/detailmenu-sign-in">Details</a>
@@ -361,7 +361,7 @@
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
-                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtc->SUBTOTAL_TRANSAKSI }}</div>
+                                                <div class="cart_item_text" style="color:black">Rp. {{ $dtc->TOTAL_BAYAR }}</div>
                                             </div>
                                             <div class="cart_item_title d-flex justify-content-between">
                                                 <a href="/detailmenu-sign-in">Details</a>
