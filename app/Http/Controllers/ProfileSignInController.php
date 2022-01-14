@@ -115,22 +115,16 @@ class ProfileSignInController extends Controller
         $this->validate($request, [
             'file' => 'file|image|mimes:jpeg,png,jpg'
         ]);
-        $filefoto = $request->file('file');
-        $filefoto->getRealPath();
-        dd($filefoto);
-        $fotoblob = base64_encode(file_get_contents($filefoto));
+        // $filefoto = $request->file('file');
+        // $filefoto->getRealPath();
+        // dd($filefoto);
+        // $fotoblob = base64_encode(file_get_contents($filefoto));
         // $foto = base64_encode($fotoblob);
 
-        // $first = Str::substr('input-name',);
-        // $fullname = 'input-name';
-        // $split = explode(" ", $fullname);
-        // dd($split);
-        // $first = $split[0];
-        // $last = $split[1];
         $updateDetails = [
-            'FOTO_PEMBELI' => $fotoblob,
-            // 'FIRST_NAME' => $request->input($first),
-            // 'LAST_NAME' => $request->input($last),
+            // 'FOTO_PEMBELI' => $fotoblob,
+            'FIRST_NAME' => $request->input('first'),
+            'LAST_NAME' => $request->input('last'),
             'EMAIL' => $request->input('email'),
             'NO_HP' =>  $request->input('nohp'),
             'ALAMAT' =>  $request->input('alamat')
@@ -149,16 +143,17 @@ class ProfileSignInController extends Controller
     }
 
 
-    public function detailpesanan($id) {
+    public function detailpesanan($id)
+    {
         $dataorders = DB::table('transaksi_beli')
-        ->where('ID_TB', $id)->first();
+            ->where('ID_TB', $id)->first();
 
         //dd($alamat->alamat);
         $detailorders = DB::table('detail_beli')
-        ->where('ID_TB', $id)->get();
+            ->where('ID_TB', $id)->get();
         //dd($detailorders);
         $idmenu = DB::table('detail_beli')->select('id_menu')
-        ->where('ID_TB', $id)->get();
+            ->where('ID_TB', $id)->get();
         //dd($idmenu);
 
         // }
@@ -175,7 +170,6 @@ class ProfileSignInController extends Controller
             //"detailpembeli" => $detailpembeli,
             "title" => "Profile"
         ]);
-
     }
     // public function profileUpdated(){
     //     $pembeli = session('idPembeli');

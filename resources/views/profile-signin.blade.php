@@ -154,12 +154,19 @@
                                 @csrf
                                 <div class="controlinfo">
                                     <div class="controltext">
-                                    <h5>Name :</h5>
+                                    <h5> First Name :</h5>
                                     </div>
                                     <div class="inputProfile">
-                                    <input type="text" name="nama" id="input-name" value=" {{ session('firstname') }} {{session('lastname')}} ">
-                                    {{-- <input type="text" name="nama" id="input-name" value=" {{ $detailpembeli -> FIRST_NAME }} {{$detailpembeli -> LAST_NAME}} "> --}}
+                                    <input type="text" name="first" id="input-name" value=" {{ session('firstname') }} ">
                                     </div>
+                                </div>
+                                <div class="controlinfo">
+                                    <div class="controltext">
+                                        <h5> Last Name :</h5>
+                                        </div>
+                                        <div class="inputProfile">
+                                        <input type="text" name="last" id="input-name" value=" {{ session('lastname') }} ">
+                                        </div>
                                 </div>
                                 <div class="controlinfo">
                                     <div class="controltext">

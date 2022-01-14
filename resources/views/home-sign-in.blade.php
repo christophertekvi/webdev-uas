@@ -189,7 +189,7 @@
                 <a href="{{ ('menu-sign-in/'.$bs->ID_MENU) }}"
                     class="deskripsi"><h5 style="text-align: center;font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px; color: black">{{ $bs->NAMA_MENU }}</h5></a>
                 <p style="font-style: italic; ">
-                    {{ $bs->HARGA_MENU }}
+                   Rp. {{ $bs->HARGA_MENU }}
                 </p>
             </div>
         @endforeach
