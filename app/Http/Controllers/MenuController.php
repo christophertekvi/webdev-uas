@@ -26,7 +26,7 @@ class MenuController extends Controller
 
         // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
-        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(10);
+        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(8);
         //Menu::query()->where('MENU_DELETE' != '0')->paginate(10);
 
         return view("menu-sign-in", [
@@ -48,7 +48,7 @@ class MenuController extends Controller
 
         // $menu = DB::select('select m.id_menu, nama_menu,harga_menu from menu m, jadwal j, jadwal_catering jc where m.id_menu = jc.id_menu and j.id_jadwal = jc.id_jadwal');
 
-        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(10);
+        $menu = DB::table('menu')->where('MENU_DELETE', 0)->paginate(8);
 
         return view("menu", [
             "menu" => $menu,
