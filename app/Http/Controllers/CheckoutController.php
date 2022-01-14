@@ -40,7 +40,7 @@ class CheckoutController extends Controller
         $tglKirim = $request->input("tanggalPesan");
         $alamat = $request->input("alamat");
         $pesan = $request->input("pesan");
-        $ongkir = 10000;
+        $ongkir = (int)10000;
 
         $paymentmethod = $type[$request->input("payment")];
         //dd($paymentmethod);
@@ -51,10 +51,11 @@ class CheckoutController extends Controller
         $total = DB::table('keranjang')->select(DB::raw('sum(harga_menu*qty) as total'))->where('ID_PEMBELI', $id)->get();
 
         $poin = DB::table('pembeli')->select(DB::raw('poin'))->where('ID_PEMBELI', $id)->get();
-        $totalbayar = $total - $poin + $ongkir;
+        $totalbayar = ((int)$total[0]->total) - ((int)$poin[0]->poin) + $ongkir;
         $dapet = $totalbayar * 0.1;
         DB::table('transaksi_beli')->insert([
-            'ID_PEMBELI' => $genidtb,
+            'ID_PEMBELI' => $id,
+            'ID_TB' => $genidtb,
             'TANGGAL_TRANSAKSI' => now(),
             'SUBTOTAL_TRANSAKSI' => $total,
             'PAKE_POIN' => $poin,
