@@ -42,7 +42,7 @@
             </div>
             <div class="namabelakang">
               <h1 style="font-size: medium;">Last Name :</h1>
-              <input type="text" name="lastname" placeholder="First Name" class="form-control @error('lastname')is-invalid @enderror" required>
+              <input type="text" name="lastname" placeholder="Last Name" class="form-control @error('lastname')is-invalid @enderror" required>
               @error('lastname')
                     <div class="invalid-feedback">
                         {{ $message }}
