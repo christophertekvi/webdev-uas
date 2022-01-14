@@ -43,10 +43,18 @@ class ControllerPostProfileSignIn extends Controller
             $userdata = DB::table('pembeli')->where('ID_PEMBELI', session('idPembeli'))->first();
             $obj = get_object_vars($userdata);
             if($obj['PASSWORD'] == $request->current_password){
-
+                if($request->new_password == $request->new_password_confirmation){
+                    DB::table('pembeli')
+                    ->where('ID_PEMBELI', session('idPembeli'))
+                    ->update(array('PASSWORD' => $request->new_password_confirmation));
+                    return back()->with('PasswordChanged', 'Password Has Changed!');
+                }
+                else{
+                    return back()->with('ChangePasswordError', 'Change Password Failed');
+                }
             }
             else {
-                dd('salah');
+                return back()->with('ChangePasswordError', 'Change Password Failed');
             }
     }
 
