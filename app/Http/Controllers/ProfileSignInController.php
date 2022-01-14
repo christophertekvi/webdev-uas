@@ -102,6 +102,7 @@ class ProfileSignInController extends Controller
         $pembeli = session('idPembeli');
         // $request->validate(["email" => "email"]);
         $request->validate(["nohp" => "numeric"]);
+        $request->validate(["file" => "file|image|mimes:jpeg,png,jpg"]);
         // $request->validate(["alamat"]);
         $dp = DB::table('pembeli')->where('ID_PEMBELI', $pembeli)->first();
 
@@ -114,11 +115,12 @@ class ProfileSignInController extends Controller
         // $img = base64_encode(file_get_contents(addslashes('img')));
 
         // $foto = Input::file('img');
-        $this->validate($request, [
-            'file' => 'file|image|mimes:jpeg,png,jpg'
-        ]);
-        // $filefoto = $request->file('file');
+        // $this->validate($request, [
+        //     'file' => 'file|image|mimes:jpeg,png,jpg'
+        // ]);
+        // $filefoto = $request->input('file');
         // $filefoto->getRealPath();
+        // $filefoto = file_get_contents($request->input('file'));
         // dd($filefoto);
         // $fotoblob = base64_encode(file_get_contents($filefoto));
         // $foto = base64_encode($fotoblob);
@@ -140,7 +142,8 @@ class ProfileSignInController extends Controller
         $request->session()->put('noHP', $dp->NO_HP);
         $request->session()->put('alamat', $dp->ALAMAT);
 
-        return redirect('profile-signin'
+        return redirect(
+            'profile-signin'
         )
             ->with("success", "Profile successfully updated!");
     }

@@ -22,65 +22,65 @@ function cancel() {
     document.getElementById("address").reset();
   }
 
- function cancelpw(){
-    document.getElementById("current-password").reset();
-    document.getElementById("new-password").reset();
-    document.getElementById("new-password-confirm").reset();
- }
+//  function cancelpw(){
+//     document.getElementById("current-password").reset();
+//     document.getElementById("new-password").reset();
+//     document.getElementById("new-password-confirm").reset();
+//  }
 
-    var savee = document.getElementById("saveprofile");
-    savee.onclick = function() {
+//     var savee = document.getElementById("saveprofile");
+//     savee.onclick = function() {
 
-   var fullname = document.getElementById("input-name").value;
-   console.log(fullname);
+//    var fullname = document.getElementById("input-name").value;
+//    console.log(fullname);
 
-   /*
-    *  We've gotten the fullname from the HTML form field.
-    *  Your job is to use the String.slice(), String.substring() or String.substr() functions
-    *  to divide your name into separate first and last name strings and assign
-    *  them to the variables provided. You may
-    *  need String.indexOf() as well.
-    *
-    *  You may not hardcode the position of where to split the string. Your code should
-    *  work for anyone's first and last name. If the user enters a name without any whitespace
-    *  return that as firstname and leave lastname blank.
-    *
-    *  If a name has more than one whitespace (as in, using one or more middle names),
-    *  make the first name 'firstname' and assign the rest to 'lastname'
-    *
-    **/
-   var spaceIndex = fullname.indexOf(" ");
-   var firstname;
-   var lastname;
+//    /*
+//     *  We've gotten the fullname from the HTML form field.
+//     *  Your job is to use the String.slice(), String.substring() or String.substr() functions
+//     *  to divide your name into separate first and last name strings and assign
+//     *  them to the variables provided. You may
+//     *  need String.indexOf() as well.
+//     *
+//     *  You may not hardcode the position of where to split the string. Your code should
+//     *  work for anyone's first and last name. If the user enters a name without any whitespace
+//     *  return that as firstname and leave lastname blank.
+//     *
+//     *  If a name has more than one whitespace (as in, using one or more middle names),
+//     *  make the first name 'firstname' and assign the rest to 'lastname'
+//     *
+//     **/
+//    var spaceIndex = fullname.indexOf(" ");
+//    var firstname;
+//    var lastname;
 
-   if (spaceIndex == -1) {
-     lastname = fullname;
-     lastname = "";
-   } else {
+//    if (spaceIndex == -1) {
+//      lastname = fullname;
+//      lastname = "";
+//    } else {
 
-     var firstname = fullname.substring(0, spaceIndex);
-     var lastname = fullname.substr(spaceIndex + 1);
-   }
+//      var firstname = fullname.substring(0, spaceIndex);
+//      var lastname = fullname.substr(spaceIndex + 1);
+//    }
 
-   document.getElementById("firstname").innerHTML = firstname;
-   document.getElementById("lastname").innerHTML = lastname;
- };
+//    document.getElementById("firstname").innerHTML = firstname;
+//    document.getElementById("lastname").innerHTML = lastname;
+//  };
 
-document.getElementById("image").onchange = function(e) {
-    var file = document.getElementById("image").files[0];
-    var reader = new FileReader();
-    reader.onload = function() {
-      console.log(reader.result);
-      document.getElementById("display").src = reader.result;
-      // image editing
-      // ...
-      var blob = window.dataURLtoBlob(reader.result);
-      console.log(blob, new File([blob], "image.png", {
-        type: "image/png"
-      }));
-    };
-    reader.readAsDataURL(file);
-  };
+// document.getElementById("image").onchange = function(e) {
+//     var file = document.getElementById("image").files[0];
+//     var reader = new FileReader();
+//     reader.onload = function() {
+//       console.log(reader.result);
+//       document.getElementById("display").src = reader.result;
+//       // image editing
+//       // ...
+//       var blob = window.dataURLtoBlob(reader.result);
+//       console.log(blob, new File([blob], "image.png", {
+//         type: "image/png"
+//       }));
+//     };
+//     reader.readAsDataURL(file);
+//   };
 
 
 // const fr = new FileReader()

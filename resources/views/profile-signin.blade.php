@@ -203,7 +203,7 @@
                                         <button onclick="cancel()" class="btn btn-primary" style="background-color: #e25f21; margin-right:12px">
                                             Cancel
                                         </button>
-                                        <button onclick="window.location.reload(true)" name="saveprofile" value=" {{session('idPembeli')}}" type="submit" class="btn btn-primary" style="background-color: #e25f21">
+                                        <button  name="saveprofile" value=" {{session('idPembeli')}}" type="submit" class="btn btn-primary" style="background-color: #e25f21">
                                             Save
                                         </button>
                                     </div>
