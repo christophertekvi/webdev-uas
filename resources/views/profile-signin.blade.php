@@ -354,7 +354,7 @@
                                                 <div class="cart_item_text" style="color:black">Rp. {{ $dtp->TOTAL_BAYAR }}</div>
                                             </div>
                                             <div class="cart_item_title d-flex justify-content-between">
-                                                <a href="/detailmenu-sign-in">Details</a>
+                                                <a href="{{ ('detail-pesanan/'.$dtp->ID_TB) }}">Details</a>
                                             </div>
                                         </div>
 
@@ -379,7 +379,7 @@
                                                 <div class="cart_item_text" style="color:black">Rp. {{ $dtc->TOTAL_BAYAR }}</div>
                                             </div>
                                             <div class="cart_item_title d-flex justify-content-between">
-                                                <a href="/detailmenu-sign-in">Details</a>
+                                                <a href="{{ ('detail-pesanan/'.$dtc->ID_TB) }}">Details</a>
                                             </div>
                                         </div>
                                     </li>

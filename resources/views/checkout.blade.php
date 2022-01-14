@@ -144,7 +144,7 @@
                     <div class="bagian6deatilpembayaran" style="border-radius: 10px;">
                         <div class="empty"></div>
                         <div class="bagian6text1">
-                            <h3>Subtotal Pesanan:</h3>
+                            <h3>Subtotal Pesanan :</h3>
                             <h3>Ongkos kirim :</h3>
                             <h3 id="text1" >Pakai Point :</h3>
                             <h3>Total :</h3>

@@ -53,6 +53,8 @@ class ProfileSignInController extends Controller
             })
             ->simplePaginate($countdataorderscomplete);
 
+
+
         $pembeli = session('idPembeli');
         $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
 
@@ -140,6 +142,30 @@ class ProfileSignInController extends Controller
             ->with("success", "Profile successfully updated!");
     }
 
+
+    public function detailpesanan($id) {
+        $dataorders = DB::table('transaksi_beli')
+        ->where('ID_TB', $id)->first();
+
+        //dd($alamat->alamat);
+        $detailorders = DB::table('detail_beli')
+        ->where('ID_TB', $id)->get();
+        //dd($detailorders);
+
+        // foreach($detailorders as $do)
+        // {
+        //     $namamenu = DB::table('menu')->select('nama')->where('ID_MENU', $do->id_menu)->get();
+        // }
+
+
+        return view('detail-pesanan', [
+            "dataorders" => $dataorders,
+            "detailorders" => $detailorders,
+            //"detailpembeli" => $detailpembeli,
+            "title" => "Profile"
+        ]);
+
+    }
     // public function profileUpdated(){
     //     $pembeli = session('idPembeli');
     //     DB::table('pembeli')->where('ID_PEMBELI', '=', $pembeli)->first();

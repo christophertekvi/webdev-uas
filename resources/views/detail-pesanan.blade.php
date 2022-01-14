@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
-    <link rel="stylesheet" href="css/template.css" />
-    <link rel="stylesheet" href="css/detail-pesanan.css">
-    <script type="text/javascript" src="js/template.js"></script>
+    <link rel="stylesheet" href="/css/template.css" />
+    <link rel="stylesheet" href="/css/detail-pesanan.css">
+    <script type="text/javascript" src="/js/template.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -34,7 +34,7 @@
             <a href="/home">
               <img
                 class="logo"
-                src="image/logo.png"
+                src="/image/logo.png"
                 style="height: 100%"
                 alt="Logo"
               />
@@ -99,18 +99,19 @@
         <div class="controlcontainer2">
             <div class="bagian1">
                 <div class="tanggalpesanan" style="border-radius: 10px;">
-                    <p>Tanggal Pesanan : .....</p>
+                    <p>Tanggal Kirim : {{$dataorders->TANGGAL_KIRIM}}</p>
                 </div>
                 <div class="nopesanan" style="border-radius: 10px;">
-                    <p>No Pesanan : .....</p>
+                    <p>No Pesanan : {{$dataorders->ID_TB}}</p>
                 </div>
             </div>
             <div class="bagian2" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Alamat :</h1>
-                <textarea name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;"></textarea>
+                <textarea disabled name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;">{{$dataorders->ALAMAT}}</textarea>
             </div>
             <div class="bagian3" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
+                @foreach ($detailorders as $do)
                 <div class="pesanan" style="border-radius: 10px;">
                     <div class="fotomenu">
                         <div class="gambar">
@@ -119,11 +120,11 @@
                     </div>
                     <div class="detailmenu">
                         <div class="detailmenu1">
-                            <h1>Mie Goreng</h1>
-                            <h3>Rp. XX.XXX</h3>
+                            <h1>{{$do->ID_MENU}}</h1>
+                            <h3>{{$do->ID_MENU}}</h3>
                         </div>
                         <div class="detailmenu2">
-                            <h3>Jumlah :</h2>
+                            <h3>Jumlah : {{ $do->QUANTITY_BELI }}</h2>
                         </div>
                     </div>
                     <div class="subtotal">
@@ -131,58 +132,11 @@
 
                         </div>
                         <div class="subtotaltext">
-                            <h3>Subtotal : Rp. XX.XXX</h3>
+                            <h3>Subtotal : Rp. {{$do->SUBTOTAL}},-</h3>
                         </div>
                     </div>
                 </div>
-                <div class="pesanan" style="border-radius: 10px;">
-                    <div class="fotomenu">
-                        <div class="gambar">
-                            <img src="user" alt="" style="width: 100%; height: 100%;">
-                        </div>
-                    </div>
-                    <div class="detailmenu">
-                        <div class="detailmenu1">
-                            <h1>Mie Goreng</h1>
-                            <h3>Rp. XX.XXX</h3>
-                        </div>
-                        <div class="detailmenu2">
-                            <h3>Jumlah :</h2>
-                        </div>
-                    </div>
-                    <div class="subtotal">
-                        <div class="emptysubtotal">
-
-                        </div>
-                        <div class="subtotaltext">
-                            <h3>Subtotal : Rp. XX.XXX</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="pesanan" style="border-radius: 10px;">
-                    <div class="fotomenu">
-                        <div class="gambar">
-                            <img src="user" alt="" style="width: 100%; height: 100%;">
-                        </div>
-                    </div>
-                    <div class="detailmenu">
-                        <div class="detailmenu1">
-                            <h1>Mie Goreng</h1>
-                            <h3>Rp. XX.XXX</h3>
-                        </div>
-                        <div class="detailmenu2">
-                            <h3>Jumlah :</h2>
-                        </div>
-                    </div>
-                    <div class="subtotal">
-                        <div class="emptysubtotal">
-
-                        </div>
-                        <div class="subtotaltext">
-                            <h3>Subtotal : Rp. XX.XXX</h3>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="bagian4" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
@@ -193,34 +147,32 @@
             <div class="bagian5" style="margin-top: 30px; border-radius: 10px;">
                 <div class="empty"></div>
                 <div class="bagian5text1">
-                    <h3>Ongkos kirim :</h3>
                     <h3>Subtotal :</h3>
                 </div>
                 <div class="bagian5text2">
-                    <h3>........</h3>
-                    <h3>......</h3>
+                    <h3>Rp. {{$dataorders->SUBTOTAL_TRANSAKSI}},-</h3>
                 </div>
             </div>
             <div class="bagian6" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Metode Pembayaran :</h1>
                 <div class="bagian6text" style="border-radius: 10px;">
-                    <h3 style="font-size: 120%; padding: 2%; margin-bottom: 0;">COD</h3>
+                    <h3 style="font-size: 120%; padding: 2%; margin-bottom: 0;">{{$dataorders->CARA_PEMBAYARAN}}</h3>
                 </div>
                 <div class="bagian6deatilpembayaran" style="border-radius: 10px;">
                     <div class="empty"></div>
                     <div class="bagian6text1">
+                        <h3>Subtotal Pesanan :</h3>
                         <h3>Ongkos kirim :</h3>
-                        <h3>Subtotal :</h3>
                         <h3>Pakai Point :</h3>
                         <h3>Total :</h3>
                         <h3>Dapat Poin :</h3>
                     </div>
                     <div class="bagian6text2">
-                        <h3>........</h3>
-                        <h3>......</h3>
-                        <h3>........</h3>
-                        <h3>......</h3>
-                        <h3>........</h3>
+                        <h3>Rp. {{$dataorders->SUBTOTAL_TRANSAKSI}},-</h3>
+                        <h3>Rp. {{$dataorders->ONGKIR}},-</h3>
+                        <h3>Rp. {{$dataorders->PAKE_POIN}},-</h3>
+                        <h3>Rp. {{$dataorders->TOTAL_BAYAR}},-</h3>
+                        <h3>Rp. {{$dataorders->DAPET_POIN}},-</h3>
 
                     </div>
                 </div>
@@ -238,7 +190,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <img style="width: 90%; height: 38%;"src="image/logo.png">
+            <img style="width: 90%; height: 38%;"src="/image/logo.png">
             <p>
             MakanYuk provides an online catering service. We have various menus and are all scheduled.
             </p>

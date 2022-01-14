@@ -115,6 +115,8 @@ Route::prefix("/menu-sign-in")->group(function () {
     //Route::post("/fav", [MenuController::class, "addFav"]);
 });
 
+Route::get("detail-pesanan/{id}", [ProfileSignInController::class, "detailpesanan"]);
+
 Route::post("/faqs-sign-in", [MenuController::class, "addFav"]);
 
 Route::prefix("/menu")->group(function () {
