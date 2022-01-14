@@ -90,6 +90,18 @@ class CheckoutController extends Controller
             ]);
         }
 
-        return redirect('detail-pesanan');
+        DB::table('keranjang')
+                ->where([
+                    ['ID_PEMBELI', '=', $id]
+                ])
+                ->delete();
+
+        DB::table('pembeli')
+            ->where([
+                ['ID_PEMBELI', '=', $id],
+                ])
+            ->update(['poin' => $dapet]);
+
+        return redirect('home-sign-in')->with("success", "Transaction Success");
     }
 }
