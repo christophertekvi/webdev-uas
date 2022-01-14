@@ -266,7 +266,22 @@
                                         @endif
                                         <form class="form-horizontal" method="POST" action="postprofilesignin">
                                             {{ csrf_field() }}
+                                            @if (session()->has('ChangePasswordError'))
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                {{ session('ChangePasswordError') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
 
+                                                </button>
+                                            </div>
+                                        @endif
+                                        @if (session()->has('PasswordChanged'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ session('PasswordChanged') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+
+                                            </button>
+                                        </div>
+                                    @endif
                                             <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
                                                 <label for="new-password" class="col-md-4 control-label">Current Password</label>
 
