@@ -156,7 +156,7 @@ class SignInController extends Controller
 
                     return view(
                         'home-sign-in',
-                        ['title' => 'Home']
+                        ["bestseller" => $bestseller,'title' => 'Home']
                     );
                 }
             } else {
