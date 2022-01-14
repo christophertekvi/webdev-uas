@@ -66,27 +66,30 @@
                     <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
                   </a>
                   <a
-                    style="padding-right: 18%;"
-                    class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                  <i class="fas fa-user" style="color: #ffffff;"></i>
-                  </a>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
+                  style="padding-right: 18%"
+                  class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user" style="color: #ffffff"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
                   </li>
                   <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : {{ session('poin') }}</a>
                   </li>
-                  </ul>
+                  <li>
+                    <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
+                  </li>
+                </ul>
               </ul>
           </div>
         </nav>
@@ -180,6 +183,13 @@
         </div>
     </div>
 </body>
+
+<div>
+    <button id="btnScrollTop" onclick="scrollToTop()">
+        <i class="material-icons">keyboard_double_arrow_up</i>
+    </button>
+</div>
+
 <!-- Footer -->
 <footer style="background-color: #f88753;" class="text-center text-lg-start text-muted">
     <!-- Section: Links  -->
