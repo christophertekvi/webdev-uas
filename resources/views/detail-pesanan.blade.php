@@ -107,7 +107,7 @@
             </div>
             <div class="bagian2" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Alamat :</h1>
-                <textarea disabled name="alamat" id="alamatuser" cols="30" rows="6" style="border-radius: 10px;">{{$dataorders->ALAMAT}}</textarea>
+                <textarea disabled name="alamat" id="alamatuser" cols="30" rows="3" style="border-radius: 10px;">{{$dataorders->ALAMAT}}</textarea>
             </div>
             <div class="bagian3" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
@@ -141,7 +141,7 @@
             <div class="bagian4" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
                 <div class="pesaninput">
-                    <textarea name="pesanpelanggan" id="textpesan" style="border-radius: 10px;"></textarea>
+                    <textarea name="pesanpelanggan" id="textpesan" cols="30" rows="3" style="border-radius: 10px;"></textarea>
                 </div>
             </div>
             <div class="bagian5" style="margin-top: 30px; border-radius: 10px;">
