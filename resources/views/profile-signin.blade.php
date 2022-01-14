@@ -163,7 +163,7 @@
                                     <h5> First Name :</h5>
                                     </div>
                                     <div class="inputProfile">
-                                    <input type="text" name="first" id="input-name" value=" {{ $dp->FIRST_NAME }} ">
+                                    <input type="text" name="first" id="input-name-1" value=" {{ $dp->FIRST_NAME }} ">
                                     </div>
                                 </div>
                                 <div class="controlinfo">
@@ -171,7 +171,7 @@
                                         <h5> Last Name :</h5>
                                         </div>
                                         <div class="inputProfile">
-                                        <input type="text" name="last" id="input-name" value=" {{ $dp->LAST_NAME }} ">
+                                        <input type="text" name="last" id="input-name-2" value=" {{ $dp->LAST_NAME }} ">
                                         </div>
                                 </div>
                                 <div class="controlinfo">

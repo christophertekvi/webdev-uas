@@ -16,7 +16,8 @@
 //   document.getElementById("defaultOpen").click();
 
 function cancel() {
-    document.getElementById("input-name").reset();
+    document.getElementById("input-name-1").reset();
+    document.getElementById("input-name-2").reset();
     document.getElementById("input-email").reset();
     document.getElementById("input-phone").reset();
     document.getElementById("address").reset();
