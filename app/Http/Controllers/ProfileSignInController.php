@@ -140,9 +140,8 @@ class ProfileSignInController extends Controller
         $request->session()->put('noHP', $dp->NO_HP);
         $request->session()->put('alamat', $dp->ALAMAT);
 
-        return redirect('profile-signin',[
-            "dp" => $dp
-        ])
+        return redirect('profile-signin'
+        )
             ->with("success", "Profile successfully updated!");
     }
 
