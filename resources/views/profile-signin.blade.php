@@ -220,8 +220,8 @@
                             <img src="image/user.png">
                             @endif                        </div>
                           <div class="textcontrol">
-                            <p style="font-size: 20px; text-align: center; font-weight: bold"> {{session('firstname')}}  </p>
-                            <p style="font-size: 20px; text-align: center; font-weight: bold"> &nbsp {{session('lastname')}}  </p>
+                            <p style="font-size: 20px; text-align: center; font-weight: bold"> {{ $dp->FIRST_NAME }}  </p>
+                            <p style="font-size: 20px; text-align: center; font-weight: bold"> &nbsp {{ $dp->LAST_NAME }}  </p>
 
                             {{-- <br><p>User ID</p> --}}
                           </div>
