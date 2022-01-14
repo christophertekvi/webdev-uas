@@ -140,8 +140,8 @@
                     </div>
                     <div id="EditProfile" class="tabcontent">
                         <div class="changeProfilePic">
-                            @if (!empty(session('foto')))
-                            <img id="display" src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
+                            @if (!empty($dp->FOTO_PEMBELI))
+                            <img id="display" src="data:image/jpg;base64,{{ chunk_split(base64_encode($dp->FOTO_PEMBELI)) }}" alt="foto">
                             @else
                             <img src="image/user.png">
                             @endif
@@ -157,7 +157,7 @@
                                     <h5> First Name :</h5>
                                     </div>
                                     <div class="inputProfile">
-                                    <input type="text" name="first" id="input-name" value=" {{ session('firstname') }} ">
+                                    <input type="text" name="first" id="input-name" value=" {{ $dp->FIRST_NAME }} ">
                                     </div>
                                 </div>
                                 <div class="controlinfo">
@@ -165,7 +165,7 @@
                                         <h5> Last Name :</h5>
                                         </div>
                                         <div class="inputProfile">
-                                        <input type="text" name="last" id="input-name" value=" {{ session('lastname') }} ">
+                                        <input type="text" name="last" id="input-name" value=" {{ $dp->LAST_NAME }} ">
                                         </div>
                                 </div>
                                 <div class="controlinfo">
@@ -173,7 +173,7 @@
                                     <h5>E-mail :</h5>
                                     </div>
                                     <div class="inputProfile">
-                                    <input type="text" name="email" id="input-email" value="{{ session('email') }}">
+                                    <input type="text" name="email" id="input-email" value="{{ $dp->EMAIL }}">
                                     </div>
                                 </div>
                                 <div class="controlinfo">
@@ -181,7 +181,7 @@
                                     <h5>Phone :</h5>
                                     </div>
                                     <div class="inputProfile">
-                                    <input type="text" name="nohp" id="input-phone" value="{{ session('noHP') }}">
+                                    <input type="text" name="nohp" id="input-phone" value="{{ $dp->NO_HP }}">
                                     </div>
                                 </div>
                                 <div class="controlinfo">
@@ -189,7 +189,7 @@
                                     <h5>Address :</h5>
                                     </div>
                                     <div class="inputAddress">
-                                    <input id="address" name="alamat" value=" {{session('alamat')}}">
+                                    <input id="address" name="alamat" value=" {{ $dp->ALAMAT }}">
                                     </div>
                                 </div>
                                 <div class="form-group" style="margin-left: 110px; margin-top: 50px">
