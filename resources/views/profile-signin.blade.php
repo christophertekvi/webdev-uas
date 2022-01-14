@@ -369,8 +369,8 @@
                                 @foreach ($dataorderscomplete as $dtc)
                                 <ul class="cart_list">
                                     <li class="cart_item clearfix">
-                                        <div style= "width: 100%%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
-                                            <div class="cart_item_name cart_info_col" >
+                                        <div style= "width: 100%  " class="cart_item_info d-flex flex-md-row flex-column justify-content-between" >
+                                            <div class="cart_item_name cart_info_col">
                                                 <div class="cart_item_title">Transaction ID : </div>
                                                 <div class="cart_item_text" style="color:black"> {{ $dtc->ID_TB }} </div>
                                             </div>
@@ -382,6 +382,7 @@
                                                 <a href="{{ ('detail-pesanan/'.$dtc->ID_TB) }}">Details</a>
                                             </div>
                                         </div>
+
                                     </li>
                                 </ul>
                                 @endforeach
