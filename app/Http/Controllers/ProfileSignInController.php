@@ -19,6 +19,7 @@ class ProfileSignInController extends Controller
      */
     public function index()
     {
+        $pembeli = session('idPembeli');
         $data1 = DB::table('transaksi_beli')
             ->where('ID_PEMBELI', session('idPembeli'))
             ->where(function ($query) {
@@ -53,7 +54,7 @@ class ProfileSignInController extends Controller
             })
             ->simplePaginate($countdataorderscomplete);
 
-
+        $dp = DB::table('pembeli')->where('ID_PEMBELI', $pembeli)->first();
 
         $pembeli = session('idPembeli');
         $listFav = DB::table('menu_favorit')->where('ID_PEMBELI', $pembeli)->get();
@@ -64,6 +65,7 @@ class ProfileSignInController extends Controller
             "dataorderscomplete" => $dataorderscomplete,
             "dataordersonprocess" => $dataordersonprocess,
             "listFav" => $listFav,
+            "dp" => $dp,
             //"detailpembeli" => $detailpembeli,
             "title" => "Profile"
         ]);
@@ -100,7 +102,6 @@ class ProfileSignInController extends Controller
         $pembeli = session('idPembeli');
         // $request->validate(["email" => "email"]);
         $request->validate(["nohp" => "numeric"]);
-        $request->validate(["file" => 'file|image|mimes:jpeg,png,jpg']);
         // $request->validate(["alamat"]);
         $dp = DB::table('pembeli')->where('ID_PEMBELI', $pembeli)->first();
 
@@ -113,7 +114,9 @@ class ProfileSignInController extends Controller
         // $img = base64_encode(file_get_contents(addslashes('img')));
 
         // $foto = Input::file('img');
-
+        $this->validate($request, [
+            'file' => 'file|image|mimes:jpeg,png,jpg'
+        ]);
         // $filefoto = $request->file('file');
         // $filefoto->getRealPath();
         // dd($filefoto);
@@ -133,11 +136,13 @@ class ProfileSignInController extends Controller
             ->update($updateDetails);
         //->get();
 
-        // $request->session()->put('email', $dp->EMAIL);
-        // $request->session()->put('nohp', $dp->NO_HP);
-        // $request->session()->put('alamat', $dp->ALAMAT);
+        $request->session()->put('email', $dp->EMAIL);
+        $request->session()->put('noHP', $dp->NO_HP);
+        $request->session()->put('alamat', $dp->ALAMAT);
 
-        return redirect('profile-signin')
+        return redirect('profile-signin',[
+            "dp" => $dp
+        ])
             ->with("success", "Profile successfully updated!");
     }
 
