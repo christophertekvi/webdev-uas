@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="/css/detail-pesanan.css">
     <script type="text/javascript" src="/js/template.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -43,54 +43,69 @@
         </div>
     </div>
 
+    {{-- @include('partials.navbar-sign-in') --}}
     <div class="topbar">
-        <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
+        <nav
+          class="
+            navbar navbar-custom navbar-expand-md
+            bg-transparent
+            justify-content-center
+          "
+        >
           <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
-          <div  class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-              <ul class="navbar-nav w-100 justify-content-center">
-                  <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="/home-sign-in">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/menu-sign-in" >MENU</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/about-sign-in">ABOUT US</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/faqs-sign-in">FAQS</a>
-                  </li>
-              </ul>
-              <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                  <a class="text-reset me-3" href="/cart">
-                    <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
-                  </a>
-                  <a
-                  style="padding-right: 18%"
-                  class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
+          <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <ul class="navbar-nav w-100 justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/home-sign-in"
+                  >HOME</a
                 >
-                  <i class="fas fa-user" style="color: #ffffff"></i>
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
-                  </li>
-                  <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : {{ session('poin') }}</a>
-                  </li>
-                  <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
-                  </li>
-                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/menu-sign-in">MENU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about-sign-in">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faqs-sign-in">FAQS</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <a href="/cart" style="padding-right: 5%; backgroud-color: transparent; color: white; border: solid 1px #e25f21; font-family: 'Outfit', sans-serif; font-size: smallerS; border-radius: 4px;">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="badge bg-dark text-white ms-1 rounded-pill">
+                      {{ \App\Models\Cart::getCount() }}
+                  </span>
+              </a>
+              {{-- <a class="text-reset me-3" href="/cart">
+                <i style="color: #ffffff" class="fas fa-shopping-cart"></i>
+              </a> --}}
+              <a
+                style="padding-right: 18%"
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user" style="color: #ffffff"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a style="text-align: left; color: black;" class="dropdown-item" href="/profile-signin">My Profile</a>
+                </li>
+                <li>
+                  <a style="text-align: left; color: black;" class="dropdown-item" href="#">Points : {{ session('poin') }}</a>
+                </li>
+                <li>
+                  <a style="text-align: left; color: black;" class="dropdown-item" href="/">Sign Out</a>
+                </li>
               </ul>
+            </ul>
           </div>
         </nav>
     </div>

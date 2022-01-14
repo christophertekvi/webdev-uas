@@ -59,8 +59,11 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                <a class="text-reset me-3" href="#">
-                  <i style="color: #ffffff;" class="fas fa-shopping-cart"></i>
+                <a href="/cart" style="padding-right: 5%; backgroud-color: transparent; color: white; border: solid 1px #e25f21; font-family: 'Outfit', sans-serif; font-size: smallerS; border-radius: 4px;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">
+                        {{ \App\Models\Cart::getCount() }}
+                    </span>
                 </a>
                 <a
                   style="padding-right: 18%;"
