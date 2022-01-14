@@ -69,7 +69,7 @@
                     </p>
                     <div class="d-flex">
                         <p style="margin-right: 10px" class="lead">
-                            Jumlah :
+                            Qty :
                         </p>
                         <input class="form-control text-center me-3" name="inputQuantity" type="number" value="1" min="1"  style="max-width: 6rem; height: 35px;">
                     </div>
