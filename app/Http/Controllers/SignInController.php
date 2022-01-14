@@ -106,10 +106,10 @@ class SignInController extends Controller
                 $request->session()->put('poin', $obj['POIN']);
                 $request->session()->put('noHP', $obj['NO_HP']);
                 $request->session()->put('alamat', $obj['ALAMAT']);
-                $request->session()->put('gender', $obj['JENIS_KELAMIN']);
+                //$request->session()->put('gender', $obj['JENIS_KELAMIN']);
                 $request->session()->put('firstname', $obj['FIRST_NAME']);
                 $request->session()->put('lastname', $obj['LAST_NAME']);
-                $request->session()->put('foto', $obj['FOTO_PEMBELI']);
+                //$request->session()->put('foto', $obj['FOTO_PEMBELI']);
 
                 // $image = session('foto');
                 // $image = DB::query('select FOTO_PEMBELI from pembeli where ID_PEMBELI=$idPembeli')->get();

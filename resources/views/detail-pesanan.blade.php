@@ -129,20 +129,20 @@
             </div>
             <div class="bagian3" style="margin-top: 30px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
-                @foreach ($detailorders as $do)
+                @foreach ($detail as $dm)
                 <div class="pesanan" style="border-radius: 10px;">
                     <div class="fotomenu">
                         <div class="gambar">
-                            <img src="user" alt="" style="width: 100%; height: 100%;">
+                            <img src="data:image/png;base64,{{ chunk_split(base64_encode($dm->FOTO_MENU)) }}" alt="" style="width: 100%; height: 100%;">
                         </div>
                     </div>
                     <div class="detailmenu">
                         <div class="detailmenu1">
-                            <h1>{{$do->ID_MENU}}</h1>
-                            <h3>{{$do->ID_MENU}}</h3>
+                            <h1>{{$dm->NAMA_MENU}}</h1>
+                            <h3>{{$dm->HARGA_MENU}}</h3>
                         </div>
                         <div class="detailmenu2">
-                            <h3>Jumlah : {{ $do->QUANTITY_BELI }}</h2>
+                            <h3>Jumlah : {{ $dm->QUANTITY_BELI }}</h2>
                         </div>
                     </div>
                     <div class="subtotal">
@@ -150,7 +150,7 @@
 
                         </div>
                         <div class="subtotaltext">
-                            <h3>Subtotal : Rp. {{$do->SUBTOTAL}},-</h3>
+                            <h3>Subtotal : Rp. {{$dm->SUBTOTAL}},-</h3>
                         </div>
                     </div>
                 </div>

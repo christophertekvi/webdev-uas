@@ -160,6 +160,12 @@ class ProfileSignInController extends Controller
         //dd($detailorders);
         $idmenu = DB::table('detail_beli')->select('id_menu')
             ->where('ID_TB', $id)->get();
+
+        $detailmenu = DB::table('detail_beli')
+        ->join('menu', 'detail_beli.ID_MENU', '=', 'menu.ID_MENU')
+        ->select('detail_beli.ID_MENU', 'NAMA_MENU', 'HARGA_MENU', 'FOTO_MENU', 'QUANTITY_BELI', 'SUBTOTAL')
+        ->where('detail_beli.ID_TB', $id)
+        ->get();
         //dd($idmenu);
 
         // }
@@ -171,6 +177,7 @@ class ProfileSignInController extends Controller
         return view('detail-pesanan', [
             "dataorders" => $dataorders,
             "detailorders" => $detailorders,
+            "detail" => $detailmenu,
             //"namamenu" => $namamenu,
 
             //"detailpembeli" => $detailpembeli,
