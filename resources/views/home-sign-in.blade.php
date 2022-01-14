@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
 
+    <link rel="icon" href="image/icon-logo.png" type="image/png">
+
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/template.css" />
     <script type="text/javascript" src="js/home.js"></script>
