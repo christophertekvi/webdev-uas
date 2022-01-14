@@ -22,11 +22,11 @@ function cancel() {
     document.getElementById("address").reset();
   }
 
-//  function cancelpw(){
-//     document.getElementById("current-password").reset();
-//     document.getElementById("new-password").reset();
-//     document.getElementById("new-password-confirm").reset();
-//  }
+ function cancelpw(){
+    document.getElementById("current-password").reset();
+    document.getElementById("new-password").reset();
+    document.getElementById("new-password-confirm").reset();
+ }
 
 //     var savee = document.getElementById("saveprofile");
 //     savee.onclick = function() {
