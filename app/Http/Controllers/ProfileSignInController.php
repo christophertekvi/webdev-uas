@@ -157,16 +157,21 @@ class ProfileSignInController extends Controller
         $detailorders = DB::table('detail_beli')
         ->where('ID_TB', $id)->get();
         //dd($detailorders);
+        $idmenu = DB::table('detail_beli')->select('id_menu')
+        ->where('ID_TB', $id)->get();
+        //dd($idmenu);
 
-        // foreach($detailorders as $do)
-        // {
-        //     $namamenu = DB::table('menu')->select('nama')->where('ID_MENU', $do->id_menu)->get();
         // }
-
+        // foreach ($idmenu as $im)
+        // {
+        //     $namamenu = DB::table('menu')->select('nama_menu')->where('ID_MENU', $im->id_menu)->get();
+        // }
 
         return view('detail-pesanan', [
             "dataorders" => $dataorders,
             "detailorders" => $detailorders,
+            //"namamenu" => $namamenu,
+
             //"detailpembeli" => $detailpembeli,
             "title" => "Profile"
         ]);
