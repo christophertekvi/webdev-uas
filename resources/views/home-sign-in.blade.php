@@ -182,15 +182,17 @@
       </h1>
 
       <div class="container1">
-        {{-- @foreach ($bestseller as $bs)
+        @foreach ($bestseller as $bs)
             <div class="bs1">
                 <img style="width: 75%; height: 50%; margin-top: 10%;" src="data:image/png;base64,{{ chunk_split(base64_encode($bs->FOTO_MENU)) }}">
-                <p href="{{ ('menu/'.$bs->ID_MENU) }}" class="deskripsi" style="font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px;">{{ $bs->NAMA_MENU }}</p>
+                {{-- <p href="{{ ('menu/'.$bs->ID_MENU) }}" class="deskripsi" style="font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px;">{{ $bs->NAMA_MENU }}</p> --}}
+                <a href="{{ ('menu-sign-in/'.$bs->ID_MENU) }}"
+                    class="deskripsi"><h5 style="text-align: center;font-family: 'Outfit', sans-serif; font-size: large; margin-top:10px; margin-bottom: 37px; color: black">{{ $bs->NAMA_MENU }}</h5></a>
                 <p style="font-style: italic; ">
                     {{ $bs->HARGA_MENU }}
                 </p>
             </div>
-        @endforeach --}}
+        @endforeach
 
         {{-- <div class="bs1">
           <img style="height: 50%; margin-top: 10%;" src="image/menu/esteh.png">

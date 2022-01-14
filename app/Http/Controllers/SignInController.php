@@ -116,6 +116,16 @@ class SignInController extends Controller
                 // $imageData = base64_encode(file_get_contents($image));
                 // $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
 
+                //titip bestseller
+                $bestseller = DB::table('detail_beli')
+                ->join('menu', 'detail_beli.ID_MENU', '=', 'menu.ID_MENU')
+                ->select('detail_beli.ID_MENU', 'NAMA_MENU', 'HARGA_MENU', 'FOTO_MENU', DB::raw('SUM(`QUANTITY_BELI`)'))
+                ->groupBy('menu.ID_MENU')
+                ->orderByRaw('SUM(`QUANTITY_BELI`) DESC')
+                ->limit(5)
+                ->get();
+                //dd($bestseller);
+
                 //titip buat id pembeli
                 $idPembeli = $obj['ID_PEMBELI'];
                 $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
@@ -138,7 +148,8 @@ class SignInController extends Controller
                     $request->session()->put('total', $obj['TOTAL_BAYAR']);
                     return view(
                         'home-sign-in',
-                        ['title' => 'Home']
+                        ["bestseller" => $bestseller,
+                        'title' => 'Home']
                     );
                 } else {
                     $request->session()->put('orders', '');

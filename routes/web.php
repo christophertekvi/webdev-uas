@@ -24,7 +24,7 @@ use App\Http\Controllers\SignUpController;
 Route::get('/', [HomeController::class, 'showbestseller']);
 //Route::get('/home/{slug}', [HomeController::class, 'showbestseller']);
 //Route::get('/home', [HomeController::class, 'showbestseller']);
-Route::get('/home-sign-in', [HomeController::class, 'showbestsellers']);
+//Route::get('/home-sign-in', [HomeController::class, 'showbestsellers']);
 
 
 Route::get('/faqs', function () {
