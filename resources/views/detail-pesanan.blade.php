@@ -111,24 +111,24 @@
     </div>
 
     <div class="container1">
-        <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">Detail Pesanan</p>
+        <p style="font-family: 'Outfit', sans-serif; font-size: 220%; margin-top: 30px;">Order Details</p>
     </div>
     <div class="container2" style="margin-top: 30px;">
         <div class="controlcontainer2">
             <div class="bagian1">
                 <div class="tanggalpesanan" style="border-radius: 10px;">
-                    <p>Tanggal Kirim : {{$dataorders->TANGGAL_KIRIM}}</p>
+                    <p>Delivery Date : {{$dataorders->TANGGAL_KIRIM}}</p>
                 </div>
                 <div class="nopesanan" style="border-radius: 10px;">
-                    <p>No Pesanan : {{$dataorders->ID_TB}}</p>
+                    <p>Order ID : {{$dataorders->ID_TB}}</p>
                 </div>
             </div>
             <div class="bagian2" style="margin-top: 30px;">
-                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Alamat :</h1>
+                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Address :</h1>
                 <textarea disabled name="alamat" id="alamatuser" cols="30" rows="3" style="border-radius: 10px;">{{$dataorders->ALAMAT}}</textarea>
             </div>
             <div class="bagian3" style="margin-top: 30px;">
-                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesanan:</h1>
+                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Orders :</h1>
                 @foreach ($detail as $dm)
                 <div class="pesanan" style="border-radius: 10px;">
                     <div class="fotomenu">
@@ -142,7 +142,7 @@
                             <h3>{{$dm->HARGA_MENU}}</h3>
                         </div>
                         <div class="detailmenu2">
-                            <h3>Jumlah : {{ $dm->QUANTITY_BELI }}</h2>
+                            <h3>Qty : {{ $dm->QUANTITY_BELI }}</h2>
                         </div>
                     </div>
                     <div class="subtotal">
@@ -157,7 +157,7 @@
                 @endforeach
             </div>
             <div class="bagian4" style="margin-top: 30px;">
-                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Pesan :</h1>
+                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Notes :</h1>
                 <div class="pesaninput">
                     <textarea name="pesanpelanggan" id="textpesan" cols="30" rows="3" style="border-radius: 10px;"></textarea>
                 </div>
@@ -172,18 +172,18 @@
                 </div>
             </div>
             <div class="bagian6" style="margin-top: 30px;">
-                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Metode Pembayaran :</h1>
+                <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Payment Method :</h1>
                 <div class="bagian6text" style="border-radius: 10px;">
                     <h3 style="font-size: 120%; padding: 2%; margin-bottom: 0;">{{$dataorders->CARA_PEMBAYARAN}}</h3>
                 </div>
                 <div class="bagian6deatilpembayaran" style="border-radius: 10px;">
                     <div class="empty"></div>
                     <div class="bagian6text1">
-                        <h3>Subtotal Pesanan :</h3>
-                        <h3>Ongkos kirim :</h3>
-                        <h3>Pakai Point :</h3>
+                        <h3>Order Subtotal :</h3>
+                        <h3>Delivery Fee :</h3>
+                        <h3>Points Used :</h3>
                         <h3>Total :</h3>
-                        <h3>Dapat Poin :</h3>
+                        <h3>Points Earned :</h3>
                     </div>
                     <div class="bagian6text2">
                         <h3>Rp. {{$dataorders->SUBTOTAL_TRANSAKSI}},-</h3>
