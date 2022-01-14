@@ -139,7 +139,7 @@
                     <div class="detailmenu">
                         <div class="detailmenu1">
                             <h1>{{$dm->NAMA_MENU}}</h1>
-                            <h3>{{$dm->HARGA_MENU}}</h3>
+                            <h3>Rp. {{$dm->HARGA_MENU}}</h3>
                         </div>
                         <div class="detailmenu2">
                             <h3>Qty : {{ $dm->QUANTITY_BELI }}</h2>
