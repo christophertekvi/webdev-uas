@@ -145,7 +145,7 @@
                             @else
                             <img src="image/user.png">
                             @endif
-                            <input type="file" id="image" name="img">
+                            <input type="file" id="file" name="file">
                             {{-- <label for="file" id="uploadPhoto">Change Photo</label> --}}
                             {{-- <p>UserID</p> --}}
                         </div>
@@ -201,11 +201,11 @@
                     <div id="ChangePass" class="tabcontent">
                       <div class="controltextAndimg">
                           <div class="imgcontrol">
-                            <img src="image/user.png" alt="">
-                          </div>
+                            <img id="display" src="data:image/jpg;base64,{{ chunk_split(base64_encode(session('foto'))) }}" alt="foto">
+                        </div>
                           <div class="textcontrol">
-                            <p style="font-size: 20px; text-align: center"> {{session('firstname')}}  </p>
-                            <p style="font-size: 20px; text-align: center"> &nbsp {{session('lastname')}}  </p>
+                            <p style="font-size: 20px; text-align: center; font-weight: bold"> {{session('firstname')}}  </p>
+                            <p style="font-size: 20px; text-align: center; font-weight: bold"> &nbsp {{session('lastname')}}  </p>
 
                             {{-- <br><p>User ID</p> --}}
                           </div>
@@ -244,7 +244,7 @@
                             <button type="submit" formaction="POST">Save</button>
                         </div>
                       </div> --}}
-                      <div class="container">
+                      <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="col-md-10 offset-2">
                                 <div class="panel panel-default">
@@ -283,7 +283,7 @@
                                         </div>
                                     @endif
                                             <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
-                                                <label for="new-password" class="col-md-4 control-label">Current Password</label>
+                                                <label for="new-password" class="col-md-4 control-label" style="font-size: small">Current Password</label>
 
                                                 <div class="col-md-6">
                                                     <input id="current-password" type="password"  name="current_password" class="form-control" required>
@@ -297,7 +297,7 @@
                                             </div>
 
                                             <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}">
-                                                <label for="new-password" class="col-md-4 control-label">New Password</label>
+                                                <label for="new-password" class="col-md-4 control-label" style="font-size: small">New Password</label>
 
                                                 <div class="col-md-6">
                                                     <input id="new-password" type="password" class="form-control" name="new_password" required>
@@ -311,7 +311,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="new-password-confirm" class="col-md-4 control-label">Confirm New Password</label>
+                                                <label for="new-password-confirm" class="col-md-4 control-label" style="font-size: small">Confirm New Password</label>
 
                                                 <div class="col-md-6">
                                                     <input id="new-password-confirm" type="password" class="form-control" name="new_password_confirmation" required>

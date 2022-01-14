@@ -177,9 +177,12 @@
     /* margin: 0px 200px 20px 325px; */
 }
 .imgcontrol img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 50px 300px 20px 300px;
+    /* width: 150px;
+    height: 150px; */
+    border-radius: 75px;
 }
 .controlinput {
     width: 100%;

@@ -112,8 +112,14 @@ class ProfileSignInController extends Controller
         // $img = base64_encode(file_get_contents(addslashes('img')));
 
         // $foto = Input::file('img');
-        // $fotoblob = base64_encode(file_get_contents($request->file('img')));
-        // dd($fotoblob);
+        $this->validate($request, [
+            'file' => 'file|image|mimes:jpeg,png,jpg'
+        ]);
+        $filefoto = $request->file('file');
+        $filefoto->getRealPath();
+        dd($filefoto);
+        $fotoblob = base64_encode(file_get_contents($filefoto));
+        // $foto = base64_encode($fotoblob);
 
         // $first = Str::substr('input-name',);
         // $fullname = 'input-name';
@@ -122,7 +128,7 @@ class ProfileSignInController extends Controller
         // $first = $split[0];
         // $last = $split[1];
         $updateDetails = [
-            // 'FOTO_PEMBELI' => $request->input('img'),
+            'FOTO_PEMBELI' => $fotoblob,
             // 'FIRST_NAME' => $request->input($first),
             // 'LAST_NAME' => $request->input($last),
             'EMAIL' => $request->input('email'),

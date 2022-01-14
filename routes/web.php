@@ -71,6 +71,7 @@ Route::get('/faqs-sign-in', function () {
 // });
 
 Route::get('/profile-signin', [ProfileSignInController::class, 'index']);
+// Route::get('/profile-signin', [ProfileSignInController::class, 'editProfile']);
 Route::post('/profile-signin', [ProfileSignInController::class, 'delFav']);
 Route::post('/about-sign-in', [ProfileSignInController::class, 'editProfile']);
 //Route::get('/profile-signin',[ProfileSignInController::class,'list']);
@@ -137,4 +138,4 @@ Route::post("/checkout", [CheckoutController::class, "checkout"]);
 
 Route::get('/changePassword', [App\Http\Controllers\SignInController::class, 'showChangePasswordGet'])->name('changePasswordGet');
 Route::post('/changePassword', [App\Http\Controllers\SignInController::class, 'changePasswordPost'])->name('changePasswordPost');
-Route::post('/postprofilesignin',[ControllerPostProfileSignIn::class,'store']);
+Route::post('/postprofilesignin', [ControllerPostProfileSignIn::class, 'store']);
