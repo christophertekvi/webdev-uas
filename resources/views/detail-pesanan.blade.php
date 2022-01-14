@@ -171,7 +171,7 @@
                     <h3>Rp. {{$dataorders->SUBTOTAL_TRANSAKSI}},-</h3>
                 </div>
             </div>
-            <div class="bagian6" style="margin-top: 30px;">
+            <div class="bagian6" style="margin-top: 30px;border-radius: 10px;">
                 <h1 style="font-family: 'Outfit', sans-serif; font-size: 170%;">Payment Method :</h1>
                 <div class="bagian6text" style="border-radius: 10px;">
                     <h3 style="font-size: 120%; padding: 2%; margin-bottom: 0;">{{$dataorders->CARA_PEMBAYARAN}}</h3>
