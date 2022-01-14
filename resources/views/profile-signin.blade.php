@@ -214,8 +214,11 @@
                     <div id="ChangePass" class="tabcontent">
                       <div class="controltextAndimg">
                           <div class="imgcontrol">
+                            @if (!empty($dp->FOTO_PEMBELI))
                             <img id="display" src="data:image/jpg;base64,{{ chunk_split(base64_encode($dp->FOTO_PEMBELI)) }}" alt="foto">
-                        </div>
+                            @else
+                            <img src="image/user.png">
+                            @endif                        </div>
                           <div class="textcontrol">
                             <p style="font-size: 20px; text-align: center; font-weight: bold"> {{session('firstname')}}  </p>
                             <p style="font-size: 20px; text-align: center; font-weight: bold"> &nbsp {{session('lastname')}}  </p>
